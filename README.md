@@ -50,8 +50,8 @@ npx serve .
 | **Eating out** | What to order / skip across 8 cuisines |
 | **The journey** | The three Low-FODMAP phases (elimination → reintroduction → personalisation) + FAQ |
 
-Features: a "warm organic" design with self-hosted premium fonts, light/dark mode,
-live search & filtering, responsive layout, printable, and **fully offline** (no CDNs).
+Features: a fresh-green, modern-wellbeing design with a self-hosted font, light/dark
+mode, live search & filtering, responsive layout, printable, and **fully offline** (no CDNs).
 
 ---
 
@@ -61,11 +61,11 @@ live search & filtering, responsive layout, printable, and **fully offline** (no
 SIBO/
 ├── index.html         # Page structure & content sections
 ├── css/
-│   └── styles.css     # All styling + light/dark "warm organic" theming
+│   └── styles.css     # All styling + light/dark green "modern-wellbeing" theming
 ├── js/
 │   ├── data.js        # The food / swap / recipe / cuisine database (edit here)
 │   └── app.js         # Rendering, search, filters, modal, theme toggle
-├── fonts/             # Self-hosted Fraunces + Nunito Sans (offline, no CDN)
+├── fonts/             # Self-hosted Nunito Sans (offline, no CDN)
 └── README.md
 ```
 
