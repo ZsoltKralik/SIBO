@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SIBO Plate — a calm, expertly-researched guide to what to eat (and what to swap) with Small Intestinal Bacterial Overgrowth. Practical food lists, snacks, meals, recipes and eating-out tips." />
-  <title>SIBO Plate · What to Eat with SIBO</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="SIBO Plate — a warm, expertly-researched Low-FODMAP guide to what to eat with SIBO. A searchable food list (including fast food & brands), simple swaps, snacks, recipes and eating-out tips." />
+  <title>SIBO Plate · Your Low-FODMAP Eating Guide</title>
+
+  <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/nunito-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
 </head>
@@ -15,19 +17,19 @@
   <header class="site-header" id="top">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="SIBO Plate home">
-        <span class="brand-mark" aria-hidden="true">🍽️</span>
+        <span class="brand-mark" aria-hidden="true">🍃</span>
         <span class="brand-text">SIBO&nbsp;Plate</span>
       </a>
 
       <nav class="main-nav" aria-label="Primary">
-        <a href="#basics">Basics</a>
+        <a href="#glance">At a Glance</a>
         <a href="#explorer">Food&nbsp;List</a>
         <a href="#swaps">Swaps</a>
         <a href="#snacks">Snacks</a>
-        <a href="#meals">Meals</a>
+        <a href="#meals">A&nbsp;Day's&nbsp;Food</a>
         <a href="#recipes">Recipes</a>
         <a href="#eatout">Eating&nbsp;Out</a>
-        <a href="#faq">FAQ</a>
+        <a href="#journey">The&nbsp;Journey</a>
       </nav>
 
       <div class="header-actions">
@@ -41,88 +43,79 @@
 
   <!-- ============================ HERO ============================ -->
   <section class="hero">
+    <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="eyebrow">Small Intestinal Bacterial Overgrowth</p>
-      <h1>Know exactly<br><span class="accent">what to put on your plate.</span></h1>
+      <p class="eyebrow">Low-FODMAP · Small Intestinal Bacterial Overgrowth</p>
+      <h1>Eat well again,<br><span class="accent">without the guesswork.</span></h1>
       <p class="lede">
-        SIBO doesn't have to mean a life of <em>"no"</em>. This is your calm, practical guide to
-        what's safe to eat, what to snack on, and the simple swaps that turn
-        <strong>"don't eat pizza"</strong> into <strong>"eat <em>this</em> instead."</strong>
+        A calm, expertly-researched guide to living with SIBO. Look up any food — from
+        spinach to a <em>Big Mac</em> — and know in a glance whether to <strong>enjoy it</strong>,
+        <strong>keep it small</strong>, or <strong>swap it for something better</strong>.
       </p>
       <div class="hero-cta">
-        <a href="#explorer" class="btn btn-primary">Explore the food list</a>
-        <a href="#swaps" class="btn btn-ghost">See the swaps</a>
+        <a href="#explorer" class="btn btn-primary">Look up a food</a>
+        <a href="#glance" class="btn btn-ghost">See the essentials</a>
       </div>
 
-      <div class="hero-legend" aria-hidden="true">
-        <span class="legend-item"><span class="dot dot-green"></span> Enjoy</span>
-        <span class="legend-item"><span class="dot dot-yellow"></span> Small portions</span>
-        <span class="legend-item"><span class="dot dot-red"></span> Best avoided</span>
-      </div>
+      <dl class="hero-stats">
+        <div><dt id="statFoods">200+</dt><dd>foods rated</dd></div>
+        <div><dt>3</dt><dd>traffic-light levels</dd></div>
+        <div><dt>Monash</dt><dd>Low-FODMAP basis</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- ============================ DISCLAIMER ============================ -->
   <div class="disclaimer" role="note">
-    <span class="disclaimer-icon" aria-hidden="true">ℹ️</span>
+    <span class="disclaimer-icon" aria-hidden="true">🩺</span>
     <p>
-      <strong>Educational guidance, not medical advice.</strong> SIBO is a medical condition and
-      tolerance is deeply individual. Use this as a head-start, and work with your doctor or a
-      registered dietitian — the strict phase is meant to be <strong>temporary</strong>, followed by
-      structured reintroduction.
+      <strong>Educational guidance, not medical advice.</strong> Tolerance is individual, and the
+      strict Low-FODMAP phase is meant to be <strong>temporary</strong> — followed by structured
+      reintroduction. Please work alongside your doctor or a registered dietitian.
     </p>
   </div>
 
   <main>
 
-    <!-- ============================ BASICS ============================ -->
-    <section id="basics" class="section">
+    <!-- ============================ AT A GLANCE ============================ -->
+    <section id="glance" class="section">
       <div class="section-head">
-        <h2>The 60-second basics</h2>
-        <p class="section-sub">Why some foods cause trouble — and the few rules that do most of the work.</p>
+        <span class="kicker">Start here</span>
+        <h2>Your plate, at a glance</h2>
+        <p class="section-sub">The whole diet in one view. Build meals from the left, go easy on the right — then dive into the full list below.</p>
       </div>
 
-      <div class="cards-grid basics-grid">
-        <article class="card info-card">
-          <div class="info-icon">🦠</div>
-          <h3>What's happening</h3>
-          <p>In SIBO, too many bacteria live in your <em>small</em> intestine. When they reach fermentable carbs, they ferment them into gas — driving bloating, pain, and irregular bowels.</p>
-        </article>
-        <article class="card info-card">
-          <div class="info-icon">🔤</div>
-          <h3>Meet FODMAPs</h3>
-          <p>The main culprits are <strong>FODMAPs</strong> — Fermentable Oligosaccharides, Disaccharides, Monosaccharides And Polyols. Think wheat, onion, garlic, beans, milk sugar, and certain fruits.</p>
-        </article>
-        <article class="card info-card">
-          <div class="info-icon">✅</div>
-          <h3>The safe core</h3>
-          <p>Foods that <em>don't</em> feed bacteria are your foundation: meat, fish, eggs, most non-starchy veg, low-sugar fruit, rice, and hard cheese. Protein and fat are essentially "free."</p>
-        </article>
-        <article class="card info-card">
-          <div class="info-icon">⏱️</div>
-          <h3>Mind the gap</h3>
-          <p>Leave <strong>4–5 hours between meals</strong> where you can. The gap lets your gut's "cleaning wave" sweep bacteria onward. Constant snacking keeps switching it off.</p>
-        </article>
+      <div class="glance-grid">
+        <div class="glance-panel glance-eat">
+          <h3><span class="glance-badge eat">Enjoy</span> Build your plate from these</h3>
+          <ul id="glanceEat" class="glance-list"></ul>
+        </div>
+        <div class="glance-panel glance-avoid">
+          <h3><span class="glance-badge avoid">Avoid</span> Leave these off for now</h3>
+          <ul id="glanceAvoid" class="glance-list"></ul>
+        </div>
       </div>
+
+      <div id="principles" class="principles-grid"></div>
     </section>
 
     <!-- ============================ FOOD EXPLORER ============================ -->
     <section id="explorer" class="section section-alt">
       <div class="section-head">
-        <h2>The food list</h2>
-        <p class="section-sub">Search or filter to see what's safe. Green = enjoy · Yellow = small portions · Red = avoid for now.</p>
+        <span class="kicker">The food list</span>
+        <h2>Look up anything</h2>
+        <p class="section-sub">Search a food or filter by type. Red items show a quick <em>“try instead”</em> so you always know the alternative.</p>
       </div>
 
       <div class="explorer-controls">
         <div class="search-wrap">
           <span class="search-icon" aria-hidden="true">🔍</span>
-          <input id="foodSearch" type="search" placeholder="Search a food… (e.g. apple, rice, onion)" aria-label="Search foods" />
+          <input id="foodSearch" type="search" placeholder="Search… try “cola”, “steak”, “apple”, “pizza”" aria-label="Search foods" />
         </div>
-
         <div class="status-filters" role="group" aria-label="Filter by safety">
           <button class="chip chip-status is-active" data-status="all">All</button>
           <button class="chip chip-status" data-status="green"><span class="dot dot-green"></span> Enjoy</button>
-          <button class="chip chip-status" data-status="yellow"><span class="dot dot-yellow"></span> Caution</button>
+          <button class="chip chip-status" data-status="yellow"><span class="dot dot-yellow"></span> Small</button>
           <button class="chip chip-status" data-status="red"><span class="dot dot-red"></span> Avoid</button>
         </div>
       </div>
@@ -137,8 +130,9 @@
     <!-- ============================ SWAPS ============================ -->
     <section id="swaps" class="section">
       <div class="section-head">
-        <h2>Eat this, not that</h2>
-        <p class="section-sub">The whole point: you rarely have to give a food up — you just trade it for a gut-friendly version.</p>
+        <span class="kicker">Eat this, not that</span>
+        <h2>Swaps, not sacrifices</h2>
+        <p class="section-sub">You rarely have to give a food up — you just trade it for a gut-friendly version.</p>
       </div>
       <div id="swapGrid" class="swap-grid"></div>
     </section>
@@ -146,8 +140,9 @@
     <!-- ============================ SNACKS ============================ -->
     <section id="snacks" class="section section-alt">
       <div class="section-head">
+        <span class="kicker">Between meals</span>
         <h2>Grab-and-go snacks</h2>
-        <p class="section-sub">Keep these on hand so hunger never pushes you toward a trigger. (Still try to leave a gap between meals where you can.)</p>
+        <p class="section-sub">Keep these on hand so hunger never pushes you toward a trigger.</p>
       </div>
       <div id="snackGrid" class="snack-grid"></div>
     </section>
@@ -155,8 +150,9 @@
     <!-- ============================ MEAL PLAN ============================ -->
     <section id="meals" class="section">
       <div class="section-head">
-        <h2>A day on a plate</h2>
-        <p class="section-sub">One easy, fully low-FODMAP day to show how naturally it comes together.</p>
+        <span class="kicker">A day on a plate</span>
+        <h2>What a full day looks like</h2>
+        <p class="section-sub">One easy, fully Low-FODMAP day to show how naturally it comes together.</p>
       </div>
       <div id="mealTimeline" class="meal-timeline"></div>
     </section>
@@ -164,8 +160,9 @@
     <!-- ============================ RECIPES ============================ -->
     <section id="recipes" class="section section-alt">
       <div class="section-head">
+        <span class="kicker">Cook with confidence</span>
         <h2>Recipes that just work</h2>
-        <p class="section-sub">Tap a card to open the full recipe. Start with the garlic-infused oil — it powers most of the others.</p>
+        <p class="section-sub">Tap a card for the full recipe. Start with the garlic-infused oil — it powers most of the others.</p>
       </div>
       <div id="recipeGrid" class="recipe-grid"></div>
     </section>
@@ -173,54 +170,58 @@
     <!-- ============================ EATING OUT ============================ -->
     <section id="eatout" class="section">
       <div class="section-head">
+        <span class="kicker">Restaurants & takeaway</span>
         <h2>Eating out, by cuisine</h2>
-        <p class="section-sub">What to order and what to skip. Tip: tell staff it's a <em>medical</em> need — most kitchens will happily cook plainer or leave out onion and garlic.</p>
+        <p class="section-sub">What to order and what to skip. Telling staff it's a <em>medical</em> need goes a long way.</p>
       </div>
       <div id="cuisineGrid" class="cuisine-grid"></div>
     </section>
 
-    <!-- ============================ KITCHEN TIPS ============================ -->
-    <section id="tips" class="section section-alt">
+    <!-- ============================ THE JOURNEY (PHASES) ============================ -->
+    <section id="journey" class="section section-alt">
       <div class="section-head">
-        <h2>Kitchen &amp; lifestyle tips</h2>
-        <p class="section-sub">Small habits that make the whole thing effortless.</p>
+        <span class="kicker">The bigger picture</span>
+        <h2>Low-FODMAP is a journey, not a life sentence</h2>
+        <p class="section-sub">This guide focuses on Phase 1 — but the goal is always to widen your plate back out. Here's the full arc.</p>
       </div>
-      <div id="tipGrid" class="tip-grid"></div>
-    </section>
-
-    <!-- ============================ FAQ / APPROACHES ============================ -->
-    <section id="faq" class="section">
-      <div class="section-head">
-        <h2>Which "SIBO diet" is right?</h2>
-        <p class="section-sub">There isn't one official diet. These are the main expert approaches — they overlap a lot. Work with a clinician to choose.</p>
-      </div>
-      <div id="approachList" class="approach-list"></div>
+      <div id="phaseTrack" class="phase-track"></div>
 
       <div class="faq-extra">
         <details class="faq-item" open>
-          <summary>How long do I have to eat like this?</summary>
-          <p>The strict phase is usually short — about <strong>2–6 weeks</strong> — to calm symptoms. It's not meant to be permanent. After treatment you methodically reintroduce foods to find your personal limits, and many foods are tolerated far better than before.</p>
-        </details>
-        <details class="faq-item">
           <summary>Why are onion and garlic singled out so often?</summary>
-          <p>They're exceptionally high in fructans and turn up in almost every savoury dish, sauce and stock. The fix is easy: <strong>garlic- and onion-infused oil</strong> gives you the flavour because the FODMAPs don't dissolve into oil. Note the low-fermentation (Cedars-Sinai) approach actually permits them — so some people tolerate them fine.</p>
+          <p>They're exceptionally high in fructans and turn up in almost every savoury dish, sauce and stock. The fix is easy: <strong>garlic- and onion-infused oil</strong> gives you the flavour because the FODMAPs don't dissolve into oil.</p>
         </details>
         <details class="faq-item">
-          <summary>Is this the same as gluten-free?</summary>
+          <summary>Is Low-FODMAP the same as gluten-free?</summary>
           <p>Not quite. Wheat is limited because of its <em>fructans</em>, not gluten itself. That's why genuine sourdough and small portions are sometimes tolerated, and why naturally gluten-free grains like rice and quinoa are perfect.</p>
         </details>
         <details class="faq-item">
-          <summary>Do I have to give up all my favourite foods forever?</summary>
-          <p>No — and that's the message of this whole site. Portion size matters enormously, swaps cover most cravings, and reintroduction widens your plate again. Over-restricting long-term can actually starve your beneficial bacteria.</p>
+          <summary>Wait — cola and Coke Zero are high-FODMAP?</summary>
+          <p>Yes, and it surprises most people. Recent Monash University testing found that both regular Coca-Cola and Coca-Cola Zero contain fructans at high-FODMAP levels. Stick to water, soda water, real lemonade or tea.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I have to give up my favourite foods forever?</summary>
+          <p>No — that's the whole point of this site. Portion size matters enormously, swaps cover most cravings, and reintroduction widens your plate again. Over-restricting long-term can actually starve your beneficial bacteria.</p>
         </details>
       </div>
+    </section>
+
+    <!-- ============================ TIPS ============================ -->
+    <section id="tips" class="section">
+      <div class="section-head">
+        <span class="kicker">Make it effortless</span>
+        <h2>Kitchen &amp; lifestyle tips</h2>
+        <p class="section-sub">Small habits that make the whole thing easy to live with.</p>
+      </div>
+      <div id="tipGrid" class="tip-grid"></div>
     </section>
 
     <!-- ============================ SOURCES ============================ -->
     <section id="sources" class="section section-alt">
       <div class="section-head">
+        <span class="kicker">Trust & transparency</span>
         <h2>Researched from</h2>
-        <p class="section-sub">This guide draws on the leading clinical and FODMAP resources.</p>
+        <p class="section-sub">This guide draws on the leading clinical and Low-FODMAP resources.</p>
       </div>
       <ul id="sourceList" class="source-list"></ul>
     </section>
@@ -230,13 +231,10 @@
   <!-- ============================ FOOTER ============================ -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">🍽️</span>
-        <span>SIBO&nbsp;Plate</span>
-      </div>
+      <div class="footer-brand"><span aria-hidden="true">🍃</span> SIBO&nbsp;Plate</div>
       <p class="footer-note">
-        Built as an educational reference. Not a substitute for personalised medical or dietetic advice.
-        Always confirm your own tolerances with a qualified professional.
+        Built as an educational reference following the Low-FODMAP framework. Not a substitute for
+        personalised medical or dietetic advice. Always confirm your own tolerances with a professional.
       </p>
       <p class="footer-meta"><a href="#top">Back to top ↑</a></p>
     </div>
