@@ -51,7 +51,7 @@
           Built as a free, educational reference following the Low-FODMAP framework. Not a substitute for
           personalised medical or dietetic advice. Always confirm your own tolerances with a professional.
         </p>
-        <p class="footer-meta"><a href="index.html">Home</a> · <a href="#top">Back to top ↑</a></p>
+        <p class="footer-meta"><a href="index.html">Home</a> · <a href="#top" class="to-top">Back to top ↑</a></p>
       </div>
     </footer>`;
 
@@ -90,6 +90,13 @@
       navToggle.setAttribute("aria-expanded", "false");
     })
   );
+
+  /* --------------------------- BACK TO TOP --------------------------- */
+  const toTop = document.querySelector(".to-top");
+  if (toTop) toTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
   /* --------------------------- REVEAL ON SCROLL --------------------------- */
   const revealTargets = Array.from(document.querySelectorAll(".section, .disclaimer"));
