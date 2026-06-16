@@ -1,4 +1,4 @@
-# 🍽️ SIBO Plate
+# 🍃 SIBO Plate
 
 A free, expertly-researched, **multi-page static** guide to eating well with **SIBO**
 (Small Intestinal Bacterial Overgrowth), built on the **Low-FODMAP framework**.
@@ -10,6 +10,22 @@ McDonald's, cola, KFC and apple pie), grab-and-go snacks, a sample day, real rec
 and an "order-this-not-that" guide for eating out. Trigger foods show a quick
 **"try instead"** alternative so you're never left guessing.
 
+> ⚠️ **Educational guidance, not medical advice.** See the [disclaimer](#️-important-disclaimer).
+
+---
+
+## Contents
+- [How to open it](#️-how-to-open-it)
+- [What's inside](#-whats-inside)
+- [Project structure](#-project-structure)
+- [How it works (architecture)](#️-how-it-works-architecture)
+- [Editing the content](#️-editing-the-content)
+- [Adding a new page / tab](#-adding-a-new-page--tab)
+- [Publishing (Cloudflare Pages / GitHub Pages)](#-publishing)
+- [Methodology & sources](#-methodology--sources)
+- [Roadmap / parked ideas](#️-roadmap--parked-ideas)
+- [Disclaimer](#️-important-disclaimer)
+
 ---
 
 ## ▶️ How to open it
@@ -17,45 +33,36 @@ and an "order-this-not-that" guide for eating out. Trigger foods show a quick
 It's a plain **multi-page static** website with **no dependencies and no build step**.
 Open `index.html` (the Home page) and use the top tabs to move between pages.
 
-### Option 1 — Just double-click (simplest)
-Open `index.html` in any modern browser (Chrome, Edge, Firefox). Every page works
-straight from `file://`.
+**Option 1 — Just double-click (simplest):** open `index.html` in any modern browser
+(Chrome, Edge, Firefox). Every page works straight from `file://`.
 
-### Option 2 — Run a tiny local server (recommended)
-A local server avoids any browser quirks and gives you a clean `localhost` URL.
-
-**Python** (already on most machines):
+**Option 2 — Run a tiny local server (recommended):**
 ```bash
 cd C:\CLAUDE\SIBO
-python -m http.server 8000
-```
-Then visit **http://localhost:8000**
-
-**Node.js** (if you prefer):
-```bash
-cd C:\CLAUDE\SIBO
-npx serve .
+python -m http.server 8000      # then visit http://localhost:8000
+# or:  npx serve .
 ```
 
 ---
 
 ## 🧭 What's inside
 
-Each tab is now its own page (see structure below).
+Each tab is its own page.
 
 | Tab / page | What it gives you |
 |---|---|
 | **Home** (`index.html`) | The whole diet at a glance — eat/avoid cheat sheet, four golden rules, quick links |
-| **Food list** | A searchable, filterable database of 260+ foods with 🟢 enjoy / 🟡 small / 🔴 avoid ratings, portion notes, and "try instead" hints |
-| **Eat this, not that** | Swap cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more |
-| **Snacks** | Grab-and-go options that won't trigger symptoms |
-| **A day's food** | A full, easy Low-FODMAP sample day |
-| **Recipes** | Six gut-friendly recipes (start with the garlic-infused oil) |
-| **Eating out** | What to order / skip across 8 cuisines |
-| **The journey** | The three Low-FODMAP phases (elimination → reintroduction → personalisation) + FAQ |
+| **Food List** (`foods.html`) | Searchable, filterable database of 260+ foods with 🟢 enjoy / 🟡 small / 🔴 avoid ratings, portion notes, and "try instead" hints |
+| **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more |
+| **Snacks** (`snacks.html`) | Grab-and-go options that won't trigger symptoms |
+| **A Day's Food** (`meals.html`) | A full, easy Low-FODMAP sample day |
+| **Recipes** (`recipes.html`) | Six gut-friendly recipes (start with the garlic-infused oil) |
+| **Eating Out** (`eating-out.html`) | What to order / skip across 8 cuisines |
+| **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
 
 Features: a fresh-green, modern-wellbeing design with a self-hosted font, light/dark
-mode, live search & filtering, responsive layout, printable, and **fully offline** (no CDNs).
+mode, live search & filtering, a recipe modal, responsive layout, printable, and
+**fully offline** (no CDNs, no trackers).
 
 ---
 
@@ -74,46 +81,143 @@ SIBO/
 ├── css/
 │   └── styles.css     # All styling + light/dark green "modern-wellbeing" theming
 ├── js/
-│   ├── data.js        # Food / swap / recipe / cuisine database (edit here)
-│   ├── layout.js      # Shared header/footer, active tab, theme, mobile nav
-│   └── app.js         # Page-aware content rendering (search, filters, modal)
+│   ├── data.js        # ALL content lives here (foods, swaps, recipes, …) — edit this
+│   ├── layout.js      # Shared header/footer, active tab, theme, mobile nav, back-to-top
+│   └── app.js         # Page-aware content rendering (search, filters, recipe modal)
 ├── fonts/             # Self-hosted Nunito Sans (offline, no CDN)
 ├── .nojekyll          # Lets GitHub Pages serve the files as-is
 └── README.md
 ```
 
-- **Add/edit a food, swap, or recipe:** everything lives in **`js/data.js`** — edit the arrays and refresh.
-- **Add or rename a tab:** the nav is defined once in **`js/layout.js`**; `app.js` renders only the containers that exist on each page, so pages stay simple.
+---
+
+## 🛠️ How it works (architecture)
+
+A deliberately simple, **build-free** static site. Three scripts load on every page,
+in order: `data.js` → `layout.js` → `app.js`.
+
+- **`data.js`** defines plain global arrays/objects (the entire content of the site).
+  No fetching — it's just `<script>` globals, so everything works from `file://`.
+- **`layout.js`** injects the shared **header + footer** into every page (so the nav
+  lives in exactly one place), marks the **active tab** from `<body data-page="…">`,
+  and wires the **theme toggle**, **mobile nav**, **back-to-top**, and reveal-on-scroll.
+- **`app.js`** renders the page content. It is **page-aware**: each block runs only if
+  its target element exists on the current page (via a small `fill(id, html)` guard and
+  `if (!el) return` checks). The *same* `app.js` therefore drives all 8 pages and only
+  renders what's present — no per-page scripts.
+
+Each page's HTML is just `<head>` (page-specific `<title>`/description) + `<body
+data-page="…">` containing that page's section(s) + the three script tags. All asset
+paths are **relative** (`css/…`, `js/…`, `fonts/…`, `foods.html`), so the site works
+unchanged from `file://`, a project subpath (e.g. `…/SIBO/`), or a domain root.
 
 ---
 
-## 🌍 Publish it free (GitHub Pages)
+## ✏️ Editing the content
 
-The site is ready to host as-is — all paths are relative, so it works from a
-project subpath, from `file://`, or any static host.
+**Everything users read lives in [`js/data.js`](js/data.js).** Edit the arrays and refresh —
+no build. The main shapes:
 
-1. Push to GitHub (done): repo **`ZsoltKralik/SIBO`**.
-2. In the repo: **Settings → Pages → Source: "Deploy from a branch" → Branch
-   `main` / `/ (root)` → Save**.
-3. After ~1 minute it's live at **https://zsoltkralik.github.io/SIBO/**.
+```js
+// Food list. status is "green" (enjoy) | "yellow" (small portions) | "red" (avoid).
+// `instead` is optional and shows a "try instead" hint (used mainly on red items).
+FOODS = [
+  { name: "Steak (plain grilled)", cat: "popular", status: "green",
+    note: "Just meat, salt & pepper = zero FODMAPs." },
+  { name: "Cola / soft drinks", cat: "drink", status: "red",
+    note: "Monash found cola high in fructans.", instead: "Soda water, lemonade or tea" },
+];
 
-(A custom domain can be added later under the same Pages settings.)
+FOOD_CATEGORIES = [ { id: "popular", label: "Popular & Fast Food", icon: "🍟" }, … ];
+//                    └ a food's `cat` must match one of these `id`s
+
+CHEAT_SHEET = { eat: [ { group, items } ], avoid: [ { group, items } ] };   // Home panels
+PRINCIPLES  = [ { icon, title, body } ];                                    // Home golden rules
+SWAPS       = [ { icon, avoid, avoidWhy, eat, eatHow } ];                    // Swaps page
+SNACKS      = [ { icon, name, note } ];                                      // Snacks page
+MEAL_PLAN   = [ { slot, icon, title, detail, alt } ];                        // A Day's Food
+RECIPES     = [ { icon, name, tagline, time, serves, why,
+                  ingredients: [], steps: [], safety } ];                    // Recipes (+ modal)
+CUISINES    = [ { icon, name, verdict, verdictLabel, order: [], skip: [] } ];// Eating Out
+                // verdict: "best" | "ok" | "tricky"  (colours the badge)
+PHASES      = [ { num, name, duration, color, blurb } ];                     // Journey
+                // color: "red" | "yellow" | "green"  (colours the top bar)
+TIPS        = [ { icon, title, body } ];                                     // Journey
+SOURCES     = [ { name, url } ];                                             // Journey
+```
+
+To **add a food**: append an object to `FOODS` with a `cat` that matches a category `id`.
+The hero "260+" stat, the result counts, and all filters update automatically.
+
+---
+
+## ➕ Adding a new page / tab
+
+1. **Create `mytab.html`** — copy any sub-page (e.g. `snacks.html`), set
+   `<body data-page="mytab">`, update `<title>`/description, and put a `<section>` with a
+   unique container id (e.g. `<div id="myGrid"></div>`) inside `<main>`.
+2. **Add the nav entry** in [`js/layout.js`](js/layout.js) → the `NAV` array:
+   `{ href: "mytab.html", label: "My&nbsp;Tab", page: "mytab" }`.
+3. **Render its content** in [`js/app.js`](js/app.js): add the data to `data.js`, then
+   `fill("myGrid", …)` (it no-ops on every other page automatically).
+4. (Optional) add a quick-link card on the Home page (`index.html`).
+
+The header/footer, active-tab highlight, theme and back-to-top all come for free.
+
+---
+
+## 🌍 Publishing
+
+All paths are relative, so the site hosts as-is anywhere. Two free options:
+
+### Cloudflare Pages (planned)
+1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick
+   the `SIBO` repo.
+2. Build settings: **Framework preset = None**, **Build command = *(leave empty)***,
+   **Build output directory = `/`**. Deploy.
+3. Every push to `main` auto-deploys. Add a **custom domain** under the project's
+   *Custom domains* tab — Cloudflare handles DNS + HTTPS automatically.
+
+### GitHub Pages (alternative)
+Repo **Settings → Pages → Source: "Deploy from a branch" → `main` / `/ (root)`**.
+Live at `https://zsoltkralik.github.io/SIBO/` after ~1 minute. (`.nojekyll` is already
+included so the files are served as-is.)
+
+---
+
+## 📚 Methodology & sources
+
+Ratings follow the **Low-FODMAP framework**, primarily **Monash University's** lab-tested
+food data — the most evidence-based elimination approach for SIBO/IBS. Whole-food ratings
+and portion thresholds reflect Monash "green-light" servings. **Branded / fast-food** items
+are rated from published specialist IBS/SIBO dietitian guidance (recipes vary by country, so
+they're a starting point, not a guarantee). Ratings reflect current evidence — e.g. Monash's
+finding that **regular cola *and* Coke Zero are high-FODMAP** (fructans).
+
+Full source links are listed on the site's **The Journey** page and in `SOURCES` in
+[`js/data.js`](js/data.js).
+
+---
+
+## 🗺️ Roadmap / parked ideas
+
+Not built yet — candidates for future work (owner will prioritise):
+
+- Favourites + printable shopping list (saved in `localStorage`)
+- Reintroduction tracker (Phase 2) and/or a simple food–symptom journal
+- Meal "FODMAP-stack" builder (warn when small portions stack into a high-FODMAP meal)
+- Instant food checker on the Home page / in the header
+- Per-food **FODMAP-type tags** (fructan / lactose / polyol / GOS / fructose) + filtering
+- Installable **PWA** (offline app for use while shopping)
+- Full **accessibility (WCAG AA)** + SEO/Open-Graph pass
+- **About / methodology** page (who made it, how rated, last-updated) for public credibility
+- Deep-linkable food URLs; multi-language
 
 ---
 
 ## ⚕️ Important disclaimer
 
-This site is **educational guidance, not medical advice**. SIBO is a medical
-condition and food tolerance is highly individual. The strict elimination phase is
-meant to be **temporary** (typically 2–6 weeks) and followed by structured
-reintroduction. Please work with your doctor or a registered dietitian.
-
----
-
-## 📚 Researched from
-
-Leading clinical and Low-FODMAP resources, including Monash University (the FODMAP
-research pioneers), Cleveland Clinic, and specialist IBS/SIBO dietitians for the
-fast-food and branded items. Notably, ratings reflect current evidence — e.g. Monash's
-finding that **regular cola *and* Coke Zero are high-FODMAP** (fructans). Full links
-are in the **"Researched from"** section at the bottom of the site.
+This site is **educational guidance, not medical advice**. SIBO is a medical condition and
+food tolerance is highly individual. The strict elimination phase is meant to be
+**temporary** (typically 2–6 weeks) and followed by structured reintroduction. Always work
+with your doctor or a registered dietitian.
