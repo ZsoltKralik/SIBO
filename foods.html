@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Searchable Low-FODMAP food list for SIBO — 260+ foods including fast food and brands, each rated enjoy / small portion / avoid, with a 'try instead' alternative." />
+  <title>Food List · SIBO Plate</title>
+
+  <link rel="preload" href="fonts/nunito-sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>" />
+</head>
+<body data-page="foods">
+  <main>
+    <section id="explorer" class="section">
+      <div class="section-head">
+        <span class="kicker">The food list</span>
+        <h2>Look up anything</h2>
+        <p class="section-sub">Search a food or filter by type. Red items show a quick <em>“try instead”</em> so you always know the alternative.</p>
+      </div>
+
+      <div class="explorer-controls">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input id="foodSearch" type="search" placeholder="Search… try “cola”, “steak”, “apple”, “pizza”" aria-label="Search foods" />
+        </div>
+        <div class="status-filters" role="group" aria-label="Filter by safety">
+          <button class="chip chip-status is-active" data-status="all">All</button>
+          <button class="chip chip-status" data-status="green"><span class="dot dot-green"></span> Enjoy</button>
+          <button class="chip chip-status" data-status="yellow"><span class="dot dot-yellow"></span> Small</button>
+          <button class="chip chip-status" data-status="red"><span class="dot dot-red"></span> Avoid</button>
+        </div>
+      </div>
+
+      <div id="catFilters" class="cat-filters" role="group" aria-label="Filter by category"></div>
+
+      <p id="resultCount" class="result-count" aria-live="polite"></p>
+      <div id="foodGrid" class="food-grid"></div>
+      <p id="noResults" class="no-results" hidden>No foods match that search. Try another term.</p>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

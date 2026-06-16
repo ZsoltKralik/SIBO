@@ -15,10 +15,11 @@
 /* ----------------------------- Design tokens ----------------------------- */
 :root {
   /* Fresh green surfaces (light) */
-  --bg:            #e9f5ec;
-  --bg-alt:        #dcefe1;
+  --bg:            #f0faf4;
+  --bg-alt:        #e3f3e8;
   --surface:       #ffffff;
-  --surface-2:     #eff8f2;
+  --surface-2:     #eef8f1;
+  --header-bg:     #c7e6cf;
   --ink:           #16241d;
   --ink-soft:      #4b6157;
   --ink-faint:     #84a094;
@@ -41,9 +42,9 @@
   --red:           #e0524e;  --red-bg:   #fde6e5;  --red-ink:   #b1352f;
 
   /* Shape + depth */
-  --radius:        20px;
-  --radius-sm:     14px;
-  --radius-lg:     28px;
+  --radius:        15px;
+  --radius-sm:     11px;
+  --radius-lg:     22px;
   --shadow-sm:     0 1px 2px rgba(16,60,40,.05), 0 4px 16px rgba(16,72,46,.06);
   --shadow-md:     0 8px 26px rgba(12,70,45,.09), 0 18px 44px rgba(12,70,45,.07);
   --shadow-lg:     0 28px 70px rgba(8,52,36,.18);
@@ -62,6 +63,7 @@
   --bg-alt:        #0a1210;
   --surface:       #16211c;
   --surface-2:     #1d2a24;
+  --header-bg:     #070d0b;
   --ink:           #e9f2ec;
   --ink-soft:      #a6bbb0;
   --ink-faint:     #74907f;
@@ -103,9 +105,9 @@ em { font-style: italic; }
 /* ----------------------------- Header ----------------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 50; height: var(--header-h);
-  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  background: color-mix(in srgb, var(--header-bg) 90%, transparent);
   backdrop-filter: saturate(160%) blur(14px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
 }
 .header-inner { max-width: var(--maxw); margin: 0 auto; height: 100%; padding: 0 24px; display: flex; align-items: center; gap: 18px; }
 .brand { display: flex; align-items: center; gap: 9px; font-family: var(--serif); font-weight: 700; font-size: 1.3rem; color: var(--ink); letter-spacing: -.01em; }
@@ -114,6 +116,7 @@ em { font-style: italic; }
 .main-nav { margin-left: auto; display: flex; gap: 2px; flex-wrap: wrap; }
 .main-nav a { color: var(--ink-soft); font-weight: 600; font-size: .88rem; padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; }
 .main-nav a:hover { color: var(--primary-deep); background: var(--primary-soft); text-decoration: none; }
+.main-nav a.is-active, .main-nav a[aria-current="page"] { color: var(--primary-deep); background: var(--primary-soft); font-weight: 800; }
 .header-actions { display: flex; align-items: center; gap: 6px; }
 .icon-btn {
   display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
@@ -191,6 +194,15 @@ em { font-style: italic; }
 .principle-icon { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; background: var(--accent-soft); margin-bottom: 14px; }
 .principle h3 { font-size: 1.08rem; margin-bottom: 7px; }
 .principle p { font-size: .92rem; color: var(--ink-soft); }
+
+/* ----------------------------- Quick links (home) ----------------------------- */
+.quicklinks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.quicklink-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); color: var(--ink); transition: transform .18s var(--ease), box-shadow .18s, border-color .18s; }
+.quicklink-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent); text-decoration: none; }
+.quicklink-card .ql-icon { font-size: 1.9rem; }
+.quicklink-card h3 { font-size: 1.18rem; margin: 12px 0 6px; }
+.quicklink-card p { font-size: .92rem; color: var(--ink-soft); }
+.quicklink-card .ql-go { margin-top: 14px; font-size: .85rem; font-weight: 800; color: var(--accent-deep); }
 
 /* ----------------------------- Food explorer ----------------------------- */
 .explorer-controls { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 18px; }

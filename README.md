@@ -1,7 +1,8 @@
 # 🍽️ SIBO Plate
 
-A calm, expertly-researched, **locally-hosted** guide to eating well with **SIBO**
+A free, expertly-researched, **multi-page static** guide to eating well with **SIBO**
 (Small Intestinal Bacterial Overgrowth), built on the **Low-FODMAP framework**.
+Runs locally or publishes free to the web.
 
 Instead of a flat list of "can't eat" foods, it tells you **what to eat instead** —
 a searchable database of **260+ foods** (including popular & fast-food items like
@@ -13,10 +14,11 @@ and an "order-this-not-that" guide for eating out. Trigger foods show a quick
 
 ## ▶️ How to open it
 
-It's a plain static website with **no dependencies and no build step**.
+It's a plain **multi-page static** website with **no dependencies and no build step**.
+Open `index.html` (the Home page) and use the top tabs to move between pages.
 
 ### Option 1 — Just double-click (simplest)
-Open `index.html` in any modern browser (Chrome, Edge, Firefox). Everything works
+Open `index.html` in any modern browser (Chrome, Edge, Firefox). Every page works
 straight from `file://`.
 
 ### Option 2 — Run a tiny local server (recommended)
@@ -39,9 +41,11 @@ npx serve .
 
 ## 🧭 What's inside
 
-| Section | What it gives you |
+Each tab is now its own page (see structure below).
+
+| Tab / page | What it gives you |
 |---|---|
-| **At a glance** | The whole diet in one view — an eat/avoid cheat sheet + the four golden rules |
+| **Home** (`index.html`) | The whole diet at a glance — eat/avoid cheat sheet, four golden rules, quick links |
 | **Food list** | A searchable, filterable database of 260+ foods with 🟢 enjoy / 🟡 small / 🔴 avoid ratings, portion notes, and "try instead" hints |
 | **Eat this, not that** | Swap cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more |
 | **Snacks** | Grab-and-go options that won't trigger symptoms |
@@ -59,18 +63,41 @@ mode, live search & filtering, responsive layout, printable, and **fully offline
 
 ```
 SIBO/
-├── index.html         # Page structure & content sections
+├── index.html         # Home (hero, at-a-glance, quick links)
+├── foods.html         # Food List (searchable explorer)
+├── swaps.html         # Eat this, not that
+├── snacks.html        # Grab-and-go snacks
+├── meals.html         # A day's food
+├── recipes.html       # Recipes (+ modal)
+├── eating-out.html    # Eating out by cuisine
+├── journey.html       # The 3 phases, FAQ, tips, sources
 ├── css/
 │   └── styles.css     # All styling + light/dark green "modern-wellbeing" theming
 ├── js/
-│   ├── data.js        # The food / swap / recipe / cuisine database (edit here)
-│   └── app.js         # Rendering, search, filters, modal, theme toggle
+│   ├── data.js        # Food / swap / recipe / cuisine database (edit here)
+│   ├── layout.js      # Shared header/footer, active tab, theme, mobile nav
+│   └── app.js         # Page-aware content rendering (search, filters, modal)
 ├── fonts/             # Self-hosted Nunito Sans (offline, no CDN)
+├── .nojekyll          # Lets GitHub Pages serve the files as-is
 └── README.md
 ```
 
-Want to add or tweak a food, swap, or recipe? Everything lives in **`js/data.js`** —
-edit the arrays and refresh the page.
+- **Add/edit a food, swap, or recipe:** everything lives in **`js/data.js`** — edit the arrays and refresh.
+- **Add or rename a tab:** the nav is defined once in **`js/layout.js`**; `app.js` renders only the containers that exist on each page, so pages stay simple.
+
+---
+
+## 🌍 Publish it free (GitHub Pages)
+
+The site is ready to host as-is — all paths are relative, so it works from a
+project subpath, from `file://`, or any static host.
+
+1. Push to GitHub (done): repo **`ZsoltKralik/SIBO`**.
+2. In the repo: **Settings → Pages → Source: "Deploy from a branch" → Branch
+   `main` / `/ (root)` → Save**.
+3. After ~1 minute it's live at **https://zsoltkralik.github.io/SIBO/**.
+
+(A custom domain can be added later under the same Pages settings.)
 
 ---
 

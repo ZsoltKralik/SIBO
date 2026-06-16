@@ -3,42 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SIBO Plate — a warm, expertly-researched Low-FODMAP guide to what to eat with SIBO. A searchable food list (including fast food & brands), simple swaps, snacks, recipes and eating-out tips." />
-  <title>SIBO Plate · Your Low-FODMAP Eating Guide</title>
+  <meta name="description" content="SIBO Plate — a free, expertly-researched Low-FODMAP guide to what to eat with SIBO. Look up 260+ foods (including fast food & brands), simple swaps, snacks, recipes and eating-out tips." />
+  <title>SIBO Plate · Your Free Low-FODMAP Eating Guide</title>
 
   <link rel="preload" href="fonts/nunito-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>" />
 </head>
-<body>
-
-  <!-- ============================ HEADER / NAV ============================ -->
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="SIBO Plate home">
-        <span class="brand-mark" aria-hidden="true">🍃</span>
-        <span class="brand-text">SIBO&nbsp;Plate</span>
-      </a>
-
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#glance">At a Glance</a>
-        <a href="#explorer">Food&nbsp;List</a>
-        <a href="#swaps">Swaps</a>
-        <a href="#snacks">Snacks</a>
-        <a href="#meals">A&nbsp;Day's&nbsp;Food</a>
-        <a href="#recipes">Recipes</a>
-        <a href="#eatout">Eating&nbsp;Out</a>
-        <a href="#journey">The&nbsp;Journey</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle light / dark">
-          <span class="theme-icon">🌙</span>
-        </button>
-        <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-      </div>
-    </div>
-  </header>
+<body data-page="home">
 
   <!-- ============================ HERO ============================ -->
   <section class="hero">
@@ -46,12 +18,12 @@
       <p class="eyebrow">Low-FODMAP · Small Intestinal Bacterial Overgrowth</p>
       <h1>Eat well again,<br><span class="accent">without the guesswork.</span></h1>
       <p class="lede">
-        A calm, expertly-researched guide to living with SIBO. Look up any food — from
+        A free, expertly-researched guide to living with SIBO. Look up any food — from
         spinach to a <em>Big Mac</em> — and know in a glance whether to <strong>enjoy it</strong>,
         <strong>keep it small</strong>, or <strong>swap it for something better</strong>.
       </p>
       <div class="hero-cta">
-        <a href="#explorer" class="btn btn-primary">Look up a food</a>
+        <a href="foods.html" class="btn btn-primary">Look up a food</a>
         <a href="#glance" class="btn btn-ghost">See the essentials</a>
       </div>
 
@@ -80,7 +52,7 @@
       <div class="section-head">
         <span class="kicker">Start here</span>
         <h2>Your plate, at a glance</h2>
-        <p class="section-sub">The whole diet in one view. Build meals from the left, go easy on the right — then dive into the full list below.</p>
+        <p class="section-sub">The whole diet in one view. Build meals from the left, go easy on the right — then dive into the full food list.</p>
       </div>
 
       <div class="glance-grid">
@@ -97,157 +69,28 @@
       <div id="principles" class="principles-grid"></div>
     </section>
 
-    <!-- ============================ FOOD EXPLORER ============================ -->
-    <section id="explorer" class="section section-alt">
+    <!-- ============================ QUICK LINKS ============================ -->
+    <section class="section section-alt">
       <div class="section-head">
-        <span class="kicker">The food list</span>
-        <h2>Look up anything</h2>
-        <p class="section-sub">Search a food or filter by type. Red items show a quick <em>“try instead”</em> so you always know the alternative.</p>
+        <span class="kicker">Explore</span>
+        <h2>Everything in SIBO Plate</h2>
+        <p class="section-sub">Jump straight to what you need.</p>
       </div>
-
-      <div class="explorer-controls">
-        <div class="search-wrap">
-          <span class="search-icon" aria-hidden="true">🔍</span>
-          <input id="foodSearch" type="search" placeholder="Search… try “cola”, “steak”, “apple”, “pizza”" aria-label="Search foods" />
-        </div>
-        <div class="status-filters" role="group" aria-label="Filter by safety">
-          <button class="chip chip-status is-active" data-status="all">All</button>
-          <button class="chip chip-status" data-status="green"><span class="dot dot-green"></span> Enjoy</button>
-          <button class="chip chip-status" data-status="yellow"><span class="dot dot-yellow"></span> Small</button>
-          <button class="chip chip-status" data-status="red"><span class="dot dot-red"></span> Avoid</button>
-        </div>
+      <div class="quicklinks-grid">
+        <a class="quicklink-card" href="foods.html"><span class="ql-icon" aria-hidden="true">🔍</span><h3>Food List</h3><p>Look up 260+ foods — including fast food &amp; brands.</p><span class="ql-go">Open →</span></a>
+        <a class="quicklink-card" href="swaps.html"><span class="ql-icon" aria-hidden="true">🔄</span><h3>Swaps</h3><p>Eat this, not that — easy gut-friendly trades.</p><span class="ql-go">Open →</span></a>
+        <a class="quicklink-card" href="snacks.html"><span class="ql-icon" aria-hidden="true">🥨</span><h3>Snacks</h3><p>Grab-and-go ideas that won't trigger symptoms.</p><span class="ql-go">Open →</span></a>
+        <a class="quicklink-card" href="meals.html"><span class="ql-icon" aria-hidden="true">🍽️</span><h3>A Day's Food</h3><p>A full, easy Low-FODMAP sample day.</p><span class="ql-go">Open →</span></a>
+        <a class="quicklink-card" href="recipes.html"><span class="ql-icon" aria-hidden="true">👩‍🍳</span><h3>Recipes</h3><p>Six gut-friendly recipes that just work.</p><span class="ql-go">Open →</span></a>
+        <a class="quicklink-card" href="eating-out.html"><span class="ql-icon" aria-hidden="true">🍴</span><h3>Eating Out</h3><p>What to order &amp; skip across 8 cuisines.</p><span class="ql-go">Open →</span></a>
+        <a class="quicklink-card" href="journey.html"><span class="ql-icon" aria-hidden="true">🧭</span><h3>The Journey</h3><p>The 3 phases, FAQ &amp; kitchen tips.</p><span class="ql-go">Open →</span></a>
       </div>
-
-      <div id="catFilters" class="cat-filters" role="group" aria-label="Filter by category"></div>
-
-      <p id="resultCount" class="result-count" aria-live="polite"></p>
-      <div id="foodGrid" class="food-grid"></div>
-      <p id="noResults" class="no-results" hidden>No foods match that search. Try another term.</p>
-    </section>
-
-    <!-- ============================ SWAPS ============================ -->
-    <section id="swaps" class="section">
-      <div class="section-head">
-        <span class="kicker">Eat this, not that</span>
-        <h2>Swaps, not sacrifices</h2>
-        <p class="section-sub">You rarely have to give a food up — you just trade it for a gut-friendly version.</p>
-      </div>
-      <div id="swapGrid" class="swap-grid"></div>
-    </section>
-
-    <!-- ============================ SNACKS ============================ -->
-    <section id="snacks" class="section section-alt">
-      <div class="section-head">
-        <span class="kicker">Between meals</span>
-        <h2>Grab-and-go snacks</h2>
-        <p class="section-sub">Keep these on hand so hunger never pushes you toward a trigger.</p>
-      </div>
-      <div id="snackGrid" class="snack-grid"></div>
-    </section>
-
-    <!-- ============================ MEAL PLAN ============================ -->
-    <section id="meals" class="section">
-      <div class="section-head">
-        <span class="kicker">A day on a plate</span>
-        <h2>What a full day looks like</h2>
-        <p class="section-sub">One easy, fully Low-FODMAP day to show how naturally it comes together.</p>
-      </div>
-      <div id="mealTimeline" class="meal-timeline"></div>
-    </section>
-
-    <!-- ============================ RECIPES ============================ -->
-    <section id="recipes" class="section section-alt">
-      <div class="section-head">
-        <span class="kicker">Cook with confidence</span>
-        <h2>Recipes that just work</h2>
-        <p class="section-sub">Tap a card for the full recipe. Start with the garlic-infused oil — it powers most of the others.</p>
-      </div>
-      <div id="recipeGrid" class="recipe-grid"></div>
-    </section>
-
-    <!-- ============================ EATING OUT ============================ -->
-    <section id="eatout" class="section">
-      <div class="section-head">
-        <span class="kicker">Restaurants & takeaway</span>
-        <h2>Eating out, by cuisine</h2>
-        <p class="section-sub">What to order and what to skip. Telling staff it's a <em>medical</em> need goes a long way.</p>
-      </div>
-      <div id="cuisineGrid" class="cuisine-grid"></div>
-    </section>
-
-    <!-- ============================ THE JOURNEY (PHASES) ============================ -->
-    <section id="journey" class="section section-alt">
-      <div class="section-head">
-        <span class="kicker">The bigger picture</span>
-        <h2>Low-FODMAP is a journey, not a life sentence</h2>
-        <p class="section-sub">This guide focuses on Phase 1 — but the goal is always to widen your plate back out. Here's the full arc.</p>
-      </div>
-      <div id="phaseTrack" class="phase-track"></div>
-
-      <div class="faq-extra">
-        <details class="faq-item" open>
-          <summary>Why are onion and garlic singled out so often?</summary>
-          <p>They're exceptionally high in fructans and turn up in almost every savoury dish, sauce and stock. The fix is easy: <strong>garlic- and onion-infused oil</strong> gives you the flavour because the FODMAPs don't dissolve into oil.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is Low-FODMAP the same as gluten-free?</summary>
-          <p>Not quite. Wheat is limited because of its <em>fructans</em>, not gluten itself. That's why genuine sourdough and small portions are sometimes tolerated, and why naturally gluten-free grains like rice and quinoa are perfect.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Wait — cola and Coke Zero are high-FODMAP?</summary>
-          <p>Yes, and it surprises most people. Recent Monash University testing found that both regular Coca-Cola and Coca-Cola Zero contain fructans at high-FODMAP levels. Stick to water, soda water, real lemonade or tea.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I have to give up my favourite foods forever?</summary>
-          <p>No — that's the whole point of this site. Portion size matters enormously, swaps cover most cravings, and reintroduction widens your plate again. Over-restricting long-term can actually starve your beneficial bacteria.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- ============================ TIPS ============================ -->
-    <section id="tips" class="section">
-      <div class="section-head">
-        <span class="kicker">Make it effortless</span>
-        <h2>Kitchen &amp; lifestyle tips</h2>
-        <p class="section-sub">Small habits that make the whole thing easy to live with.</p>
-      </div>
-      <div id="tipGrid" class="tip-grid"></div>
-    </section>
-
-    <!-- ============================ SOURCES ============================ -->
-    <section id="sources" class="section section-alt">
-      <div class="section-head">
-        <span class="kicker">Trust & transparency</span>
-        <h2>Researched from</h2>
-        <p class="section-sub">This guide draws on the leading clinical and Low-FODMAP resources.</p>
-      </div>
-      <ul id="sourceList" class="source-list"></ul>
     </section>
 
   </main>
 
-  <!-- ============================ FOOTER ============================ -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand"><span aria-hidden="true">🍃</span> SIBO&nbsp;Plate</div>
-      <p class="footer-note">
-        Built as an educational reference following the Low-FODMAP framework. Not a substitute for
-        personalised medical or dietetic advice. Always confirm your own tolerances with a professional.
-      </p>
-      <p class="footer-meta"><a href="#top">Back to top ↑</a></p>
-    </div>
-  </footer>
-
-  <!-- ============================ RECIPE MODAL ============================ -->
-  <div id="recipeModal" class="modal" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" data-close aria-label="Close recipe">×</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
   <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
