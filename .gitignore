@@ -3,6 +3,11 @@
 Thumbs.db
 desktop.ini
 
+# Secrets / API keys — NEVER commit
+.env
+.env.*
+!.env.example
+
 # Claude Code local / personal settings (machine-specific)
 .claude/settings.local.json
 

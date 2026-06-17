@@ -56,8 +56,8 @@ Each tab is its own page.
 | **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more |
 | **Snacks** (`snacks.html`) | Grab-and-go options that won't trigger symptoms |
 | **A Day's Food** (`meals.html`) | A full, easy Low-FODMAP sample day |
-| **Recipes** (`recipes.html`) | Six gut-friendly recipes (start with the garlic-infused oil) |
-| **Eating Out** (`eating-out.html`) | What to order / skip across 8 cuisines |
+| **Recipes** (`recipes.html`) | 40 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
+| **Eating Out** (`eating-out.html`) | What to order / skip across 16 cuisines (Japanese, Vietnamese, café, French, Korean, pub, bakery and more) |
 | **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
 
 Features: a fresh-green, modern-wellbeing design with a self-hosted font, light/dark
@@ -136,8 +136,10 @@ PRINCIPLES  = [ { icon, title, body } ];                                    // H
 SWAPS       = [ { icon, avoid, avoidWhy, eat, eatHow } ];                    // Swaps page
 SNACKS      = [ { icon, name, note } ];                                      // Snacks page
 MEAL_PLAN   = [ { slot, icon, title, detail, alt } ];                        // A Day's Food
-RECIPES     = [ { icon, name, tagline, time, serves, why,
-                  ingredients: [], steps: [], safety } ];                    // Recipes (+ modal)
+RECIPE_CATS = [ { id, label, icon } ];                                       // Recipe filter chips
+RECIPES     = [ { meal, icon, name, tagline, time, serves, why,
+                  ingredients: [], steps: [], safety } ];                    // Recipes (+ filter + modal)
+                // meal: a RECIPE_CATS id  (powers the on-page filter)
 CUISINES    = [ { icon, name, verdict, verdictLabel, order: [], skip: [] } ];// Eating Out
                 // verdict: "best" | "ok" | "tricky"  (colours the badge)
 PHASES      = [ { num, name, duration, color, blurb } ];                     // Journey

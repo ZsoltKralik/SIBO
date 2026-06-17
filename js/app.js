@@ -143,19 +143,59 @@
       </div>
     </div>`).join(""));
 
-  /* --------------------------- RECIPES + MODAL --------------------------- */
+  /* --------------------------- RECIPES + FILTER + MODAL --------------------------- */
   (function () {
     const recipeGrid = byId("recipeGrid");
     if (!recipeGrid) return;
 
-    recipeGrid.innerHTML = RECIPES.map((r, i) => `
+    const filtersEl = byId("recipeFilters");
+    const countEl   = byId("recipeCount");
+    const hasCats   = typeof RECIPE_CATS !== "undefined";
+    let activeCat = "all";
+
+    function recipeCard(r, i) {
+      return `
       <button class="recipe-card" data-recipe="${i}">
         <span class="recipe-emoji" aria-hidden="true">${r.icon}</span>
         <h3>${r.name}</h3>
         <p class="recipe-tagline">${r.tagline}</p>
         <div class="recipe-meta"><span>⏱️ ${r.time}</span><span>🍽️ ${r.serves}</span></div>
         <div class="recipe-open">Open recipe →</div>
-      </button>`).join("");
+      </button>`;
+    }
+
+    function renderRecipes() {
+      // Keep each recipe's ORIGINAL index so the modal lookup stays correct when filtered.
+      const items = RECIPES
+        .map((r, i) => ({ r, i }))
+        .filter(o => activeCat === "all" || o.r.meal === activeCat);
+      recipeGrid.innerHTML = items.map(o => recipeCard(o.r, o.i)).join("");
+      if (countEl) {
+        if (activeCat === "all") {
+          countEl.textContent = `${RECIPES.length} recipes`;
+        } else {
+          const cat = hasCats ? RECIPE_CATS.find(c => c.id === activeCat) : null;
+          countEl.textContent = `${items.length} ${cat ? cat.label : "recipes"}`;
+        }
+      }
+    }
+
+    if (filtersEl && hasCats) {
+      filtersEl.innerHTML = [`<button class="cat-chip is-active" data-cat="all">All recipes</button>`]
+        .concat(RECIPE_CATS.map(c =>
+          `<button class="cat-chip" data-cat="${c.id}"><span aria-hidden="true">${c.icon}</span> ${c.label}</button>`
+        )).join("");
+      filtersEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".cat-chip");
+        if (!btn) return;
+        $$(".cat-chip", filtersEl).forEach(b => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        activeCat = btn.dataset.cat;
+        renderRecipes();
+      });
+    }
+
+    renderRecipes();
 
     const modal = byId("recipeModal");
     const modalBody = byId("modalBody");
