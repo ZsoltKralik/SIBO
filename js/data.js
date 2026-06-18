@@ -6,7 +6,7 @@
 
    STATUS LEGEND
      "green"  → Enjoy freely (low FODMAP)
-     "yellow" → Small, measured portions only (low FODMAP up to a threshold)
+     "yellow" → Moderate — measured portions only (low FODMAP up to a threshold)
      "red"    → High FODMAP — best avoided during the elimination phase
 
    Ratings follow the LOW-FODMAP framework (Monash University), the most
@@ -24,6 +24,7 @@
 /* ----------------------------------------------------------------------- */
 const FOOD_CATEGORIES = [
   { id: "popular",  label: "Popular & Fast Food", icon: "🍟" },
+  { id: "snacks",   label: "Snacks",              icon: "🍿" },
   { id: "veg",      label: "Vegetables",          icon: "🥕" },
   { id: "fruit",    label: "Fruit",               icon: "🍓" },
   { id: "protein",  label: "Protein",             icon: "🍗" },
@@ -327,7 +328,23 @@ const FOODS = [
   { name: "Chamomile / fennel tea",cat: "drink", status: "red",   note: "Higher-FODMAP herbal teas.", instead: "Peppermint or green tea" },
   { name: "Oat / soy milk",        cat: "drink", status: "red",   note: "Often high per serving.", instead: "Almond or lactose-free milk" },
   { name: "Rum & sweet liqueurs",  cat: "drink", status: "red",   note: "Added sugars/polyols.", instead: "A measure of gin or vodka" },
-  { name: "Sugar-free / diet drinks", cat: "drink", status: "red", note: "Often sweetened with polyols.", instead: "Soda water with fresh lime" }
+  { name: "Sugar-free / diet drinks", cat: "drink", status: "red", note: "Often sweetened with polyols.", instead: "Soda water with fresh lime" },
+
+  /* —— Snacks (grab-and-go) —— */
+  { name: "Hard-boiled eggs",          cat: "snacks", status: "green",  note: "Protein and fat that keep you full for hours." },
+  { name: "Rice cakes + peanut butter", cat: "snacks", status: "green", note: "Crunchy, fast and satisfying." },
+  { name: "Handful of nuts",           cat: "snacks", status: "green",  note: "About 10 almonds, macadamias or walnuts." },
+  { name: "Cheddar cheese cubes",      cat: "snacks", status: "green",  note: "Aged cheese is essentially lactose-free." },
+  { name: "Carrot & cucumber sticks",  cat: "snacks", status: "green",  note: "With a feta or roasted-pepper dip." },
+  { name: "Strawberries or blueberries", cat: "snacks", status: "green", note: "A low-FODMAP berry bowl." },
+  { name: "Grapes or an orange",       cat: "snacks", status: "green",  note: "The easiest portable fruit." },
+  { name: "Lactose-free yogurt + berries", cat: "snacks", status: "green", note: "Add a few pumpkin seeds for crunch." },
+  { name: "Plain popcorn",             cat: "snacks", status: "green",  note: "Up to a couple of cups, lightly salted." },
+  { name: "Beef jerky / biltong",      cat: "snacks", status: "green",  note: "Choose brands with no onion or garlic." },
+  { name: "Firm banana + peanut butter", cat: "snacks", status: "green", note: "Quick energy before activity." },
+  { name: "Olives",                    cat: "snacks", status: "green",  note: "Salty, savoury and shelf-stable." },
+  { name: "Dark chocolate squares",    cat: "snacks", status: "yellow", note: "Up to about 3 squares (30 g) to curb a sweet craving." },
+  { name: "Plain salted crisps",       cat: "snacks", status: "green",  note: "Ready-salted only — skip onion & BBQ flavours." }
 ];
 
 /* ----------------------------------------------------------------------- */
@@ -384,25 +401,8 @@ const SWAPS = [
   { icon: "☕", avoid: "Large latte", avoidWhy: "A big milky coffee is a large lactose load.", eat: "Lactose-free or almond latte", eatHow: "Ask for lactose-free or almond milk — most cafés now keep it on hand." }
 ];
 
-/* ----------------------------------------------------------------------- */
-/* 6. GRAB-AND-GO SNACKS                                                    */
-/* ----------------------------------------------------------------------- */
-const SNACKS = [
-  { icon: "🥚", name: "Hard-boiled eggs", note: "Protein + fat that keeps you full for hours." },
-  { icon: "🍚", name: "Rice cakes + peanut butter", note: "Crunchy, fast, and satisfying." },
-  { icon: "🥜", name: "Handful of nuts", note: "10 almonds, macadamias, or walnuts." },
-  { icon: "🧀", name: "Cheddar cheese cubes", note: "Aged cheese is essentially lactose-free." },
-  { icon: "🥕", name: "Carrot & cucumber sticks", note: "With a roasted-pepper or feta dip." },
-  { icon: "🍓", name: "Strawberries or blueberries", note: "A free-serving low-FODMAP berry bowl." },
-  { icon: "🍇", name: "Grapes or an orange", note: "The easiest portable fruit." },
-  { icon: "🥣", name: "Lactose-free yogurt + berries", note: "Add a few pumpkin seeds for crunch." },
-  { icon: "🍿", name: "Plain popcorn", note: "Up to a couple of cups, lightly salted." },
-  { icon: "🥩", name: "Beef jerky / biltong", note: "Choose brands with no onion or garlic." },
-  { icon: "🍌", name: "Firm banana + peanut butter", note: "Quick energy before activity." },
-  { icon: "🫒", name: "Olives", note: "Salty, savoury, shelf-stable." },
-  { icon: "🍫", name: "Dark chocolate squares", note: "Up to ~3 squares to curb a sweet craving." },
-  { icon: "🥔", name: "Plain salted crisps", note: "Ready-salted only — skip onion & BBQ flavours." }
-];
+/* Section 6 "Snacks" was removed — snack ideas now live in FOODS under the
+   "snacks" category (and the standalone Snacks page/tab was retired). */
 
 /* ----------------------------------------------------------------------- */
 /* 7. A WEEK'S FOOD (7-DAY MEAL PLAN)                                       */

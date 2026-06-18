@@ -44,6 +44,7 @@
   ],
   "categories": [
     { "slug": "popular", "label": "Popular & Fast Food", "subject": "a cardboard carton of golden french fries beside a cheeseburger" },
+    { "slug": "snacks",  "label": "Snacks",              "subject": "a small wooden board of healthy snacks: nuts, crackers and cheese" },
     { "slug": "veg",     "label": "Vegetables",          "subject": "a fresh orange carrot with green leafy vegetables" },
     { "slug": "fruit",   "label": "Fruit",               "subject": "fresh strawberries, blueberries and a slice of orange" },
     { "slug": "protein", "label": "Protein",             "subject": "a grilled chicken breast, an egg and a fish fillet" },

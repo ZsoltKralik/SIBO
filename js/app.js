@@ -9,7 +9,7 @@
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const byId = (id) => document.getElementById(id);
-  const STATUS_LABEL = { green: "Enjoy", yellow: "Small", red: "Avoid" };
+  const STATUS_LABEL = { green: "Enjoy", yellow: "Moderate", red: "Avoid" };
 
   /* Render `html` into #id only if that element exists on this page. */
   function fill(id, html) {
@@ -80,7 +80,7 @@
       const y = list.filter(f => f.status === "yellow").length;
       const r = list.filter(f => f.status === "red").length;
       resultCount.textContent = list.length
-        ? `${list.length} foods · ${g} enjoy · ${y} small portions · ${r} to avoid`
+        ? `${list.length} foods · ${g} enjoy · ${y} moderate · ${r} to avoid`
         : "";
     }
 
@@ -119,16 +119,6 @@
         <span class="swap-tag">✓ Enjoy</span>
         <div class="swap-title">${s.eat}</div>
         <div class="swap-detail">${s.eatHow}</div>
-      </div>
-    </article>`).join(""));
-
-  /* --------------------------- SNACKS --------------------------- */
-  fill("snackGrid", SNACKS.map(s => `
-    <article class="snack-card">
-      <span class="snack-emoji" aria-hidden="true">${s.icon}</span>
-      <div>
-        <div class="snack-name">${s.name}</div>
-        <div class="snack-note">${s.note}</div>
       </div>
     </article>`).join(""));
 

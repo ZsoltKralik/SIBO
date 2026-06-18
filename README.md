@@ -52,10 +52,8 @@ Each tab is its own page.
 | Tab / page | What it gives you |
 |---|---|
 | **Home** (`index.html`) | The whole diet at a glance — eat/avoid cheat sheet, four golden rules, quick links |
-| **Food List** (`foods.html`) | Searchable, filterable database of 260+ foods with 🟢 enjoy / 🟡 small / 🔴 avoid ratings, portion notes, and "try instead" hints |
-| **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more |
-| **Snacks** (`snacks.html`) | Grab-and-go options that won't trigger symptoms |
-| **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day), mostly drawn from the recipes |
+| **Food List** (`foods.html`) | Searchable, filterable database of 280+ foods (incl. a **Snacks** category) with 🟢 enjoy / 🟡 moderate / 🔴 avoid ratings, portion notes, and "try instead" hints |
+| **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more || **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day), mostly drawn from the recipes |
 | **Recipes** (`recipes.html`) | 40 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
 | **Eating Out** (`eating-out.html`) | What to order / skip across 16 cuisines (Japanese, Vietnamese, café, French, Korean, pub, bakery and more) |
 | **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
@@ -72,9 +70,7 @@ mode, live search & filtering, a recipe modal, responsive layout, printable, and
 SIBO/
 ├── index.html         # Home (hero, at-a-glance, quick links)
 ├── foods.html         # Food List (searchable explorer)
-├── swaps.html         # Eat this, not that
-├── snacks.html        # Grab-and-go snacks
-├── meals.html         # A day's food
+├── swaps.html         # Eat this, not that├── meals.html         # A day's food
 ├── recipes.html       # Recipes (+ modal)
 ├── eating-out.html    # Eating out by cuisine
 ├── journey.html       # The 3 phases, FAQ, tips, sources
@@ -110,7 +106,7 @@ in order: `data.js` → `layout.js` → `app.js`.
   and wires the **theme toggle**, **mobile nav**, **back-to-top**, and reveal-on-scroll.
 - **`app.js`** renders the page content. It is **page-aware**: each block runs only if
   its target element exists on the current page (via a small `fill(id, html)` guard and
-  `if (!el) return` checks). The *same* `app.js` therefore drives all 8 pages and only
+  `if (!el) return` checks). The *same* `app.js` therefore drives all 7 pages and only
   renders what's present — no per-page scripts.
 - **Imagery** (recipe photos, food-category / recipe-category / cuisine icons, and the logo)
   is **pre-generated locally** with **GPT Image 2** (via the Leonardo API — see `tools/`) and
@@ -145,9 +141,7 @@ FOOD_CATEGORIES = [ { id: "popular", label: "Popular & Fast Food", icon: "🍟" 
 
 CHEAT_SHEET = { eat: [ { group, items } ], avoid: [ { group, items } ] };   // Home panels
 PRINCIPLES  = [ { icon, title, body } ];                                    // Home golden rules
-SWAPS       = [ { icon, avoid, avoidWhy, eat, eatHow } ];                    // Swaps page
-SNACKS      = [ { icon, name, note } ];                                      // Snacks page
-WEEK_PLAN   = [ { day, meals: [ { slot, icon, title, detail } ] } ];         // A Week's Food (7 days)
+SWAPS       = [ { icon, avoid, avoidWhy, eat, eatHow } ];                    // Swaps pageWEEK_PLAN   = [ { day, meals: [ { slot, icon, title, detail } ] } ];         // A Week's Food (7 days)
 RECIPE_CATS = [ { id, label, icon } ];                                       // Recipe filter chips
 RECIPES     = [ { meal, icon, name, tagline, time, serves, why,
                   ingredients: [], steps: [], safety } ];                    // Recipes (+ filter + modal)
@@ -169,7 +163,7 @@ The hero "260+" stat, the result counts, and all filters update automatically.
 
 ## ➕ Adding a new page / tab
 
-1. **Create `mytab.html`** — copy any sub-page (e.g. `snacks.html`), set
+1. **Create `mytab.html`** — copy any sub-page (e.g. `swaps.html`), set
    `<body data-page="mytab">`, update `<title>`/description, and put a `<section>` with a
    unique container id (e.g. `<div id="myGrid"></div>`) inside `<main>`.
 2. **Add the nav entry** in [`js/layout.js`](js/layout.js) → the `NAV` array:

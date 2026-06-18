@@ -12,7 +12,6 @@
     { href: "index.html",      label: "Home",            page: "home" },
     { href: "foods.html",      label: "Food&nbsp;List",  page: "foods" },
     { href: "swaps.html",      label: "Swaps",           page: "swaps" },
-    { href: "snacks.html",     label: "Snacks",          page: "snacks" },
     { href: "meals.html",      label: "A&nbsp;Week's&nbsp;Food", page: "meals" },
     { href: "recipes.html",    label: "Recipes",         page: "recipes" },
     { href: "eating-out.html", label: "Eating&nbsp;Out", page: "eatout" },
