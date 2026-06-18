@@ -47,7 +47,7 @@
 
     catFilters.innerHTML = [`<button class="cat-chip is-active" data-cat="all">All categories</button>`]
       .concat(FOOD_CATEGORIES.map(c =>
-        `<button class="cat-chip" data-cat="${c.id}"><span aria-hidden="true">${c.icon}</span> ${c.label}</button>`
+        `<button class="cat-chip" data-cat="${c.id}"><span class="cat-ico"><img src="assets/img/categories/${c.id}.webp" alt="" loading="lazy" onerror="this.closest('.cat-ico').classList.add('noimg')"><span class="cat-emoji" aria-hidden="true">${c.icon}</span></span> ${c.label}</button>`
       )).join("");
 
     function foodCard(f) {
@@ -132,16 +132,22 @@
       </div>
     </article>`).join(""));
 
-  /* --------------------------- MEAL PLAN --------------------------- */
-  fill("mealTimeline", MEAL_PLAN.map(m => `
-    <div class="meal-row">
-      <div class="meal-slot"><span class="meal-emoji" aria-hidden="true">${m.icon}</span> ${m.slot}</div>
-      <div class="meal-main">
-        <h3>${m.title}</h3>
-        <p>${m.detail}</p>
-        <p class="meal-alt">${m.alt}</p>
-      </div>
-    </div>`).join(""));
+  /* --------------------------- WEEK PLAN --------------------------- */
+  fill("weekPlan", (typeof WEEK_PLAN !== "undefined" ? WEEK_PLAN : []).map(d => `
+    <article class="day-card">
+      <h3 class="day-name">${d.day}</h3>
+      <ul class="day-meals">
+        ${d.meals.map(m => `
+          <li class="day-meal">
+            <span class="meal-emoji" aria-hidden="true">${m.icon}</span>
+            <div class="day-meal-text">
+              <span class="meal-slot-label">${m.slot}</span>
+              <span class="meal-title">${m.title}</span>
+              <span class="meal-detail">${m.detail}</span>
+            </div>
+          </li>`).join("")}
+      </ul>
+    </article>`).join(""));
 
   /* --------------------------- RECIPES + FILTER + MODAL --------------------------- */
   (function () {
@@ -153,14 +159,25 @@
     const hasCats   = typeof RECIPE_CATS !== "undefined";
     let activeCat = "all";
 
+    function recipeImg(i) {
+      return (typeof RECIPE_SLUGS !== "undefined" && RECIPE_SLUGS[i])
+        ? `assets/img/recipes/${RECIPE_SLUGS[i]}.webp` : "";
+    }
+
     function recipeCard(r, i) {
+      const src = recipeImg(i);
+      const thumb = src
+        ? `<span class="recipe-thumb"><img src="${src}" alt="" loading="lazy" onerror="this.closest('.recipe-thumb').classList.add('noimg')"><span class="recipe-emoji" aria-hidden="true">${r.icon}</span></span>`
+        : `<span class="recipe-thumb noimg"><span class="recipe-emoji" aria-hidden="true">${r.icon}</span></span>`;
       return `
       <button class="recipe-card" data-recipe="${i}">
-        <span class="recipe-emoji" aria-hidden="true">${r.icon}</span>
-        <h3>${r.name}</h3>
-        <p class="recipe-tagline">${r.tagline}</p>
-        <div class="recipe-meta"><span>⏱️ ${r.time}</span><span>🍽️ ${r.serves}</span></div>
-        <div class="recipe-open">Open recipe →</div>
+        ${thumb}
+        <span class="recipe-card-body">
+          <h3>${r.name}</h3>
+          <p class="recipe-tagline">${r.tagline}</p>
+          <div class="recipe-meta"><span>⏱️ ${r.time}</span><span>🍽️ ${r.serves}</span></div>
+          <div class="recipe-open">Open recipe →</div>
+        </span>
       </button>`;
     }
 
@@ -183,7 +200,7 @@
     if (filtersEl && hasCats) {
       filtersEl.innerHTML = [`<button class="cat-chip is-active" data-cat="all">All recipes</button>`]
         .concat(RECIPE_CATS.map(c =>
-          `<button class="cat-chip" data-cat="${c.id}"><span aria-hidden="true">${c.icon}</span> ${c.label}</button>`
+          `<button class="cat-chip" data-cat="${c.id}"><span class="cat-ico"><img src="assets/img/recipe-cats/${c.id}.webp" alt="" loading="lazy" onerror="this.closest('.cat-ico').classList.add('noimg')"><span class="cat-emoji" aria-hidden="true">${c.icon}</span></span> ${c.label}</button>`
         )).join("");
       filtersEl.addEventListener("click", (e) => {
         const btn = e.target.closest(".cat-chip");
@@ -204,8 +221,12 @@
     function openRecipe(i) {
       const r = RECIPES[i];
       if (!r) return;
+      const src = recipeImg(i);
+      const figure = src
+        ? `<div class="modal-figure"><img src="${src}" alt="${r.name}" loading="lazy" onerror="this.closest('.modal-figure').classList.add('noimg')"><span class="modal-emoji" aria-hidden="true">${r.icon}</span></div>`
+        : `<div class="modal-figure noimg"><span class="modal-emoji" aria-hidden="true">${r.icon}</span></div>`;
       modalBody.innerHTML = `
-        <span class="modal-emoji" aria-hidden="true">${r.icon}</span>
+        ${figure}
         <h2 id="modalTitle">${r.name}</h2>
         <p class="modal-tagline">${r.tagline}</p>
         <div class="modal-meta"><span class="pill">⏱️ ${r.time}</span><span class="pill">🍽️ ${r.serves}</span></div>
@@ -234,10 +255,15 @@
   })();
 
   /* --------------------------- CUISINES --------------------------- */
-  fill("cuisineGrid", CUISINES.map(c => `
+  fill("cuisineGrid", CUISINES.map((c, i) => {
+    const slug = (typeof CUISINE_SLUGS !== "undefined") ? CUISINE_SLUGS[i] : "";
+    const ico = slug
+      ? `<span class="cuisine-ico"><img src="assets/img/cuisines/${slug}.webp" alt="" loading="lazy" onerror="this.closest('.cuisine-ico').classList.add('noimg')"><span class="cuisine-emoji" aria-hidden="true">${c.icon}</span></span>`
+      : `<span class="cuisine-ico noimg"><span class="cuisine-emoji" aria-hidden="true">${c.icon}</span></span>`;
+    return `
     <article class="cuisine-card">
       <div class="cuisine-head">
-        <span class="cuisine-emoji" aria-hidden="true">${c.icon}</span>
+        ${ico}
         <h3>${c.name}</h3>
         <span class="verdict ${c.verdict}">${c.verdictLabel}</span>
       </div>
@@ -246,7 +272,8 @@
       <hr class="cuisine-divider" />
       <p class="cuisine-list-label skip">✕ Skip / ask to change</p>
       <ul class="cuisine-list skip">${c.skip.map(x => `<li>${x}</li>`).join("")}</ul>
-    </article>`).join(""));
+    </article>`;
+  }).join(""));
 
   /* --------------------------- PHASES --------------------------- */
   fill("phaseTrack", PHASES.map(p => `

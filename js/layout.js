@@ -13,7 +13,7 @@
     { href: "foods.html",      label: "Food&nbsp;List",  page: "foods" },
     { href: "swaps.html",      label: "Swaps",           page: "swaps" },
     { href: "snacks.html",     label: "Snacks",          page: "snacks" },
-    { href: "meals.html",      label: "A&nbsp;Day's&nbsp;Food", page: "meals" },
+    { href: "meals.html",      label: "A&nbsp;Week's&nbsp;Food", page: "meals" },
     { href: "recipes.html",    label: "Recipes",         page: "recipes" },
     { href: "eating-out.html", label: "Eating&nbsp;Out", page: "eatout" },
     { href: "journey.html",    label: "The&nbsp;Journey",page: "journey" }
@@ -30,7 +30,7 @@
     <header class="site-header" id="top">
       <div class="header-inner">
         <a class="brand" href="index.html" aria-label="SIBO Plate home">
-          <span class="brand-mark" aria-hidden="true">🍃</span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/img/logo.webp" alt="" class="brand-logo" onerror="this.closest('.brand-mark').classList.add('noimg')"><span class="brand-emoji">🍃</span></span>
           <span class="brand-text">SIBO&nbsp;Plate</span>
         </a>
         <nav class="main-nav" aria-label="Primary">${navLinks}</nav>
@@ -46,7 +46,7 @@
   const footerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="footer-brand"><span aria-hidden="true">🍃</span> SIBO&nbsp;Plate</div>
+        <div class="footer-brand"><span class="brand-mark footer-mark" aria-hidden="true"><img src="assets/img/logo.webp" alt="" class="brand-logo" onerror="this.closest('.brand-mark').classList.add('noimg')"><span class="brand-emoji">🍃</span></span> SIBO&nbsp;Plate</div>
         <p class="footer-note">
           Built as a free, educational reference following the Low-FODMAP framework. Not a substitute for
           personalised medical or dietetic advice. Always confirm your own tolerances with a professional.

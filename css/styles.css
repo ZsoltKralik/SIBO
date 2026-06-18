@@ -221,6 +221,39 @@ em { font-style: italic; }
 .cat-chip { display: inline-flex; align-items: center; gap: 6px; padding: 9px 15px; border-radius: 999px; font-weight: 600; font-size: .86rem; font-family: inherit; border: 1.5px solid var(--border); background: var(--surface); color: var(--ink-soft); cursor: pointer; transition: all .18s var(--ease); }
 .cat-chip:hover { border-color: var(--accent); color: var(--accent-deep); }
 .cat-chip.is-active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.cat-ico { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; }
+.cat-ico img { width: 20px; height: 20px; object-fit: cover; border-radius: 50%; display: block; }
+.cat-ico .cat-emoji { display: none; }
+.cat-ico.noimg img { display: none; }
+.cat-ico.noimg .cat-emoji { display: inline; }
+
+/* ----------------------------- Brand logo ----------------------------- */
+.brand-mark { display: inline-flex; align-items: center; }
+.brand-logo { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; box-shadow: var(--shadow-sm); }
+.brand-mark .brand-emoji { display: none; }
+.brand-mark.noimg .brand-logo { display: none; }
+.brand-mark.noimg .brand-emoji { display: inline; }
+.footer-mark { vertical-align: middle; }
+.footer-mark .brand-logo { width: 26px; height: 26px; }
+
+/* ----------------------------- Cuisine icon ----------------------------- */
+.cuisine-ico { position: relative; width: 42px; height: 42px; flex: none; display: inline-flex; align-items: center; justify-content: center; }
+.cuisine-ico img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; display: block; }
+.cuisine-ico .cuisine-emoji { display: none; }
+.cuisine-ico.noimg img { display: none; }
+.cuisine-ico.noimg .cuisine-emoji { display: inline; font-size: 1.95rem; }
+
+/* ----------------------------- A Week's Food ----------------------------- */
+.week-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.day-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow-sm); }
+.day-name { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft); color: var(--accent-deep); }
+.day-meals { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.day-meal { display: flex; gap: 12px; align-items: flex-start; }
+.day-meal .meal-emoji { font-size: 1.5rem; flex: none; line-height: 1.2; }
+.day-meal-text { display: flex; flex-direction: column; gap: 1px; }
+.meal-slot-label { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); }
+.meal-title { font-weight: 700; font-size: .98rem; }
+.meal-detail { font-size: .86rem; color: var(--ink-soft); }
 .result-count { font-size: .86rem; color: var(--ink-faint); margin-bottom: 18px; font-weight: 700; }
 
 .food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(248px, 1fr)); gap: 15px; }
@@ -277,14 +310,20 @@ em { font-style: italic; }
 
 /* ----------------------------- Recipes ----------------------------- */
 .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(284px, 1fr)); gap: 18px; }
-.recipe-card { text-align: left; cursor: pointer; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); font-family: inherit; transition: transform .18s var(--ease), box-shadow .18s, border-color .18s; }
+.recipe-card { text-align: left; cursor: pointer; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0; overflow: hidden; box-shadow: var(--shadow-sm); font-family: inherit; display: flex; flex-direction: column; transition: transform .18s var(--ease), box-shadow .18s, border-color .18s; }
 .recipe-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+.recipe-thumb { position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; }
+.recipe-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.recipe-thumb .recipe-emoji { display: none; font-size: 2.8rem; }
+.recipe-thumb.noimg img { display: none; }
+.recipe-thumb.noimg .recipe-emoji { display: block; }
+.recipe-card-body { padding: 16px 22px 22px; display: flex; flex-direction: column; flex: 1; }
 .recipe-emoji { font-size: 2.1rem; }
-.recipe-card h3 { font-size: 1.2rem; margin: 12px 0 6px; }
+.recipe-card h3 { font-size: 1.2rem; margin: 4px 0 6px; }
 .recipe-tagline { font-size: .9rem; color: var(--ink-soft); }
-.recipe-meta { display: flex; gap: 14px; margin-top: 16px; font-size: .8rem; color: var(--ink-faint); font-weight: 700; }
+.recipe-meta { display: flex; gap: 14px; margin-top: auto; padding-top: 14px; font-size: .8rem; color: var(--ink-faint); font-weight: 700; }
 .recipe-meta span { display: inline-flex; align-items: center; gap: 5px; }
-.recipe-open { margin-top: 14px; font-size: .85rem; font-weight: 800; color: var(--accent-deep); }
+.recipe-open { margin-top: 12px; font-size: .85rem; font-weight: 800; color: var(--accent-deep); }
 
 /* ----------------------------- Modal ----------------------------- */
 .modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; }
@@ -296,6 +335,11 @@ em { font-style: italic; }
 @keyframes fade { from { opacity: 0; } }
 @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
 .modal-emoji { font-size: 2.8rem; }
+.modal-figure { position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--bg-alt); border-radius: var(--radius); overflow: hidden; margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
+.modal-figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.modal-figure .modal-emoji { display: none; }
+.modal-figure.noimg { aspect-ratio: auto; background: none; margin-bottom: 6px; }
+.modal-figure.noimg .modal-emoji { display: block; }
 .modal-card h2 { font-size: 1.8rem; margin: 10px 0 6px; }
 .modal-tagline { color: var(--ink-soft); font-size: 1.02rem; }
 .modal-meta { display: flex; gap: 16px; margin: 18px 0; flex-wrap: wrap; }

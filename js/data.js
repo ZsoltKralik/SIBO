@@ -405,15 +405,51 @@ const SNACKS = [
 ];
 
 /* ----------------------------------------------------------------------- */
-/* 7. SAMPLE DAY (MEAL PLAN)                                                */
+/* 7. A WEEK'S FOOD (7-DAY MEAL PLAN)                                       */
 /* ----------------------------------------------------------------------- */
-const MEAL_PLAN = [
-  { slot: "Breakfast", icon: "🌅", title: "Veggie omelette + sourdough", detail: "Eggs with spinach, tomato and chives cooked in garlic-infused oil, with a slice of genuine sourdough or GF toast.", alt: "Or: rolled oats with lactose-free milk, blueberries, walnuts & maple syrup." },
-  { slot: "Morning snack", icon: "🍊", title: "Macadamias + a mandarin", detail: "A small handful of macadamias with a mandarin or a few strawberries.", alt: "Or: rice cakes with peanut butter." },
-  { slot: "Lunch", icon: "🥗", title: "Chicken & quinoa power bowl", detail: "Grilled chicken, quinoa, cucumber, cherry tomato, grated carrot and baby spinach with olive oil, lemon and feta.", alt: "Or: a turkey-and-cheddar GF wrap with salad." },
-  { slot: "Afternoon snack", icon: "🥣", title: "Lactose-free yogurt + berries", detail: "Topped with pumpkin seeds and a drizzle of maple syrup.", alt: "Or: cheddar cubes with cucumber sticks." },
-  { slot: "Dinner", icon: "🍽️", title: "Baked salmon, rice & roast veg", detail: "Salmon baked with lemon and herbs, white rice, and roasted zucchini and carrots tossed in garlic-infused oil. Side salad.", alt: "Or: lemon-herb roast chicken with potatoes and green beans." },
-  { slot: "Dessert", icon: "🍫", title: "Dark chocolate + strawberries", detail: "A couple of squares of dark chocolate with a few strawberries.", alt: "Or: a small scoop of lactose-free ice cream." }
+const WEEK_PLAN = [
+  { day: "Monday", meals: [
+    { slot: "Breakfast", icon: "🥣", title: "Strawberry overnight oats", detail: "Made the night before with lactose-free milk, chia and fresh strawberries." },
+    { slot: "Lunch", icon: "🥗", title: "Quinoa tabbouleh + grilled chicken", detail: "Herby, onion-free tabbouleh with sliced grilled chicken." },
+    { slot: "Dinner", icon: "🍗", title: "Lemon-herb roast chicken tray bake", detail: "Chicken thighs with carrot, zucchini and baby potatoes." },
+    { slot: "Snack", icon: "🍌", title: "PB & banana rice cakes", detail: "Rice cakes with peanut butter and firm banana." }
+  ]},
+  { day: "Tuesday", meals: [
+    { slot: "Breakfast", icon: "🍳", title: "Spinach & feta omelette", detail: "Three eggs with baby spinach and feta, plus GF toast." },
+    { slot: "Lunch", icon: "🌯", title: "Fresh rice-paper summer rolls", detail: "Prawn or chicken rolls with a tamari-ginger dip." },
+    { slot: "Dinner", icon: "🐟", title: "Baked lemon salmon & potatoes", detail: "Salmon, baby potatoes and green beans on one tray." },
+    { slot: "Snack", icon: "🍿", title: "Stovetop popcorn", detail: "A bowl of lightly salted popcorn." }
+  ]},
+  { day: "Wednesday", meals: [
+    { slot: "Breakfast", icon: "🥞", title: "Fluffy gluten-free pancakes", detail: "Topped with blueberries, strawberries and a little maple." },
+    { slot: "Lunch", icon: "🍲", title: "Soothing chicken & rice soup", detail: "A gentle, onion-free bowl with carrot and parsley." },
+    { slot: "Dinner", icon: "🧆", title: "Herby rice meatballs in tomato sauce", detail: "Over gluten-free pasta or soft polenta." },
+    { slot: "Snack", icon: "🧀", title: "Cheese & cracker plate", detail: "Cheddar, rice crackers, cucumber and a few grapes." }
+  ]},
+  { day: "Thursday", meals: [
+    { slot: "Breakfast", icon: "🥝", title: "Kiwi & vanilla chia pudding", detail: "Made ahead with lactose-free or almond milk." },
+    { slot: "Lunch", icon: "🥒", title: "Cucumber-feta salad + tuna", detail: "Cool herb salad with a tin of tuna and olives." },
+    { slot: "Dinner", icon: "🥢", title: "Ginger chicken & bok choy stir-fry", detail: "Over steamed rice with sesame and spring-onion tops." },
+    { slot: "Snack", icon: "🥜", title: "Peanut butter oat energy balls", detail: "A couple of no-bake bites." }
+  ]},
+  { day: "Friday", meals: [
+    { slot: "Breakfast", icon: "🍚", title: "Creamy quinoa porridge", detail: "With firm banana, walnuts and a pinch of cinnamon." },
+    { slot: "Lunch", icon: "🍅", title: "Caprese + grilled chicken", detail: "Tomato, mozzarella and basil with chicken and GF bread." },
+    { slot: "Dinner", icon: "🍕", title: "Margherita-style GF pizza", detail: "On a gluten-free base with a side salad." },
+    { slot: "Snack", icon: "🍫", title: "Dark chocolate & strawberry bark", detail: "A couple of squares' worth, with berries." }
+  ]},
+  { day: "Saturday", meals: [
+    { slot: "Breakfast", icon: "🧁", title: "Veggie frittata muffins", detail: "Make-ahead egg muffins with a piece of fruit." },
+    { slot: "Lunch", icon: "🥕", title: "Carrot & ginger soup", detail: "Silky and warming, with a gluten-free roll." },
+    { slot: "Dinner", icon: "🥩", title: "Beef & veg rice bowl", detail: "Seared beef, carrot and green beans over rice." },
+    { slot: "Snack", icon: "🍪", title: "Peanut butter cookies", detail: "Flourless, three-ingredient and naturally GF." }
+  ]},
+  { day: "Sunday", meals: [
+    { slot: "Breakfast", icon: "🥤", title: "Berry & banana smoothie", detail: "With lactose-free milk and a slice of GF toast." },
+    { slot: "Lunch", icon: "🥔", title: "Roast chicken + smashed potatoes", detail: "Leftover chicken with garlic-oil smashed potatoes and salad." },
+    { slot: "Dinner", icon: "🍢", title: "Crispy tofu & veg stir-fry", detail: "Golden tofu with bok choy and capsicum over rice." },
+    { slot: "Snack", icon: "🍓", title: "Strawberry chia jam on rice cakes", detail: "A sweet, gut-gentle finish to the week." }
+  ]}
 ];
 
 /* ----------------------------------------------------------------------- */
@@ -855,6 +891,19 @@ const RECIPES = [
     steps: ["Blend everything until smooth.", "Add water or ice to reach your preferred thickness."], safety: "" }
 ];
 
+/* Image filename per recipe — SAME ORDER as RECIPES above (see tools/image_manifest.json).
+   The site loads assets/img/recipes/<slug>.webp, falling back to the emoji if absent. */
+const RECIPE_SLUGS = [
+  "garlic-infused-olive-oil", "marinara", "basil-pesto", "lemon-herb-vinaigrette", "tomato-salsa",
+  "strawberry-overnight-oats", "spinach-feta-omelette", "gluten-free-pancakes", "kiwi-chia-pudding", "quinoa-porridge", "frittata-muffins",
+  "garlic-oil-spaghetti", "roast-chicken-tray-bake", "ginger-chicken-stir-fry", "lemon-salmon", "beef-rice-bowl", "cottage-pie", "margherita-pizza", "tofu-stir-fry", "summer-rolls", "rice-meatballs",
+  "pho-bowl", "carrot-ginger-soup", "pumpkin-coconut-soup", "chicken-rice-soup",
+  "quinoa-tabbouleh", "smashed-potatoes", "caprese-salad", "maple-roasted-carrots", "cucumber-feta-salad",
+  "pb-banana-rice-cakes", "popcorn", "energy-balls", "cheese-cracker-plate",
+  "peanut-butter-cookies", "strawberry-chia-jam", "chocolate-strawberry-bark", "lemon-polenta-cake",
+  "berry-smoothie", "green-smoothie"
+];
+
 /* ----------------------------------------------------------------------- */
 /* 9. EATING-OUT GUIDE                                                      */
 /* ----------------------------------------------------------------------- */
@@ -912,6 +961,12 @@ const CUISINES = [
   { icon: "🥪", name: "Bakery / Sandwich", verdict: "tricky", verdictLabel: "Order carefully",
     order: ["Fillings on gluten-free bread, if available", "A salad bowl — grilled chicken, egg, cheese, oil & vinegar", "Rice-based sushi", "Plain corn chips or rice cakes"],
     skip: ["Wheat bread, wraps & pastries", "Onion, hummus & garlic-mayo fillings", "Honey, fruit-heavy muffins & high-fructose juices"] }
+];
+
+/* Image filename per cuisine — SAME ORDER as CUISINES above. */
+const CUISINE_SLUGS = [
+  "japanese", "vietnamese", "cafe-brunch", "steakhouse", "burgers", "italian", "mexican", "greek",
+  "french", "spanish", "american-diner", "pub", "chinese-thai", "indian", "korean", "bakery"
 ];
 
 /* ----------------------------------------------------------------------- */

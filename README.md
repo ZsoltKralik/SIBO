@@ -6,7 +6,7 @@ Runs locally or publishes free to the web.
 
 Instead of a flat list of "can't eat" foods, it tells you **what to eat instead** —
 a searchable database of **260+ foods** (including popular & fast-food items like
-McDonald's, cola, KFC and apple pie), grab-and-go snacks, a sample day, real recipes,
+McDonald's, cola, KFC and apple pie), grab-and-go snacks, a 7-day meal plan, real recipes,
 and an "order-this-not-that" guide for eating out. Trigger foods show a quick
 **"try instead"** alternative so you're never left guessing.
 
@@ -55,7 +55,7 @@ Each tab is its own page.
 | **Food List** (`foods.html`) | Searchable, filterable database of 260+ foods with 🟢 enjoy / 🟡 small / 🔴 avoid ratings, portion notes, and "try instead" hints |
 | **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more |
 | **Snacks** (`snacks.html`) | Grab-and-go options that won't trigger symptoms |
-| **A Day's Food** (`meals.html`) | A full, easy Low-FODMAP sample day |
+| **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day), mostly drawn from the recipes |
 | **Recipes** (`recipes.html`) | 40 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
 | **Eating Out** (`eating-out.html`) | What to order / skip across 16 cuisines (Japanese, Vietnamese, café, French, Korean, pub, bakery and more) |
 | **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
@@ -85,6 +85,13 @@ SIBO/
 │   ├── layout.js      # Shared header/footer, active tab, theme, mobile nav, back-to-top
 │   └── app.js         # Page-aware content rendering (search, filters, recipe modal)
 ├── fonts/             # Self-hosted Nunito Sans (offline, no CDN)
+├── assets/
+│   └── img/           # Pre-generated recipe photos + category icons (referenced by the site)
+├── tools/             # Local-only image generator — NOT shipped with the site
+│   ├── generate_images.py   # Leonardo / OpenAI GPT Image → assets/img/
+│   ├── image_manifest.json  # what to generate (slugs + prompts)
+│   └── README.md            # how to run it
+├── .env.example       # Copy to .env (git-ignored) for the image-generator API key
 ├── .nojekyll          # Lets GitHub Pages serve the files as-is
 └── README.md
 ```
@@ -105,6 +112,11 @@ in order: `data.js` → `layout.js` → `app.js`.
   its target element exists on the current page (via a small `fill(id, html)` guard and
   `if (!el) return` checks). The *same* `app.js` therefore drives all 8 pages and only
   renders what's present — no per-page scripts.
+- **Imagery** (recipe photos, food-category / recipe-category / cuisine icons, and the logo)
+  is **pre-generated locally** with **GPT Image 2** (via the Leonardo API — see `tools/`) and
+  committed as plain WebP files under `assets/img/`. The site just references them and **falls
+  back to an emoji** if an image is missing — so it stays fully offline and the published site
+  never calls an API or holds a key.
 
 Each page's HTML is just `<head>` (page-specific `<title>`/description) + `<body
 data-page="…">` containing that page's section(s) + the three script tags. All asset
@@ -135,13 +147,15 @@ CHEAT_SHEET = { eat: [ { group, items } ], avoid: [ { group, items } ] };   // H
 PRINCIPLES  = [ { icon, title, body } ];                                    // Home golden rules
 SWAPS       = [ { icon, avoid, avoidWhy, eat, eatHow } ];                    // Swaps page
 SNACKS      = [ { icon, name, note } ];                                      // Snacks page
-MEAL_PLAN   = [ { slot, icon, title, detail, alt } ];                        // A Day's Food
+WEEK_PLAN   = [ { day, meals: [ { slot, icon, title, detail } ] } ];         // A Week's Food (7 days)
 RECIPE_CATS = [ { id, label, icon } ];                                       // Recipe filter chips
 RECIPES     = [ { meal, icon, name, tagline, time, serves, why,
                   ingredients: [], steps: [], safety } ];                    // Recipes (+ filter + modal)
                 // meal: a RECIPE_CATS id  (powers the on-page filter)
+RECIPE_SLUGS  = [ "garlic-infused-olive-oil", … ];   // image filename per recipe (same order as RECIPES)
 CUISINES    = [ { icon, name, verdict, verdictLabel, order: [], skip: [] } ];// Eating Out
                 // verdict: "best" | "ok" | "tricky"  (colours the badge)
+CUISINE_SLUGS = [ "japanese", … ];                   // image filename per cuisine (same order as CUISINES)
 PHASES      = [ { num, name, duration, color, blurb } ];                     // Journey
                 // color: "red" | "yellow" | "green"  (colours the top bar)
 TIPS        = [ { icon, title, body } ];                                     // Journey
