@@ -127,7 +127,7 @@ unchanged from `file://`, a project subpath (e.g. `…/SIBO/`), or a domain root
 no build. The main shapes:
 
 ```js
-// Food list. status is "green" (enjoy) | "yellow" (small portions) | "red" (avoid).
+// Food list. status is "green" (enjoy) | "yellow" (moderate) | "red" (avoid).
 // `instead` is optional and shows a "try instead" hint (used mainly on red items).
 FOODS = [
   { name: "Steak (plain grilled)", cat: "popular", status: "green",
