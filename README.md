@@ -5,7 +5,7 @@ A free, expertly-researched, **multi-page static** guide to eating well with **S
 Runs locally or publishes free to the web.
 
 Instead of a flat list of "can't eat" foods, it tells you **what to eat instead** —
-a searchable database of **260+ foods** (including popular & fast-food items like
+a searchable database of **300+ foods** (including popular & fast-food items like
 McDonald's, cola, KFC and apple pie), grab-and-go snacks, a 7-day meal plan, real recipes,
 and an "order-this-not-that" guide for eating out. Trigger foods show a quick
 **"try instead"** alternative so you're never left guessing.
@@ -52,7 +52,7 @@ Each tab is its own page.
 | Tab / page | What it gives you |
 |---|---|
 | **Home** (`index.html`) | The whole diet at a glance — eat/avoid cheat sheet, four golden rules, quick links |
-| **Food List** (`foods.html`) | Searchable, filterable database of 280+ foods (incl. a **Snacks** category) with 🟢 enjoy / 🟡 moderate / 🔴 avoid ratings, portion notes, and "try instead" hints |
+| **Food List** (`foods.html`) | Searchable, filterable database of 300+ foods (incl. a **Snacks** category) with 🟢 enjoy / 🟡 moderate / 🔴 avoid ratings, portion notes, and "try instead" hints |
 | **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more || **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day), mostly drawn from the recipes |
 | **Recipes** (`recipes.html`) | 54 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
 | **Eating Out** (`eating-out.html`) | What to order / skip across 16 cuisines (Japanese, Vietnamese, café, French, Korean, pub, bakery and more) |
@@ -113,6 +113,9 @@ in order: `data.js` → `layout.js` → `app.js`.
   committed as plain WebP files under `assets/img/`. The site just references them and **falls
   back to an emoji** if an image is missing — so it stays fully offline and the published site
   never calls an API or holds a key.
+- Shared CSS/JS includes may use a small relative cache-busting query string
+  (`css/styles.css?v=...`, `js/app.js?v=...`). Keep it relative; bump it when the
+  local browser keeps serving an old shared asset.
 
 Each page's HTML is just `<head>` (page-specific `<title>`/description) + `<body
 data-page="…">` containing that page's section(s) + the three script tags. All asset
@@ -157,7 +160,7 @@ SOURCES     = [ { name, url } ];                                             // 
 ```
 
 To **add a food**: append an object to `FOODS` with a `cat` that matches a category `id`.
-The hero "260+" stat, the result counts, and all filters update automatically.
+The hero "300+" stat, the result counts, and all filters update automatically.
 
 ---
 

@@ -111,8 +111,9 @@ TIPS, SOURCES   = …                                        // Journey page
 - Serve: `python -m http.server 8000` (config in `.claude/launch.json`, name `sibo`) →
   http://localhost:8000. Or just open `index.html`.
 - **Cache gotcha:** the dev server + browser aggressively cache `data.js`/`app.js`/
-  `layout.js`. After editing JS, hard-refresh (Ctrl+F5) or cache-bust. (Screenshot capture
-  has been unreliable in this environment — verify via the DOM/console instead.)
+  `layout.js` and `styles.css`. After editing shared assets, hard-refresh (Ctrl+F5)
+  or bump the relative `?v=...` query string used in the HTML includes. (Screenshot
+  capture has been unreliable in this environment — verify via the DOM/console instead.)
 - There are no tests or linters. Verify a change by loading the affected page(s) and
   confirming the browser console is **error-free** and the expected counts render.
 

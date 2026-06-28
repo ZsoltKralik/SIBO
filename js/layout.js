@@ -51,6 +51,7 @@
           personalised medical or dietetic advice. Always confirm your own tolerances with a professional.
         </p>
         <p class="footer-meta"><a href="index.html">Home</a> · <a href="#top" class="to-top">Back to top ↑</a></p>
+        <p class="footer-credit">Produced by SPECTRA STUDIO.</p>
       </div>
     </footer>`;
 
