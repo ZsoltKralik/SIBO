@@ -54,7 +54,7 @@ Each tab is its own page.
 | **Home** (`index.html`) | The whole diet at a glance — eat/avoid cheat sheet, four golden rules, quick links |
 | **Food List** (`foods.html`) | Searchable, filterable database of 280+ foods (incl. a **Snacks** category) with 🟢 enjoy / 🟡 moderate / 🔴 avoid ratings, portion notes, and "try instead" hints |
 | **Swaps** (`swaps.html`) | "Eat this, not that" cards — Big Mac, pizza, cola, KFC, apple pie, ramen and more || **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day), mostly drawn from the recipes |
-| **Recipes** (`recipes.html`) | 40 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
+| **Recipes** (`recipes.html`) | 54 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
 | **Eating Out** (`eating-out.html`) | What to order / skip across 16 cuisines (Japanese, Vietnamese, café, French, Korean, pub, bakery and more) |
 | **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
 
@@ -146,7 +146,7 @@ RECIPE_CATS = [ { id, label, icon } ];                                       // 
 RECIPES     = [ { meal, icon, name, tagline, time, serves, why,
                   ingredients: [], steps: [], safety } ];                    // Recipes (+ filter + modal)
                 // meal: a RECIPE_CATS id  (powers the on-page filter)
-RECIPE_SLUGS  = [ "garlic-infused-olive-oil", … ];   // image filename per recipe (same order as RECIPES)
+RECIPE_SLUGS  = [ "marinara", … ];                   // image filename per recipe (same order as RECIPES)
 CUISINES    = [ { icon, name, verdict, verdictLabel, order: [], skip: [] } ];// Eating Out
                 // verdict: "best" | "ok" | "tricky"  (colours the badge)
 CUISINE_SLUGS = [ "japanese", … ];                   // image filename per cuisine (same order as CUISINES)

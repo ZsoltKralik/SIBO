@@ -7,7 +7,7 @@ Context for an AI assistant picking up this repo cold. Human docs:
 ## What this is
 **SIBO Plate** is a free, **static, fully-offline** website giving **Low-FODMAP**
 eating guidance for people with **SIBO** (Small Intestinal Bacterial Overgrowth):
-a searchable food list, "eat this, not that" swaps, 40 recipes, a 7-day meal plan,
+a searchable food list, "eat this, not that" swaps, 54 recipes, a 7-day meal plan,
 and an eating-out guide. It is framed **positively** (what you *can* eat, not just
 restrictions).
 
@@ -75,7 +75,7 @@ SWAPS           = [ { icon, avoid, avoidWhy, eat, eatHow } ]
 WEEK_PLAN       = [ { day, meals:[ { slot, icon, title, detail } ] } ]   // 7 days × 4 meals
 RECIPE_CATS     = [ { id, label, icon } ]                  // recipe filter chips
 RECIPES         = [ { meal, icon, name, tagline, time, serves, why, ingredients[], steps[], safety } ]
-RECIPE_SLUGS    = [ "garlic-infused-olive-oil", … ]        // ORDER-LOCKED to RECIPES (image filenames)
+RECIPE_SLUGS    = [ "marinara", … ]                        // ORDER-LOCKED to RECIPES (image filenames)
 CUISINES        = [ { icon, name, verdict, verdictLabel, order[], skip[] } ]  // verdict "best"|"ok"|"tricky"
 CUISINE_SLUGS   = [ "japanese", … ]                        // ORDER-LOCKED to CUISINES (image filenames)
 PHASES          = [ { num, name, duration, color, blurb } ]// color "red"|"yellow"|"green"
