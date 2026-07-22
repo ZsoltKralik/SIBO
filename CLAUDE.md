@@ -7,7 +7,7 @@ Context for an AI assistant picking up this repo cold. Human docs:
 ## What this is
 **SIBO Plate** is a free, **static, fully-offline** website giving **Low-FODMAP**
 eating guidance for people with **SIBO** (Small Intestinal Bacterial Overgrowth):
-a searchable food list, "eat this, not that" swaps, 54 recipes, a 7-day meal plan,
+a searchable food list, "eat this, not that" swaps, 68 recipes, a 7-day meal plan,
 and an eating-out guide. It is framed **positively** (what you *can* eat, not just
 restrictions).
 

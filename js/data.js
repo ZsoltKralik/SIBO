@@ -421,7 +421,15 @@ const SWAPS = [
   { icon: "🍦", avoid: "Ice cream", avoidWhy: "Lactose, often with high-fructose corn syrup.", eat: "Sorbet or lactose-free ice cream", eatHow: "A small scoop of fruit sorbet (no HFCS) or lactose-free ice cream." },
   { icon: "🍎", avoid: "Apple as a snack", avoidWhy: "High fructose plus sorbitol — a frequent bloat trigger.", eat: "Orange, kiwi or grapes", eatHow: "Keep low-FODMAP fruit handy: an orange, two kiwis, or a handful of grapes." },
   { icon: "🍯", avoid: "Honey in tea/yogurt", avoidWhy: "Excess free fructose.", eat: "Maple syrup", eatHow: "Maple syrup sweetens just as well and is low-FODMAP up to ~2 tablespoons." },
-  { icon: "☕", avoid: "Large latte", avoidWhy: "A big milky coffee is a large lactose load.", eat: "Lactose-free or almond latte", eatHow: "Ask for lactose-free or almond milk — most cafés now keep it on hand." }
+  { icon: "☕", avoid: "Large latte", avoidWhy: "A big milky coffee is a large lactose load.", eat: "Lactose-free or almond latte", eatHow: "Ask for lactose-free or almond milk — most cafés now keep it on hand." },
+  { icon: "🧅", avoid: "Onion & garlic in cooking", avoidWhy: "The two biggest FODMAP triggers — fructans that hide in almost every savoury dish.", eat: "Garlic-infused oil + green tops", eatHow: "Cook with garlic- or onion-infused oil, and build the savoury base from the green tops of spring onions, leeks and chives." },
+  { icon: "🍞", avoid: "Regular wheat sandwich bread", avoidWhy: "Wheat is high in fructans, and a couple of slices add up fast.", eat: "Sourdough spelt or gluten-free bread", eatHow: "Slow-fermented sourdough (especially spelt) or a gluten-free loaf keeps toast and sandwiches on the menu." },
+  { icon: "🥑", avoid: "A whole smashed avocado", avoidWhy: "Avocado turns high in sorbitol once you go past a small portion.", eat: "⅛ avocado or a scrape", eatHow: "Keep it to about ⅛ of an avocado, or reach for olive oil, feta or a little mayo for the same richness." },
+  { icon: "🫛", avoid: "Lentil or chickpea dal", avoidWhy: "Dried legumes are loaded with GOS — a classic bloating trigger.", eat: "Rinsed canned lentils or grilled meat", eatHow: "Well-rinsed canned lentils or chickpeas (about ¼ cup) are far gentler; or have tandoori grilled meat with basmati rice." },
+  { icon: "🥣", avoid: "Flavoured fruit yogurt", avoidWhy: "Lactose plus added inulin, honey or high-fructose fruit purée.", eat: "Lactose-free yogurt + berries", eatHow: "Start with plain lactose-free yogurt and sweeten it yourself with strawberries, blueberries and a little maple syrup." },
+  { icon: "🧃", avoid: "Apple or pear juice", avoidWhy: "Concentrated excess fructose and sorbitol with none of the fibre.", eat: "Citrus water or a small orange juice", eatHow: "Infuse water with lemon, lime or cucumber, or have a small glass (~100 ml) of orange juice instead." },
+  { icon: "🥜", avoid: "Cashew & pistachio trail mix", avoidWhy: "Cashews and pistachios are the two high-FODMAP nuts, often mixed with dried fruit.", eat: "Walnuts, peanuts & macadamias", eatHow: "Build your own mix from walnuts, peanuts, macadamias and pumpkin seeds with a few dark-chocolate chips." },
+  { icon: "🥫", avoid: "BBQ, sweet-chilli & ketchup sauces", avoidWhy: "Usually built on onion, garlic and high-fructose corn syrup.", eat: "Infused oil, tomato & tamari", eatHow: "Season with garlic-infused oil, plain passata, tamari or a squeeze of lemon to skip the hidden triggers." }
 ];
 
 /* Section 6 "Snacks" was removed — snack ideas now live in FOODS under the
@@ -535,6 +543,18 @@ const RECIPES = [
       "Serve with corn chips, grilled meat or eggs."
     ], safety: "" },
 
+  { meal: "basics", icon: "🍲", name: "Onion & Garlic-Free Chicken Stock", tagline: "The building block half these recipes call for.",
+    time: "2 hr (mostly hands-off)", serves: "Makes ~2 litres",
+    why: "Shop-bought stock almost always leads with onion and garlic. Homemade lets you build deep flavour from carrot, herbs and green tops instead.",
+    ingredients: ["1 chicken carcass (or 500 g wings/necks)", "2 carrots, roughly chopped", "Green tops of 2 leeks or a bunch of spring onions", "2 bay leaves", "A few parsley stalks & peppercorns", "2.5 litres cold water", "Salt"],
+    steps: [
+      "Put everything except the salt in a large pot and cover with the cold water.",
+      "Bring to a gentle simmer, skimming off any foam.",
+      "Simmer uncovered 1½–2 hours, topping up the water if needed.",
+      "Strain, discard the solids, and season lightly with salt.",
+      "Cool, then refrigerate up to 4 days or freeze in portions."
+    ], safety: "Leek and spring-onion GREEN tops are low-FODMAP; keep the white bulbs out of the pot." },
+
   /* —— Breakfast —— */
   { meal: "breakfast", icon: "🥣", name: "Strawberry Overnight Oats", tagline: "Tomorrow's breakfast, made tonight.",
     time: "5 min + overnight", serves: "Serves 1",
@@ -620,6 +640,18 @@ const RECIPES = [
       "Fry or poach the eggs.",
       "Top the hash with smoked salmon, eggs, chives, black pepper and lemon."
     ], safety: "Choose plain smoked salmon without garlic/onion flavourings." },
+
+  { meal: "breakfast", icon: "🫐", name: "Blueberry Baked Oatmeal", tagline: "A make-ahead tray you can slice all week.",
+    time: "40 min", serves: "Serves 4",
+    why: "Rolled oats are low-FODMAP at ½ cup, and blueberries are a freely low-FODMAP berry — baked together they set into portionable squares.",
+    ingredients: ["2 cups rolled oats", "1½ cups lactose-free or almond milk", "1 egg", "2 tbsp maple syrup", "1 tsp baking powder", "1 tsp cinnamon", "1 cup blueberries", "¼ cup chopped walnuts"],
+    steps: [
+      "Heat oven to 180°C / 350°F and grease a small baking dish.",
+      "Whisk the milk, egg, maple, baking powder and cinnamon together.",
+      "Stir in the oats, then fold through most of the blueberries.",
+      "Scatter the remaining berries and the walnuts over the top.",
+      "Bake 25–30 minutes until set and golden; slice into squares."
+    ], safety: "" },
 
   /* —— Mains —— */
   { meal: "mains", icon: "🍝", name: "Garlic-Oil Spaghetti with Tomato & Basil", tagline: "Comfort pasta, minus the triggers.",
@@ -788,6 +820,40 @@ const RECIPES = [
       "Serve over gluten-free pasta or soft polenta."
     ], safety: "" },
 
+  { meal: "mains", icon: "🍢", name: "Lemon & Herb Chicken Skewers", tagline: "Backyard-BBQ flavour, gut-friendly marinade.",
+    time: "25 min + marinating", serves: "Serves 4",
+    why: "A marinade built on lemon, herbs and garlic-infused oil delivers all the punch of a garlic marinade without the fructans.",
+    ingredients: ["4 chicken breasts or thighs, cubed", "1 red capsicum, in chunks", "2 zucchini, in thick slices", "3 tbsp garlic-infused olive oil", "Juice of 1 lemon", "1 tsp dried oregano", "Green spring-onion tops", "Steamed rice, to serve"],
+    steps: [
+      "Whisk the infused oil, lemon, oregano, salt and pepper together.",
+      "Toss the chicken in the marinade and rest 20 minutes (or overnight).",
+      "Thread the chicken, capsicum and zucchini onto skewers.",
+      "Grill or barbecue 10–12 minutes, turning, until charred and cooked through.",
+      "Scatter with spring-onion tops and serve over rice."
+    ], safety: "If using wooden skewers, soak them in water first so they don't burn." },
+
+  { meal: "mains", icon: "🥩", name: "Pan-Seared Steak with Chimichurri", tagline: "A steakhouse plate you can make safely at home.",
+    time: "20 min", serves: "Serves 2",
+    why: "Plain steak is naturally FODMAP-free, and this chimichurri gets its kick from herbs, chilli and vinegar instead of the usual raw garlic.",
+    ingredients: ["2 steaks (sirloin or scotch fillet)", "1 tbsp olive oil", "Salt & pepper", "Chimichurri: 1 cup parsley + 2 tbsp oregano, finely chopped", "3 tbsp garlic-infused olive oil", "1 tbsp red-wine vinegar", "Pinch of chilli flakes"],
+    steps: [
+      "Bring the steaks to room temperature; pat dry and season well.",
+      "Sear in the hot oil 2–3 minutes each side for medium-rare, then rest 5 minutes.",
+      "Stir the chimichurri ingredients together with a little salt.",
+      "Slice the steak and spoon the chimichurri over the top."
+    ], safety: "" },
+
+  { meal: "mains", icon: "🐟", name: "Oven-Baked Fish & Chips", tagline: "The pub classic, made gut-safe.",
+    time: "40 min", serves: "Serves 2",
+    why: "A polenta crust crisps up in the oven without wheat batter, and potato chips are a low-FODMAP carb — no deep-frying required.",
+    ingredients: ["2 white fish fillets (cod, snapper or hoki)", "½ cup fine polenta", "1 egg, beaten", "3 potatoes, cut into chips", "3 tbsp olive oil", "Lemon wedges", "Salt, pepper & parsley"],
+    steps: [
+      "Heat oven to 220°C / 430°F. Toss the chips in 2 tbsp oil and salt; roast 25 minutes.",
+      "Dip the fish in the beaten egg, then coat in seasoned polenta.",
+      "Add the fish to the tray, drizzle with the last of the oil, and bake 12–15 minutes until crisp and cooked through.",
+      "Serve with lemon wedges and a scatter of parsley."
+    ], safety: "" },
+
   /* —— Soups & bowls —— */
   { meal: "soups", icon: "🍲", name: "Cozy Rice-Noodle Pho-Style Bowl", tagline: "Warming broth that loves your gut back.",
     time: "25 min", serves: "Serves 2",
@@ -850,6 +916,28 @@ const RECIPES = [
       "Add tofu, bok choy and cooked rice noodles; warm gently.",
       "Finish with spring-onion tops and a few drops of sesame oil."
     ], safety: "Keep miso to about ½ tbsp per serving and avoid stock powders with onion or garlic." },
+
+  { meal: "soups", icon: "🫑", name: "Roasted Red Pepper & Tomato Soup", tagline: "Smoky, sweet and deeply comforting.",
+    time: "40 min", serves: "Serves 4",
+    why: "Roasting red capsicum and tomato builds a naturally sweet, onion-free base; infused oil carries the savoury depth.",
+    ingredients: ["3 red capsicums, halved", "4 tomatoes, halved", "3 tbsp garlic-infused olive oil", "3 cups onion/garlic-free stock", "Green spring-onion tops", "1 tsp smoked paprika", "Salt, pepper & basil"],
+    steps: [
+      "Heat oven to 220°C / 430°F. Roast the capsicum and tomato with 1 tbsp oil for 25 minutes until charred.",
+      "Soften the spring-onion tops and paprika in the rest of the oil in a pot.",
+      "Add the roasted vegetables and stock; simmer 10 minutes.",
+      "Blend smooth, season, and finish with torn basil."
+    ], safety: "" },
+
+  { meal: "soups", icon: "🥣", name: "Silky Parsnip & Chive Soup", tagline: "A smooth, sweet, onion-free winter warmer.",
+    time: "35 min", serves: "Serves 4",
+    why: "Parsnip is a low-FODMAP root vegetable; blended with infused oil and stock it turns velvety without any onion.",
+    ingredients: ["5 parsnips, peeled & chopped", "3 tbsp garlic-infused olive oil", "4 cups onion/garlic-free stock", "Green tops of 1 leek or 2 spring onions", "Pinch of nutmeg", "Salt, pepper & chives", "A swirl of lactose-free cream"],
+    steps: [
+      "Soften the leek or spring-onion tops in the infused oil for 2 minutes.",
+      "Add the parsnip and stock; simmer 20–25 minutes until very tender.",
+      "Blend until silky and season with nutmeg, salt and pepper.",
+      "Finish with a swirl of cream and a scatter of chives."
+    ], safety: "" },
 
   /* —— Salads & sides —— */
   { meal: "salads", icon: "🥗", name: "Onion-Free Quinoa Tabbouleh", tagline: "Herby, lemony and protein-rich.",
@@ -923,6 +1011,17 @@ const RECIPES = [
       "Top with roasted kabocha, feta and pumpkin seeds."
     ], safety: "Keep kabocha to about 1 cup per serve and avoid swapping in butternut squash without reducing the portion." },
 
+  { meal: "salads", icon: "🥗", name: "Lemony Rice & Herb Salad", tagline: "A make-ahead grain salad that travels well.",
+    time: "20 min", serves: "Serves 4",
+    why: "Cooled rice, fresh herbs and low-FODMAP vegetables make a bright, filling salad with no onion or garlic.",
+    ingredients: ["3 cups cooked long-grain rice, cooled", "Large handful parsley & mint, chopped", "½ cucumber, diced", "10 cherry tomatoes, halved", "½ red capsicum, diced", "60 g feta, crumbled", "Lemon–herb vinaigrette (see Basics)", "Green spring-onion tops"],
+    steps: [
+      "Fluff the cooled rice into a large bowl.",
+      "Add the herbs, cucumber, tomato, capsicum and feta.",
+      "Toss through the vinaigrette and spring-onion tops.",
+      "Season and chill until ready to serve."
+    ], safety: "" },
+
   /* —— Snacks —— */
   { meal: "snacks", icon: "🍌", name: "PB & Banana Rice Cakes", tagline: "A two-minute, satisfying snack.",
     time: "5 min", serves: "Serves 1",
@@ -982,6 +1081,28 @@ const RECIPES = [
       "Bake at 180°C / 350°F for 14–16 minutes until crisp."
     ], safety: "Enjoy a small handful; oats are portion-dependent on the low-FODMAP diet." },
 
+  { meal: "snacks", icon: "🌰", name: "Maple-Cinnamon Roasted Nuts & Seeds", tagline: "A crunchy, make-ahead snack for the whole week.",
+    time: "20 min", serves: "Makes ~2 cups",
+    why: "Walnuts, peanuts, macadamias and pumpkin seeds are all low-FODMAP in a small-handful serve — far gentler than a cashew or pistachio mix.",
+    ingredients: ["½ cup walnuts", "½ cup peanuts", "½ cup macadamias", "½ cup pumpkin seeds", "1 tbsp maple syrup", "½ tsp cinnamon", "Pinch of salt"],
+    steps: [
+      "Heat oven to 160°C / 320°F and line a tray.",
+      "Toss the nuts and seeds with the maple, cinnamon and salt.",
+      "Roast 12–15 minutes, stirring once, until golden and fragrant.",
+      "Cool completely (they crisp as they cool) and store in a jar."
+    ], safety: "Keep to a small handful (about 30 g) per serve — even low-FODMAP nuts stack up in large amounts." },
+
+  { meal: "snacks", icon: "🧆", name: "Zucchini & Feta Fritters", tagline: "Crispy, savoury and freezer-friendly.",
+    time: "25 min", serves: "Makes ~8",
+    why: "Zucchini and feta are low-FODMAP, and a gluten-free flour binds these fritters without any wheat.",
+    ingredients: ["2 zucchini, grated", "2 eggs", "½ cup gluten-free plain flour", "60 g feta, crumbled", "Green spring-onion tops", "Garlic-infused oil, for frying", "Salt & pepper"],
+    steps: [
+      "Squeeze the grated zucchini firmly to remove the excess water.",
+      "Mix with the eggs, flour, feta, spring-onion tops and seasoning.",
+      "Fry heaped spoonfuls in the infused oil 2–3 minutes each side until golden.",
+      "Drain and serve warm — great with a squeeze of lemon."
+    ], safety: "" },
+
   /* —— Sweets —— */
   { meal: "sweets", icon: "🍪", name: "3-Ingredient Peanut Butter Cookies", tagline: "Flourless, fuss-free and naturally gluten-free.",
     time: "20 min", serves: "Makes ~12",
@@ -1036,6 +1157,30 @@ const RECIPES = [
       "Cool completely; freeze extras for easy portions."
     ], safety: "Stick to one muffin per serve; almond meal is safe here because the batch is portioned." },
 
+  { meal: "sweets", icon: "🍰", name: "Mixed-Berry Pavlova", tagline: "A showstopper that happens to be gluten-free.",
+    time: "1½ hr + cooling", serves: "Serves 8",
+    why: "Meringue is just egg white and sugar, and low-FODMAP berries with lactose-free cream keep every bite gentle.",
+    ingredients: ["4 egg whites", "1 cup caster sugar", "1 tsp white vinegar", "1 tsp cornflour", "1 cup lactose-free cream, whipped", "Strawberries, blueberries & kiwi, to top"],
+    steps: [
+      "Heat oven to 120°C / 250°F and line a tray.",
+      "Whisk the egg whites to soft peaks, then add the sugar a spoonful at a time until glossy and stiff.",
+      "Fold in the vinegar and cornflour; spoon into a circle on the tray.",
+      "Bake 1¼ hours, then cool in the turned-off oven.",
+      "Top with the whipped cream and berries just before serving."
+    ], safety: "" },
+
+  { meal: "sweets", icon: "🍫", name: "Fudgy Flourless Chocolate Brownies", tagline: "Rich, gluten-free and deeply chocolatey.",
+    time: "35 min", serves: "Makes 12",
+    why: "Dark chocolate and cocoa are low-FODMAP in modest servings, and there's no wheat flour at all — just a fudgy, naturally gluten-free square.",
+    ingredients: ["150 g dark chocolate", "120 g butter", "¾ cup sugar", "3 eggs", "½ cup cocoa powder", "¼ cup cornflour (or GF flour)", "½ cup chopped walnuts", "1 tsp vanilla"],
+    steps: [
+      "Heat oven to 170°C / 340°F and line a square tin.",
+      "Gently melt the chocolate and butter together, then cool slightly.",
+      "Whisk in the sugar, eggs and vanilla.",
+      "Fold in the cocoa, cornflour and walnuts.",
+      "Bake 20–25 minutes until just set; cool before cutting into 12 squares."
+    ], safety: "Dark chocolate and cocoa are low-FODMAP in small serves — enjoy a square at a time." },
+
   /* —— Drinks —— */
   { meal: "drinks", icon: "🥤", name: "Berry & Banana Breakfast Smoothie", tagline: "A five-minute, gut-gentle start.",
     time: "5 min", serves: "Serves 1",
@@ -1057,20 +1202,40 @@ const RECIPES = [
       "Muddle pineapple, lime, mint and maple in a jug.",
       "Add ice and top with sparkling water.",
       "Stir, taste and serve cold."
-    ], safety: "Keep to one glass; very large fruit drink portions can stack quickly." }
+    ], safety: "Keep to one glass; very large fruit drink portions can stack quickly." },
+
+  { meal: "drinks", icon: "🥛", name: "Golden Turmeric Latte", tagline: "A warm, soothing, caffeine-free wind-down.",
+    time: "5 min", serves: "Serves 1",
+    why: "Lactose-free or almond milk with turmeric, ginger and cinnamon makes a comforting, anti-inflammatory drink with no triggers.",
+    ingredients: ["1 cup lactose-free or almond milk", "½ tsp ground turmeric", "¼ tsp ground ginger (or a little fresh)", "Pinch of cinnamon & black pepper", "1 tsp maple syrup"],
+    steps: [
+      "Warm the milk in a small pan (don't let it boil).",
+      "Whisk in the turmeric, ginger, cinnamon, pepper and maple.",
+      "Froth or whisk until smooth and pour into a mug."
+    ], safety: "" },
+
+  { meal: "drinks", icon: "🍋", name: "Fresh Ginger & Lemon Tea", tagline: "The kindest thing to sip after dinner.",
+    time: "10 min", serves: "Serves 1",
+    why: "Ginger is a traditional digestive soother and is freely low-FODMAP — a simple, warming, caffeine-free cup.",
+    ingredients: ["1 thumb fresh ginger, thinly sliced", "1 cup boiling water", "Squeeze of lemon", "1 tsp maple syrup (optional)"],
+    steps: [
+      "Steep the ginger in the boiling water for 5 minutes.",
+      "Stir in the lemon and maple to taste.",
+      "Sip slowly — lovely after a meal."
+    ], safety: "" }
 ];
 
 /* Image filename per recipe — SAME ORDER as RECIPES above (see tools/image_manifest.json).
    The site loads assets/img/recipes/<slug>.webp, falling back to the emoji if absent. */
 const RECIPE_SLUGS = [
-  "marinara", "basil-pesto", "lemon-herb-vinaigrette", "tomato-salsa",
-  "strawberry-overnight-oats", "spinach-feta-omelette", "gluten-free-pancakes", "kiwi-chia-pudding", "quinoa-porridge", "frittata-muffins", "savoury-rice-congee", "smoked-salmon-potato-hash",
-  "garlic-oil-spaghetti", "roast-chicken-tray-bake", "ginger-chicken-stir-fry", "lemon-salmon", "beef-rice-bowl", "cottage-pie", "margherita-pizza", "tofu-stir-fry", "summer-rolls", "salmon-sushi-rice-bowl", "turkey-lettuce-cups", "tempeh-peanut-rice-bowl", "rosemary-lamb-polenta", "tuna-rice-noodle-salad", "rice-meatballs",
-  "pho-bowl", "carrot-ginger-soup", "pumpkin-coconut-soup", "chicken-rice-soup", "tomato-basil-rice-soup", "miso-ginger-tofu-soup",
-  "quinoa-tabbouleh", "smashed-potatoes", "caprese-salad", "maple-roasted-carrots", "cucumber-feta-salad", "nicoise-tuna-potato-salad", "kabocha-quinoa-bowl",
-  "pb-banana-rice-cakes", "popcorn", "energy-balls", "cheese-cracker-plate", "blueberry-yogurt-bark", "cheddar-oat-crackers",
-  "peanut-butter-cookies", "strawberry-chia-jam", "chocolate-strawberry-bark", "lemon-polenta-cake", "orange-almond-polenta-muffins",
-  "berry-smoothie", "green-smoothie", "pineapple-mint-cooler"
+  "marinara", "basil-pesto", "lemon-herb-vinaigrette", "tomato-salsa", "chicken-stock",
+  "strawberry-overnight-oats", "spinach-feta-omelette", "gluten-free-pancakes", "kiwi-chia-pudding", "quinoa-porridge", "frittata-muffins", "savoury-rice-congee", "smoked-salmon-potato-hash", "baked-oatmeal",
+  "garlic-oil-spaghetti", "roast-chicken-tray-bake", "ginger-chicken-stir-fry", "lemon-salmon", "beef-rice-bowl", "cottage-pie", "margherita-pizza", "tofu-stir-fry", "summer-rolls", "salmon-sushi-rice-bowl", "turkey-lettuce-cups", "tempeh-peanut-rice-bowl", "rosemary-lamb-polenta", "tuna-rice-noodle-salad", "rice-meatballs", "chicken-skewers", "steak-chimichurri", "baked-fish-chips",
+  "pho-bowl", "carrot-ginger-soup", "pumpkin-coconut-soup", "chicken-rice-soup", "tomato-basil-rice-soup", "miso-ginger-tofu-soup", "red-pepper-soup", "parsnip-soup",
+  "quinoa-tabbouleh", "smashed-potatoes", "caprese-salad", "maple-roasted-carrots", "cucumber-feta-salad", "nicoise-tuna-potato-salad", "kabocha-quinoa-bowl", "rice-herb-salad",
+  "pb-banana-rice-cakes", "popcorn", "energy-balls", "cheese-cracker-plate", "blueberry-yogurt-bark", "cheddar-oat-crackers", "roasted-nuts", "zucchini-fritters",
+  "peanut-butter-cookies", "strawberry-chia-jam", "chocolate-strawberry-bark", "lemon-polenta-cake", "orange-almond-polenta-muffins", "pavlova", "flourless-brownies",
+  "berry-smoothie", "green-smoothie", "pineapple-mint-cooler", "turmeric-latte", "ginger-lemon-tea"
 ];
 
 /* ----------------------------------------------------------------------- */
@@ -1090,6 +1255,13 @@ const CUISINES = [
   { icon: "🥩", name: "Steakhouse / Grill", verdict: "best", verdictLabel: "Easiest choice",
     order: ["Plain steak, grilled chicken or fish", "Baked or boiled potato (butter, chives)", "Side salad with oil & vinegar", "Plain steamed vegetables"],
     skip: ["Onion rings & garlic bread", "Garlic-butter or onion-gravy sauces", "Marinades — ask for plain with salt & pepper"] },
+
+  { icon: "🍢", name: "Brazilian / Churrasco", verdict: "best", verdictLabel: "Easiest choice",
+    order: ["Grilled meats off the skewer (picanha, beef, chicken, sausage)", "Plain white rice", "Grilled pineapple", "Simple garden salad with oil & vinegar"],
+    skip: ["Feijoada & black-bean stew (GOS)", "Farofa & pão de queijo in quantity", "Onion-garlic vinaigrette (molho) — ask for oil & vinegar"] },
+  { icon: "🦞", name: "Seafood / Fish", verdict: "best", verdictLabel: "Easiest choice",
+    order: ["Grilled, baked or steamed fish", "Grilled prawns, oysters or scallops", "Plain boiled or baked potatoes & rice", "Side salad or steamed veg with oil & lemon"],
+    skip: ["Chowder & bisque (onion, cream, flour)", "Beer-battered & crumbed fish (wheat)", "Garlic butter & marinara-style sauces"] },
 
   /* —— Doable with a few asks —— */
   { icon: "🍔", name: "Burgers / Fast food", verdict: "ok", verdictLabel: "Doable with asks",
@@ -1117,6 +1289,13 @@ const CUISINES = [
     order: ["Grilled steak, chicken or fish with chips", "Jacket/baked potato with butter & cheese", "Vegetables or salad — dressing on the side", "Plain salted chips/crisps"],
     skip: ["Battered fish & crumbed items (wheat)", "Gravy & onion-garlic sauces — ask on the side", "Pies & burger buns (wheat)", "Beer in quantity — try wine or a spirit + soda"] },
 
+  { icon: "🍗", name: "Peri-Peri / Portuguese", verdict: "ok", verdictLabel: "Doable with asks",
+    order: ["Plain or lemon-herb grilled chicken", "Plain rice or chips", "Corn on the cob (about half a cob)", "Garden salad — ask for no onion"],
+    skip: ["Peri-peri & hot basting sauces (garlic + onion)", "Spicy rice with peas & beans", "Garlic bread & garlic-mayo — ask for plain"] },
+  { icon: "🍥", name: "Poke / Hawaiian Bowl", verdict: "ok", verdictLabel: "Doable with asks",
+    order: ["Rice base with raw salmon or tuna", "Cucumber, carrot, seaweed & sesame", "A little avocado (⅛) and pickled ginger", "Tamari or a plain sauce on the side"],
+    skip: ["Edamame (whole soybeans)", "Sweet-chilli & spicy-mayo sauces (garlic/onion)", "Sweetcorn, mango & big scoops of avocado"] },
+
   /* —— Order carefully —— */
   { icon: "🥡", name: "Chinese / Thai", verdict: "tricky", verdictLabel: "Order carefully",
     order: ["Steamed rice & plainly steamed fish or chicken", "Stir-fries — ask for 'no garlic, no onion'", "Plain rice noodles", "Thai dishes with coconut — keep the portion small"],
@@ -1129,13 +1308,17 @@ const CUISINES = [
     skip: ["Kimchi & gochujang (garlic + chilli paste)", "Marinated bulgogi/galbi (garlic, onion, soy-sugar)", "Stews (jjigae) & japchae glass noodles"] },
   { icon: "🥪", name: "Bakery / Sandwich", verdict: "tricky", verdictLabel: "Order carefully",
     order: ["Fillings on gluten-free bread, if available", "A salad bowl — grilled chicken, egg, cheese, oil & vinegar", "Rice-based sushi", "Plain corn chips or rice cakes"],
-    skip: ["Wheat bread, wraps & pastries", "Onion, hummus & garlic-mayo fillings", "Honey, fruit-heavy muffins & high-fructose juices"] }
+    skip: ["Wheat bread, wraps & pastries", "Onion, hummus & garlic-mayo fillings", "Honey, fruit-heavy muffins & high-fructose juices"] },
+
+  { icon: "🧆", name: "Middle Eastern / Lebanese", verdict: "tricky", verdictLabel: "Order carefully",
+    order: ["Grilled meat skewers (shish taouk, kofta) — ask garlic-free", "Grilled halloumi & olives", "Plain rice or a parsley tabbouleh", "Salad with lemon & oil"],
+    skip: ["Hummus, falafel & baba ganoush (chickpeas + garlic)", "Toum (whipped garlic sauce)", "Pita & flatbreads (wheat); lentil soup"] }
 ];
 
 /* Image filename per cuisine — SAME ORDER as CUISINES above. */
 const CUISINE_SLUGS = [
-  "japanese", "vietnamese", "cafe-brunch", "steakhouse", "burgers", "italian", "mexican", "greek",
-  "french", "spanish", "american-diner", "pub", "chinese-thai", "indian", "korean", "bakery"
+  "japanese", "vietnamese", "cafe-brunch", "steakhouse", "brazilian", "seafood", "burgers", "italian", "mexican", "greek",
+  "french", "spanish", "american-diner", "pub", "peri-peri", "poke", "chinese-thai", "indian", "korean", "bakery", "middle-eastern"
 ];
 
 /* ----------------------------------------------------------------------- */

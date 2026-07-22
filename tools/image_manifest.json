@@ -54,7 +54,21 @@
     { "slug": "orange-almond-polenta-muffins", "title": "Orange almond polenta muffins on a plate with orange zest and a soft crumb" },
     { "slug": "berry-smoothie", "title": "A creamy strawberry and banana smoothie in a glass with a straw" },
     { "slug": "green-smoothie", "title": "A fresh green pineapple and spinach smoothie in a glass" },
-    { "slug": "pineapple-mint-cooler", "title": "Sparkling pineapple mint cooler in glasses with lime, mint and ice" }
+    { "slug": "pineapple-mint-cooler", "title": "Sparkling pineapple mint cooler in glasses with lime, mint and ice" },
+    { "slug": "chicken-stock", "title": "A pot of golden homemade chicken stock with carrots, herbs and peppercorns" },
+    { "slug": "baked-oatmeal", "title": "A dish of baked blueberry oatmeal topped with fresh blueberries and walnuts, one square lifted out" },
+    { "slug": "chicken-skewers", "title": "Grilled lemon and herb chicken skewers with red capsicum and zucchini over rice" },
+    { "slug": "steak-chimichurri", "title": "A sliced pan-seared steak topped with green chimichurri sauce on a plate" },
+    { "slug": "baked-fish-chips", "title": "Oven-baked crispy crumbed fish fillets with potato chips and a lemon wedge on a plate" },
+    { "slug": "red-pepper-soup", "title": "A bowl of roasted red pepper and tomato soup with a swirl of cream and basil" },
+    { "slug": "parsnip-soup", "title": "A bowl of silky parsnip soup with a swirl of cream and chopped chives" },
+    { "slug": "rice-herb-salad", "title": "A lemony rice salad with parsley, mint, cucumber, cherry tomato and feta in a bowl" },
+    { "slug": "roasted-nuts", "title": "A bowl of maple-cinnamon roasted mixed nuts and pumpkin seeds" },
+    { "slug": "zucchini-fritters", "title": "A stack of golden crispy zucchini and feta fritters with a lemon wedge" },
+    { "slug": "pavlova", "title": "A mixed-berry pavlova topped with whipped cream, strawberries, blueberries and kiwi" },
+    { "slug": "flourless-brownies", "title": "A stack of fudgy flourless chocolate brownies dusted with cocoa" },
+    { "slug": "turmeric-latte", "title": "A golden turmeric latte in a mug with a dusting of cinnamon" },
+    { "slug": "ginger-lemon-tea", "title": "A clear glass mug of fresh ginger and lemon tea with sliced ginger and lemon" }
   ],
   "categories": [
     { "slug": "popular", "label": "Popular & Fast Food", "subject": "a cardboard carton of golden french fries beside a cheeseburger" },
@@ -96,7 +110,12 @@
     { "slug": "chinese-thai",   "subject": "a takeout box of stir-fried rice noodles with chopsticks" },
     { "slug": "indian",         "subject": "an indian curry with basmati rice" },
     { "slug": "korean",         "subject": "a korean bibimbap rice bowl" },
-    { "slug": "bakery",         "subject": "a fresh sandwich beside a loaf of bread" }
+    { "slug": "bakery",         "subject": "a fresh sandwich beside a loaf of bread" },
+    { "slug": "brazilian",      "subject": "grilled brazilian churrasco skewered meats with white rice" },
+    { "slug": "seafood",        "subject": "a plate of grilled fish and prawns with a lemon wedge" },
+    { "slug": "peri-peri",      "subject": "a plate of flame-grilled peri-peri chicken with rice and corn" },
+    { "slug": "poke",           "subject": "a hawaiian poke bowl with rice, salmon, cucumber and sesame" },
+    { "slug": "middle-eastern", "subject": "a middle eastern mezze plate with grilled meat skewers, halloumi and olives" }
   ],
   "logo": [
     { "slug": "logo", "prompt": "A circular app-icon logo badge for a healthy gut-friendly eating brand, smooth fresh green gradient background, a simple clean white stylised leaf and plate symbol centered, modern minimalist flat design, soft shadow, crisp and balanced. No text, no words, no letters, no watermark." }

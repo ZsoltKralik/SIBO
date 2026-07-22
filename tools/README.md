@@ -30,8 +30,8 @@ assets/img/logo.webp                       ← brand logo / favicon
 python tools/generate_images.py --provider leonardo --model gpt-image-2 --quality low
 
 python tools/generate_images.py --dry-run                                              # preview prompts, spend nothing
-python tools/generate_images.py --provider leonardo --model gpt-image-2 --type recipes  # 54 recipe photos
-python tools/generate_images.py --provider leonardo --model gpt-image-2 --type cuisines # 16 cuisine icons
+python tools/generate_images.py --provider leonardo --model gpt-image-2 --type recipes  # 68 recipe photos
+python tools/generate_images.py --provider leonardo --model gpt-image-2 --type cuisines # 21 cuisine icons
 # --type one of: recipes | categories | recipe_categories | cuisines | logo
 ```
 
@@ -45,7 +45,7 @@ python tools/generate_images.py --provider leonardo --model gpt-image-2 --type c
 ## Cost & settings
 
 - **GPT Image 2 via Leonardo** (what the site uses), 1024×1024, LOW: ~**8 Leonardo tokens + ~$0.012**
-  per image. The full set (54 recipes + 11 + 8 + 16 icons + logo = 90) ≈ **~$1.1 + ~720 tokens**.
+  per image. The full set (68 recipes + 12 + 8 + 21 icons + logo = 110) ≈ **~$1.3 + ~880 tokens**.
 - **OpenAI-direct** (`--provider openai`): ~low $0.016 / medium $0.042 / high $0.167 per 1024² image.
 - **Leonardo's own SDXL models** (e.g. AlbedoBase XL): ~11 tokens/image, alchemy off.
 - Output is downscaled to ≤896px wide WebP (q82) for fast page loads.
