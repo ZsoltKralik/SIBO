@@ -1,7 +1,7 @@
-# SIBO Plate — image pipeline (local dev tool)
+# SIBO Plate - image pipeline (local dev tool)
 
 These scripts pre-generate the food/recipe imagery used by the site. They run on
-**your machine only**. The published site stays 100% static and offline — it
+**your machine only**. The published site stays 100% static and offline - it
 references the generated image **files** in `assets/img/` and never touches an API
 or your key.
 
@@ -26,7 +26,7 @@ assets/img/logo.webp                       ← brand logo / favicon
 3. Generate:
 
 ```bash
-# What the live site was built with — GPT Image 2 via the Leonardo API, LOW quality:
+# What the live site was built with - GPT Image 2 via the Leonardo API, LOW quality:
 python tools/generate_images.py --provider leonardo --model gpt-image-2 --quality low
 
 python tools/generate_images.py --dry-run                                              # preview prompts, spend nothing
@@ -40,7 +40,7 @@ python tools/generate_images.py --provider leonardo --model gpt-image-2 --type c
 - **GPT Image 2** runs via `--provider leonardo --model gpt-image-2` (Leonardo's v2 API). Leonardo's own
   models work too (`--model phoenix|flux|vision|kino|lucid|albedo`), as does OpenAI-direct
   (`--provider openai`, needs `OPENAI_API_KEY`).
-- One failed image won't abort the batch — just re-run to fill any gaps.
+- One failed image won't abort the batch - just re-run to fill any gaps.
 
 ## Cost & settings
 

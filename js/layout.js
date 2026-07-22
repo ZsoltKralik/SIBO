@@ -1,5 +1,5 @@
 /* =========================================================================
-   SIBO Plate — Shared layout (vanilla JS, no build, works from file://)
+   SIBO Plate - Shared layout (vanilla JS, no build, works from file://)
    Injects the header + footer on every page, marks the active tab, and owns
    the theme toggle, mobile-nav toggle and reveal-on-scroll behaviour.
    Loads on every page BEFORE app.js.
@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  /* The tab bar — single source of truth for navigation. */
+  /* The tab bar - single source of truth for navigation. */
   const NAV = [
     { href: "index.html",      label: "Home",            page: "home" },
     { href: "foods.html",      label: "Food&nbsp;List",  page: "foods" },

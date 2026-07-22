@@ -1,5 +1,5 @@
 /* =========================================================================
-   SIBO Plate — Content rendering (vanilla JS, no build, works from file://)
+   SIBO Plate - Content rendering (vanilla JS, no build, works from file://)
    Page-aware: every block runs only if its container exists on the current
    page, so the SAME file drives all pages. Header/theme/nav live in layout.js.
    ========================================================================= */

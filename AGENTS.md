@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This project's full agent/AI context lives in **[`CLAUDE.md`](CLAUDE.md)** — start there.
+This project's full agent/AI context lives in **[`CLAUDE.md`](CLAUDE.md)** - start there.
 
 Quick orientation:
 - **Static, offline, no-build** site (plain HTML/CSS/vanilla JS). No frameworks, no CDNs,
