@@ -63,12 +63,20 @@ then the three `<script>` tags.
 | `index.html` | `home` | `#glanceEat` `#glanceAvoid` `#principles` (+ static quick-links) |
 | `foods.html` | `foods` | `#catFilters` `#foodSearch` `#resultCount` `#foodGrid` `#noResults` |
 | `swaps.html` | `swaps` | `#swapGrid` |
-| `meals.html` | `meals` | `#weekPlan` (the 7-day "A Week's Food" plan) |
+| `meals.html` | `meals` | `#weekPlan` (7-day plan; a horizontal scroll strip - see note below) |
 | `recipes.html` | `recipes` | `#recipeFilters` `#recipeCount` `#recipeGrid` + `#recipeModal`/`#modalBody` |
 | `eating-out.html` | `eatout` | `#cuisineGrid` |
 | `journey.html` | `journey` | `#phaseTrack` (+ static FAQ) `#tipGrid` `#sourceList` |
 
 (There is no Snacks page - snacks were merged into the Food List as a category.)
+
+The **Week's Food** plan is a **horizontal scroller** (Mon -> Sun, left to right).
+`meals.html` wraps `#weekPlan` in `.week-scroller` with two `.week-nav` prev/next buttons;
+`app.js` renders the day cards into `#weekPlan.week-track` (a `scroll-snap` flex row of
+fixed-width `.day-card`s) and wires the buttons, their end-state disabling, and the
+`.at-start`/`.at-end` edge fades. It is a progressive enhancement: the strip still scrolls
+by swipe / trackpad / scrollbar with no JS, and the `.week-nav` buttons are hidden on
+small screens (where swiping is natural).
 
 ## Content model (all globals live in `js/data.js`)
 ```
