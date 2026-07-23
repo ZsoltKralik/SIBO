@@ -105,20 +105,21 @@
   /* --------------------------- SWAPS --------------------------- */
   fill("swapGrid", SWAPS.map(s => `
     <article class="swap-card">
-      <div class="swap-head">
+      <header class="swap-head">
         <span class="swap-emoji" aria-hidden="true">${s.icon}</span>
         <h3>${s.avoid}</h3>
-      </div>
-      <div class="swap-row avoid">
-        <span class="swap-tag">✕ Instead of</span>
-        <div class="swap-title">${s.avoid}</div>
-        <div class="swap-detail">${s.avoidWhy}</div>
-      </div>
-      <div class="swap-arrow"><span aria-hidden="true">↓</span></div>
-      <div class="swap-row eat">
-        <span class="swap-tag">✓ Enjoy</span>
-        <div class="swap-title">${s.eat}</div>
-        <div class="swap-detail">${s.eatHow}</div>
+      </header>
+      <div class="swap-body">
+        <div class="swap-skip">
+          <span class="swap-tag skip"><span class="swap-mark" aria-hidden="true">✕</span> Skip</span>
+          <p class="swap-why">${s.avoidWhy}</p>
+        </div>
+        <div class="swap-connector" aria-hidden="true"><span>↓</span></div>
+        <div class="swap-pick">
+          <span class="swap-tag pick"><span class="swap-mark" aria-hidden="true">✓</span> Enjoy instead</span>
+          <p class="swap-eat">${s.eat}</p>
+          <p class="swap-how">${s.eatHow}</p>
+        </div>
       </div>
     </article>`).join(""));
 

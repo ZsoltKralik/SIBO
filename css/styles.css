@@ -274,22 +274,26 @@ em { font-style: italic; }
 .no-results { text-align: center; padding: 44px; color: var(--ink-faint); font-size: 1.05rem; }
 
 /* ----------------------------- Swaps ----------------------------- */
-.swap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
-.swap-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .2s var(--ease), box-shadow .2s; }
-.swap-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.swap-head { display: flex; align-items: center; gap: 12px; padding: 17px 20px; }
-.swap-emoji { font-size: 1.7rem; }
-.swap-head h3 { font-size: 1.12rem; }
-.swap-row { padding: 15px 20px; }
-.swap-row.avoid { background: var(--red-bg); }
-.swap-row.eat   { background: var(--green-bg); }
-.swap-tag { display: inline-flex; align-items: center; gap: 6px; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; font-family: var(--sans); }
-.swap-row.avoid .swap-tag { color: var(--red-ink); }
-.swap-row.eat .swap-tag { color: var(--green-ink); }
-.swap-title { font-family: var(--serif); font-weight: 600; color: var(--ink); font-size: 1.12rem; }
-.swap-detail { font-size: .88rem; color: var(--ink-soft); margin-top: 4px; }
-.swap-arrow { text-align: center; margin: -8px 0; position: relative; z-index: 1; }
-.swap-arrow span { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 50%; width: 32px; height: 32px; display: inline-grid; place-items: center; box-shadow: var(--shadow-sm); color: var(--accent); font-weight: 800; }
+.swap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; align-items: stretch; }
+.swap-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .2s var(--ease), box-shadow .2s, border-color .2s; }
+.swap-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+.swap-head { display: flex; align-items: center; gap: 13px; padding: 17px 19px; border-bottom: 1px solid var(--border); }
+.swap-emoji { width: 44px; height: 44px; flex: none; display: grid; place-items: center; font-size: 1.5rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: 13px; }
+.swap-head h3 { font-size: 1.08rem; font-weight: 700; line-height: 1.25; color: var(--ink); letter-spacing: -.01em; }
+.swap-body { display: flex; flex-direction: column; flex: 1; padding: 17px 19px 19px; }
+.swap-tag { display: inline-flex; align-items: center; gap: 7px; font-size: .67rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-family: var(--sans); }
+.swap-mark { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; font-size: .6rem; }
+.swap-tag.skip { color: var(--red-ink); }
+.swap-tag.skip .swap-mark { background: var(--red-bg); color: var(--red-ink); }
+.swap-tag.pick { color: var(--green-ink); }
+.swap-tag.pick .swap-mark { background: var(--green-bg); color: var(--green-ink); }
+.swap-why { margin-top: 9px; font-size: .89rem; color: var(--ink-soft); line-height: 1.5; }
+.swap-connector { display: flex; align-items: center; gap: 11px; margin-top: auto; margin-bottom: 15px; padding-top: 15px; }
+.swap-connector::before, .swap-connector::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.swap-connector span { flex: none; display: inline-grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; border: 1px solid var(--border-strong); background: var(--surface); color: var(--accent); font-weight: 800; font-size: .92rem; box-shadow: var(--shadow-sm); }
+.swap-pick { background: var(--green-bg); border: 1px solid color-mix(in srgb, var(--green) 24%, transparent); border-radius: var(--radius-sm); padding: 14px 16px; }
+.swap-eat { margin-top: 9px; font-family: var(--serif); font-weight: 700; color: var(--green-ink); font-size: 1.04rem; line-height: 1.28; }
+.swap-how { margin-top: 6px; font-size: .87rem; color: var(--ink-soft); line-height: 1.5; }
 
 /* ----------------------------- Snacks ----------------------------- */
 .snack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(252px, 1fr)); gap: 15px; }
