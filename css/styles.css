@@ -87,6 +87,76 @@
   --shadow-lg: 0 28px 70px rgba(0,0,0,.65);
 }
 
+/* ----------------------------- Colour themes ----------------------------- */
+/* Selectable via the header palette picker (sets data-palette on <html>).
+   "Meadow" (green) is the default and lives in :root / [data-theme="dark"]
+   above. Each theme below re-skins only the brand + surface tokens, for both
+   light and dark; the semantic traffic-light colours (green/yellow/red) stay
+   constant across every theme so food ratings never change meaning. Each dark
+   block redefines the full set so no light value leaks in dark mode. */
+
+/* OCEAN - cool teal and cyan */
+[data-palette="ocean"] {
+  --bg:#eff9fb; --bg-alt:#dcf0f6; --surface:#ffffff; --surface-2:#e8f6fa; --header-bg:#bfe4ee;
+  --ink:#12262f; --ink-soft:#42606c; --ink-faint:#7ea0ab; --border:#cde8ef; --border-strong:#b0dae5;
+  --primary:#0e8aa8; --primary-deep:#0a6b84; --primary-soft:#d0eef5;
+  --accent:#06b6d4; --accent-deep:#0891b2; --accent-soft:#cbeff7;
+}
+[data-palette="ocean"][data-theme="dark"] {
+  --bg:#0a1618; --bg-alt:#061011; --surface:#102325; --surface-2:#162d30; --header-bg:#040c0e;
+  --ink:#e5f3f6; --ink-soft:#a0bcc4; --ink-faint:#6d8f99; --border:#213a3f; --border-strong:#2d4a50;
+  --primary:#2bc3e0; --primary-deep:#6bd8ee; --primary-soft:#0b2a30;
+  --accent:#22d3ee; --accent-deep:#67e3f6; --accent-soft:#0a2a31;
+}
+
+/* SUNSET - warm terracotta and amber */
+[data-palette="sunset"] {
+  --bg:#fdf5f0; --bg-alt:#f9e7db; --surface:#ffffff; --surface-2:#fceee5; --header-bg:#f6d5c2;
+  --ink:#2a1a12; --ink-soft:#6b5245; --ink-faint:#ab8d7d; --border:#f0dacd; --border-strong:#e8c6b2;
+  --primary:#d1632f; --primary-deep:#ab4c22; --primary-soft:#fbe0d1;
+  --accent:#f97316; --accent-deep:#ea580c; --accent-soft:#fde1cd;
+}
+[data-palette="sunset"][data-theme="dark"] {
+  --bg:#191110; --bg-alt:#120a08; --surface:#241813; --surface-2:#2e2019; --header-bg:#0d0705;
+  --ink:#f6e8e0; --ink-soft:#c8afa1; --ink-faint:#9a7f71; --border:#39271e; --border-strong:#4a3428;
+  --primary:#f0885a; --primary-deep:#f6a884; --primary-soft:#2b1810;
+  --accent:#fb923c; --accent-deep:#fdba8c; --accent-soft:#2b1810;
+}
+
+/* BERRY - raspberry and plum */
+[data-palette="berry"] {
+  --bg:#fdf3f8; --bg-alt:#f8e2ec; --surface:#ffffff; --surface-2:#fcebf2; --header-bg:#f2ccdd;
+  --ink:#271521; --ink-soft:#664a58; --ink-faint:#a8899a; --border:#f0d4e1; --border-strong:#e7b9cf;
+  --primary:#c0357c; --primary-deep:#98285f; --primary-soft:#f8d6e7;
+  --accent:#db2777; --accent-deep:#be185d; --accent-soft:#f9d2e4;
+}
+[data-palette="berry"][data-theme="dark"] {
+  --bg:#180f14; --bg-alt:#100a0d; --surface:#21161d; --surface-2:#2b1d26; --header-bg:#0c060a;
+  --ink:#f6e6ef; --ink-soft:#cbaabb; --ink-faint:#9c7b8c; --border:#38222f; --border-strong:#492e3e;
+  --primary:#ec4899; --primary-deep:#f472b6; --primary-soft:#2b1520;
+  --accent:#f0559f; --accent-deep:#f77fb8; --accent-soft:#2b1520;
+}
+
+/* TWILIGHT - indigo and violet */
+[data-palette="twilight"] {
+  --bg:#f4f4fd; --bg-alt:#e7e8fa; --surface:#ffffff; --surface-2:#eeeefb; --header-bg:#d2d5f4;
+  --ink:#191a30; --ink-soft:#4d4d6a; --ink-faint:#8888ab; --border:#dcddf6; --border-strong:#c6c8ef;
+  --primary:#4f46e5; --primary-deep:#4338ca; --primary-soft:#e1e0fb;
+  --accent:#7c3aed; --accent-deep:#6d28d9; --accent-soft:#eadffb;
+}
+[data-palette="twilight"][data-theme="dark"] {
+  --bg:#0f1021; --bg-alt:#0a0b18; --surface:#181a2f; --surface-2:#20223b; --header-bg:#070812;
+  --ink:#e9e9f7; --ink-soft:#adaecb; --ink-faint:#7c7d9e; --border:#262845; --border-strong:#353863;
+  --primary:#818cf8; --primary-deep:#a5b4fc; --primary-soft:#191b34;
+  --accent:#a78bfa; --accent-deep:#c4b5fd; --accent-soft:#1c1937;
+}
+
+/* Footer band sits on the theme's darkest tint in dark mode */
+[data-palette="ocean"][data-theme="dark"] .site-footer    { background:#050d0e; }
+[data-palette="sunset"][data-theme="dark"] .site-footer   { background:#0c0605; }
+[data-palette="berry"][data-theme="dark"] .site-footer    { background:#0b0508; }
+[data-palette="twilight"][data-theme="dark"] .site-footer { background:#080910; }
+
 /* ----------------------------- Base ----------------------------- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 14px); }
@@ -126,6 +196,25 @@ em { font-style: italic; }
 .icon-btn:hover { background: var(--surface-2); border-color: var(--accent); }
 .icon-btn:active { transform: scale(.93); }
 .nav-toggle { display: none; }
+
+/* Palette picker */
+.palette { position: relative; display: flex; }
+.palette-dot { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.6); }
+.palette-menu {
+  position: absolute; top: calc(100% + 10px); right: 0; z-index: 60; width: 212px;
+  background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); padding: 7px; opacity: 0; transform: translateY(-8px) scale(.97);
+  transform-origin: top right; pointer-events: none;
+  transition: opacity .18s var(--ease), transform .18s var(--ease);
+}
+.palette-menu.open { opacity: 1; transform: none; pointer-events: auto; }
+.palette-menu-title { margin: 0; padding: 6px 10px 8px; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); }
+.palette-opt { display: flex; align-items: center; gap: 11px; width: 100%; padding: 9px 10px; border: none; background: none; border-radius: var(--radius-sm); cursor: pointer; font-family: inherit; font-size: .93rem; font-weight: 700; color: var(--ink); text-align: left; transition: background .15s; }
+.palette-opt:hover { background: var(--surface-2); }
+.palette-opt.is-active { background: var(--surface-2); }
+.palette-sw { width: 22px; height: 22px; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px rgba(0,0,0,.14); }
+.palette-opt .check { margin-left: auto; color: var(--accent-deep); font-weight: 800; opacity: 0; }
+.palette-opt.is-active .check { opacity: 1; }
 
 /* ----------------------------- Hero ----------------------------- */
 .hero {

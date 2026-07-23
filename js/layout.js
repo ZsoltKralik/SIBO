@@ -34,6 +34,12 @@
         </a>
         <nav class="main-nav" aria-label="Primary">${navLinks}</nav>
         <div class="header-actions">
+          <div class="palette">
+            <button id="paletteToggle" class="icon-btn" type="button" aria-label="Change colour theme" aria-haspopup="true" aria-expanded="false" title="Colour theme">
+              <span class="palette-dot" aria-hidden="true"></span>
+            </button>
+            <div id="paletteMenu" class="palette-menu" role="menu" aria-label="Colour theme"></div>
+          </div>
           <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle light / dark">
             <span class="theme-icon">🌙</span>
           </button>
@@ -75,6 +81,65 @@
   themeToggle.addEventListener("click", () => {
     const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     applyTheme(next);
+  });
+
+  /* --------------------------- PALETTE PICKER --------------------------- */
+  /* Colour themes, orthogonal to light/dark. Sets data-palette on <html>; the
+     CSS re-skins the brand tokens per theme. Green ("Meadow") is the default. */
+  const PALETTES = [
+    { id: "green",    name: "Meadow",   c: ["#10b981", "#0b774c"] },
+    { id: "ocean",    name: "Ocean",    c: ["#06b6d4", "#0a6b84"] },
+    { id: "sunset",   name: "Sunset",   c: ["#f97316", "#ab4c22"] },
+    { id: "berry",    name: "Berry",    c: ["#db2777", "#98285f"] },
+    { id: "twilight", name: "Twilight", c: ["#7c3aed", "#4338ca"] }
+  ];
+  const paletteToggle = document.getElementById("paletteToggle");
+  const paletteMenu = document.getElementById("paletteMenu");
+
+  paletteMenu.innerHTML =
+    '<p class="palette-menu-title">Colour theme</p>' +
+    PALETTES.map(p =>
+      `<button class="palette-opt" type="button" role="menuitemradio" aria-checked="false" data-pal="${p.id}">` +
+        `<span class="palette-sw" style="background:linear-gradient(135deg,${p.c[0]},${p.c[1]})" aria-hidden="true"></span>` +
+        `<span>${p.name}</span><span class="check" aria-hidden="true">✓</span>` +
+      `</button>`
+    ).join("");
+
+  function applyPalette(id) {
+    const p = PALETTES.find(x => x.id === id) || PALETTES[0];
+    document.documentElement.setAttribute("data-palette", p.id);
+    try { localStorage.setItem("sibo-palette", p.id); } catch (e) {}
+    Array.from(paletteMenu.querySelectorAll(".palette-opt")).forEach(b => {
+      const on = b.dataset.pal === p.id;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", String(on));
+    });
+  }
+  (function initPalette() {
+    let saved = null;
+    try { saved = localStorage.getItem("sibo-palette"); } catch (e) {}
+    applyPalette(saved || "green");
+  })();
+
+  function togglePaletteMenu(open) {
+    paletteMenu.classList.toggle("open", open);
+    paletteToggle.setAttribute("aria-expanded", String(open));
+  }
+  paletteToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    togglePaletteMenu(!paletteMenu.classList.contains("open"));
+  });
+  paletteMenu.addEventListener("click", (e) => {
+    const btn = e.target.closest(".palette-opt");
+    if (!btn) return;
+    applyPalette(btn.dataset.pal);
+    togglePaletteMenu(false);
+  });
+  document.addEventListener("click", (e) => {
+    if (paletteMenu.classList.contains("open") && !e.target.closest(".palette")) togglePaletteMenu(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") togglePaletteMenu(false);
   });
 
   /* --------------------------- MOBILE NAV --------------------------- */
