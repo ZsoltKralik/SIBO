@@ -68,7 +68,17 @@
     { "slug": "pavlova", "title": "A mixed-berry pavlova topped with whipped cream, strawberries, blueberries and kiwi" },
     { "slug": "flourless-brownies", "title": "A stack of fudgy flourless chocolate brownies dusted with cocoa" },
     { "slug": "turmeric-latte", "title": "A golden turmeric latte in a mug with a dusting of cinnamon" },
-    { "slug": "ginger-lemon-tea", "title": "A clear glass mug of fresh ginger and lemon tea with sliced ginger and lemon" }
+    { "slug": "ginger-lemon-tea", "title": "A clear glass mug of fresh ginger and lemon tea with sliced ginger and lemon" },
+    { "slug": "herb-yogurt-sauce", "title": "A bowl of creamy herby yogurt sauce with grated cucumber, dill and a drizzle of olive oil" },
+    { "slug": "tofu-scramble", "title": "A golden turmeric tofu scramble with spinach and cherry tomato served on gluten-free toast" },
+    { "slug": "baked-eggs-tomato", "title": "A skillet of shakshuka-style baked eggs in spiced tomato sauce with crumbled feta and parsley" },
+    { "slug": "zucchini-risotto", "title": "A bowl of creamy zucchini and parmesan risotto topped with grated parmesan and black pepper" },
+    { "slug": "lemongrass-pork-noodles", "title": "A fresh lemongrass pork rice-noodle bowl with carrot, cucumber, herbs, lime and crushed peanuts" },
+    { "slug": "potato-leek-soup", "title": "A bowl of silky potato and leek soup with a cream swirl and chopped chives" },
+    { "slug": "rocket-orange-salad", "title": "A rocket salad with fresh orange segments, walnuts and shaved parmesan on a plate" },
+    { "slug": "kale-chips", "title": "A bowl of crispy baked kale chips dusted with parmesan and paprika" },
+    { "slug": "panna-cotta", "title": "A glass of set vanilla panna cotta topped with fresh strawberries and blueberries" },
+    { "slug": "matcha-latte", "title": "An iced matcha latte in a tall glass with layers of green matcha and milk over ice" }
   ],
   "categories": [
     { "slug": "popular", "label": "Popular & Fast Food", "subject": "a cardboard carton of golden french fries beside a cheeseburger" },

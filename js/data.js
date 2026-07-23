@@ -1222,7 +1222,116 @@ const RECIPES = [
       "Steep the ginger in the boiling water for 5 minutes.",
       "Stir in the lemon and maple to taste.",
       "Sip slowly - lovely after a meal."
-    ], safety: "" }
+    ], safety: "" },
+
+  /* -- 10 extra low-FODMAP recipes -- */
+  { meal: "basics", icon: "🥣", name: "Herby Lactose-Free Yogurt Sauce", tagline: "A cool, garlic-free take on tzatziki.",
+    time: "10 min", serves: "Makes ~1 cup",
+    why: "Tzatziki and ranch lean on raw garlic. Lactose-free yogurt with cucumber, lemon and herbs gives the same cooling tang, trigger-free.",
+    ingredients: ["1 cup plain lactose-free yogurt", "⅓ cucumber, grated and squeezed dry", "1 tbsp lemon juice", "1 tbsp olive oil", "2 tbsp chopped dill or mint", "Green tops of 1 spring onion, finely sliced", "Salt & pepper"],
+    steps: [
+      "Grate the cucumber and squeeze out the excess water in a clean cloth.",
+      "Stir it through the yogurt with the lemon, oil, herbs and spring-onion tops.",
+      "Season, chill 10 minutes, then serve with grilled meat, fish or veg sticks."
+    ], safety: "Uses lactose-free yogurt and green onion tops only - no garlic or onion bulb." },
+
+  { meal: "breakfast", icon: "🍳", name: "Turmeric Tofu Scramble", tagline: "A golden, savoury, plant-based start.",
+    time: "15 min", serves: "Serves 2",
+    why: "A veggie alternative to scrambled eggs - firm tofu holds together and soaks up turmeric, while spinach and tomato keep it fresh and low-FODMAP.",
+    ingredients: ["250 g firm tofu, drained and crumbled", "1 tbsp garlic-infused olive oil", "½ tsp ground turmeric", "1 cup baby spinach", "1 small tomato, diced", "Green tops of 2 spring onions", "1 tbsp nutritional yeast (optional)", "Salt & pepper"],
+    steps: [
+      "Press the tofu briefly, then crumble it into rough curds.",
+      "Warm the infused oil and cook the spring-onion tops for 1 minute.",
+      "Add the tofu and turmeric; fry 4-5 minutes until golden.",
+      "Stir through the tomato and spinach until just wilted, season and serve on gluten-free toast."
+    ], safety: "Use firm tofu, not silken - silken tofu is higher in FODMAPs." },
+
+  { meal: "breakfast", icon: "🍅", name: "Baked Eggs in Spiced Tomato", tagline: "A shakshuka-style skillet, minus the onion and garlic.",
+    time: "25 min", serves: "Serves 2",
+    why: "Classic shakshuka starts with onion and garlic. Infused oil, red pepper and paprika build the same smoky base so the eggs poach in a rich, safe sauce.",
+    ingredients: ["1 tbsp garlic-infused olive oil", "1 red bell pepper, diced", "1 × 400 g can crushed tomatoes", "1 tsp smoked paprika", "½ tsp ground cumin", "Green tops of 2 spring onions", "4 eggs", "40 g feta, crumbled", "Fresh parsley or coriander"],
+    steps: [
+      "Warm the infused oil and soften the red pepper and spring-onion tops for 4-5 minutes.",
+      "Stir in the paprika and cumin, then the tomatoes; simmer 8-10 minutes until thick.",
+      "Make four wells, crack in the eggs, cover and cook until the whites set.",
+      "Scatter with feta and herbs and scoop up with gluten-free toast."
+    ], safety: "No onion or garlic bulb; the smoky base comes from paprika and infused oil." },
+
+  { meal: "mains", icon: "🍚", name: "Zucchini & Parmesan Risotto", tagline: "Creamy, comforting and completely onion-free.",
+    time: "35 min", serves: "Serves 4",
+    why: "Restaurant risotto is built on an onion soffritto. Infused oil and spring-onion tops give the savoury base, and the rice turns creamy all on its own.",
+    ingredients: ["2 tbsp garlic-infused olive oil", "Green tops of 3 spring onions", "1½ cups arborio rice", "½ cup dry white wine (optional)", "5 cups low-FODMAP chicken or vegetable stock, kept warm", "2 small zucchini, diced (about ⅓ cup per serve)", "½ cup grated parmesan", "1 tbsp butter", "Salt & pepper"],
+    steps: [
+      "Warm the infused oil and cook the spring-onion tops for 1 minute, then toast the rice for 1-2 minutes.",
+      "Pour in the wine and let it cook away.",
+      "Add the warm stock a ladle at a time, stirring, until each is absorbed (about 18 minutes).",
+      "Stir in the zucchini for the last 6-7 minutes, then beat in the parmesan and butter. Season and serve."
+    ], safety: "Keep zucchini to about ⅓ cup per serve, and use an onion- and garlic-free stock." },
+
+  { meal: "mains", icon: "🍜", name: "Lemongrass Pork Rice Noodles", tagline: "A fresh, fragrant noodle bowl with real punch.",
+    time: "25 min", serves: "Serves 2",
+    why: "Vietnamese noodle bowls usually hide onion and garlic. Lemongrass, ginger and spring-onion tops carry the aroma instead, over safe rice noodles.",
+    ingredients: ["200 g rice vermicelli noodles", "300 g pork mince", "1 tbsp garlic-infused oil", "1 stalk lemongrass, finely chopped", "1 tsp grated ginger", "Green tops of 2 spring onions", "1 tbsp fish sauce (check garlic-free)", "1 tbsp tamari", "1 tsp brown sugar", "Juice of 1 lime", "1 carrot, julienned", "½ cucumber, sliced", "Mint & coriander", "2 tbsp crushed peanuts"],
+    steps: [
+      "Soak the rice noodles in hot water until tender, then drain.",
+      "Fry the pork in the infused oil over high heat until browned.",
+      "Add the lemongrass, ginger and spring-onion tops for 1 minute, then the fish sauce, tamari and sugar.",
+      "Pile noodles into bowls with carrot and cucumber, top with the pork, and finish with lime, herbs and peanuts."
+    ], safety: "Use a garlic-free fish sauce and infused oil; keep peanuts to about a tablespoon per bowl." },
+
+  { meal: "soups", icon: "🥔", name: "Potato & Leek-Top Soup", tagline: "Silky and warming, using the safe part of the leek.",
+    time: "35 min", serves: "Serves 4",
+    why: "The white of a leek is high-FODMAP, but the green tops are not - they carry all the gentle oniony flavour into this creamy potato soup.",
+    ingredients: ["Green tops of 2 leeks, sliced (green part only)", "2 tbsp garlic-infused olive oil", "700 g potatoes, peeled and diced", "4 cups low-FODMAP vegetable or chicken stock", "½ cup lactose-free milk or cream", "Chives, to serve", "Salt & pepper"],
+    steps: [
+      "Soften the green leek tops in the infused oil for 4-5 minutes without colouring.",
+      "Add the potatoes and stock; simmer 20 minutes until the potato is very soft.",
+      "Blend until smooth, then stir in the lactose-free milk and warm through.",
+      "Season well and serve scattered with chives."
+    ], safety: "Use only the green tops of the leek - the white bulb is high in fructans." },
+
+  { meal: "salads", icon: "🥗", name: "Rocket, Orange & Walnut Salad", tagline: "Peppery, sweet and bright in five minutes.",
+    time: "10 min", serves: "Serves 2",
+    why: "Rocket, orange and walnuts are all comfortably low-FODMAP, and the sweet-sharp mix makes a fresh side for grilled meat or fish.",
+    ingredients: ["3 big handfuls rocket (arugula)", "1 orange, peeled and segmented", "¼ cup walnuts, roughly chopped", "30 g feta or shaved parmesan", "1 tbsp olive oil", "1 tsp red-wine vinegar", "½ tsp maple syrup", "Salt & pepper"],
+    steps: [
+      "Toast the walnuts in a dry pan for 2 minutes until fragrant.",
+      "Whisk the oil, vinegar, maple, salt and pepper into a dressing.",
+      "Toss the rocket with the orange segments and most of the dressing.",
+      "Top with walnuts and feta, drizzle over the rest and serve straight away."
+    ], safety: "Keep to about one orange and a small handful of walnuts per serve." },
+
+  { meal: "snacks", icon: "🥬", name: "Crispy Baked Kale Chips", tagline: "The crunchy, salty snack with nothing to hide.",
+    time: "20 min", serves: "Serves 2",
+    why: "Shop crisps often carry onion or garlic powder. Baked kale gives you the salty crunch from a single low-FODMAP green.",
+    ingredients: ["1 bunch kale, stems removed, torn into pieces", "1 tbsp olive oil", "½ tsp salt", "1 tbsp grated parmesan (optional)", "Pinch of paprika"],
+    steps: [
+      "Heat the oven to 160C / 320F and line two trays.",
+      "Dry the kale well, then massage it with the oil, salt and paprika.",
+      "Spread in a single layer, not touching, and bake 12-15 minutes until crisp.",
+      "Cool for a couple of minutes (they crisp further) and dust with parmesan."
+    ], safety: "Season with plain salt and paprika, not onion or garlic powder." },
+
+  { meal: "sweets", icon: "🍮", name: "Lactose-Free Berry Panna Cotta", tagline: "A silky make-ahead dessert that feels fancy.",
+    time: "15 min + chilling", serves: "Serves 4",
+    why: "Panna cotta is naturally simple - swap in lactose-free cream and top with low-FODMAP berries and it stays a safe, elegant treat.",
+    ingredients: ["2 cups lactose-free cream (or lactose-free milk + cream)", "¼ cup sugar", "1 tsp vanilla", "2½ tsp powdered gelatine", "3 tbsp cold water", "1 cup strawberries and blueberries, to serve"],
+    steps: [
+      "Sprinkle the gelatine over the cold water and let it swell for 5 minutes.",
+      "Warm the cream, sugar and vanilla until steaming (not boiling), then whisk in the gelatine until dissolved.",
+      "Pour into 4 glasses or moulds and chill at least 4 hours until set.",
+      "Top with the berries just before serving."
+    ], safety: "Use lactose-free dairy, and keep berries to a small handful per serve." },
+
+  { meal: "drinks", icon: "🍵", name: "Iced Matcha Latte", tagline: "A calm, grassy-green pick-me-up over ice.",
+    time: "5 min", serves: "Serves 1",
+    why: "Matcha with lactose-free or almond milk makes a low-FODMAP cafe-style latte without the large milky lactose load of a regular one.",
+    ingredients: ["1 tsp matcha powder", "2 tbsp hot water", "1 cup lactose-free or almond milk", "1 tsp maple syrup (optional)", "Ice"],
+    steps: [
+      "Whisk the matcha with the hot water until smooth and frothy, with no lumps.",
+      "Fill a glass with ice and pour over the milk.",
+      "Add the matcha and maple, then stir and serve."
+    ], safety: "Choose lactose-free or almond milk; go easy on oat milk, which is higher in FODMAPs per glass." }
 ];
 
 /* Image filename per recipe - SAME ORDER as RECIPES above (see tools/image_manifest.json).
@@ -1235,7 +1344,8 @@ const RECIPE_SLUGS = [
   "quinoa-tabbouleh", "smashed-potatoes", "caprese-salad", "maple-roasted-carrots", "cucumber-feta-salad", "nicoise-tuna-potato-salad", "kabocha-quinoa-bowl", "rice-herb-salad",
   "pb-banana-rice-cakes", "popcorn", "energy-balls", "cheese-cracker-plate", "blueberry-yogurt-bark", "cheddar-oat-crackers", "roasted-nuts", "zucchini-fritters",
   "peanut-butter-cookies", "strawberry-chia-jam", "chocolate-strawberry-bark", "lemon-polenta-cake", "orange-almond-polenta-muffins", "pavlova", "flourless-brownies",
-  "berry-smoothie", "green-smoothie", "pineapple-mint-cooler", "turmeric-latte", "ginger-lemon-tea"
+  "berry-smoothie", "green-smoothie", "pineapple-mint-cooler", "turmeric-latte", "ginger-lemon-tea",
+  "herb-yogurt-sauce", "tofu-scramble", "baked-eggs-tomato", "zucchini-risotto", "lemongrass-pork-noodles", "potato-leek-soup", "rocket-orange-salad", "kale-chips", "panna-cotta", "matcha-latte"
 ];
 
 /* ----------------------------------------------------------------------- */
