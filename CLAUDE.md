@@ -40,10 +40,8 @@ Every page loads three scripts, in this order: **`js/data.js` → `js/layout.js`
 - **`js/layout.js`** - injects the shared `<header>` + `<footer>` into every page via
   `insertAdjacentHTML` (no fetch → works offline). The `NAV` array is the **single
   source of truth** for the tab bar. Marks the active tab from `document.body.dataset.page`.
-  Also owns: theme toggle (light/dark, `localStorage` key `sibo-theme`), the **colour-theme
-  picker** (5 palettes set via `data-palette` on `<html>`, `localStorage` key `sibo-palette`;
-  the palettes themselves live in `css/styles.css`, and the semantic traffic-light colours
-  stay constant across all of them), mobile nav, back-to-top, and reveal-on-scroll. The reveal is a progressive enhancement that must
+  Also owns: theme toggle (persisted in `localStorage` key `sibo-theme`), mobile nav,
+  back-to-top, and reveal-on-scroll. The reveal is a progressive enhancement that must
   **never** gate content: sections already in view are shown synchronously (so a tall
   above-the-fold section like the food list paints on load), and only below-the-fold
   ones are animated in via an `IntersectionObserver` at `threshold:0`. Do not go back

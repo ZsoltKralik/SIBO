@@ -59,9 +59,8 @@ Each tab is its own page.
 | **Eating Out** (`eating-out.html`) | What to order / skip across 21 cuisines (Japanese, Vietnamese, café, seafood, Brazilian, French, Korean, pub, bakery and more) |
 | **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
 
-Features: a clean, modern-wellbeing design with a self-hosted font, **5 hand-tuned colour
-themes** (Meadow, Ocean, Sunset, Berry, Twilight) each in light or dark mode, live search &
-filtering, a recipe modal, responsive layout, printable, and
+Features: a fresh-green, modern-wellbeing design with a self-hosted font, light/dark
+mode, live search & filtering, a recipe modal, responsive layout, printable, and
 **fully offline** (no CDNs, no trackers).
 
 ---
