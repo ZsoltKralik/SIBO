@@ -1331,7 +1331,133 @@ const RECIPES = [
       "Whisk the matcha with the hot water until smooth and frothy, with no lumps.",
       "Fill a glass with ice and pour over the milk.",
       "Add the matcha and maple, then stir and serve."
-    ], safety: "Choose lactose-free or almond milk; go easy on oat milk, which is higher in FODMAPs per glass." }
+    ], safety: "Choose lactose-free or almond milk; go easy on oat milk, which is higher in FODMAPs per glass." },
+
+  /* -- New food recipes -- */
+  { meal: "breakfast", icon: "🫐", name: "Blueberry Quinoa Breakfast Pudding", tagline: "A make-ahead berry breakfast with gentle staying power.",
+    time: "10 min + overnight", serves: "Serves 2",
+    why: "Quinoa flakes, lactose-free milk and blueberries make a filling breakfast from familiar low-FODMAP staples.",
+    ingredients: ["1/2 cup quinoa flakes", "3/4 cup lactose-free milk", "1 tbsp ground flaxseed", "2 tsp maple syrup", "1/2 cup blueberries", "1 tbsp pumpkin seeds"],
+    steps: [
+      "Stir the quinoa flakes, milk, flaxseed and maple together in a covered container.",
+      "Refrigerate overnight, or for at least 4 hours, until softly thickened.",
+      "Divide between two bowls and finish with blueberries and pumpkin seeds."
+    ], safety: "Keep the recipe divided into two serves, and use lactose-free milk." },
+
+  { meal: "breakfast", icon: "🍳", name: "Spinach, Tomato & Feta Polenta Bowl", tagline: "A warm savoury breakfast that feels properly cooked.",
+    time: "20 min", serves: "Serves 2",
+    why: "Polenta and eggs are dependable low-FODMAP staples, while spinach, a measured handful of tomatoes and feta bring colour and protein.",
+    ingredients: ["1/2 cup quick-cook polenta", "2 cups onion- and garlic-free stock or water", "2 tsp garlic-infused olive oil", "2 eggs", "2 cups baby spinach", "10 cherry tomatoes, halved", "40 g feta", "Chives, salt & pepper"],
+    steps: [
+      "Simmer the polenta in the stock or water, stirring, until creamy and tender.",
+      "Warm the garlic-infused oil in a pan; wilt the spinach and tomatoes, then season.",
+      "Spoon the polenta into bowls, top with the greens, a fried or poached egg, feta and chives."
+    ], safety: "Use garlic-infused oil rather than garlic, and keep to five cherry tomatoes per serving." },
+
+  { meal: "mains", icon: "🍗", name: "Garlic-Infused Chicken & Herb Rice Pilaf", tagline: "A bright one-pan chicken dinner without the onion base.",
+    time: "45 min", serves: "Serves 4",
+    why: "Rice, plain chicken and low-FODMAP vegetables make a balanced dinner, while garlic-infused oil gives the familiar aroma without fructans.",
+    ingredients: ["350 g plain chicken thigh fillets, diced", "1 1/2 cups basmati rice", "2 tbsp garlic-infused olive oil", "2 carrots, diced", "1 small zucchini, diced", "1 green bell pepper, diced", "3 cups onion- and garlic-free chicken stock", "1 tsp ground turmeric", "Chopped parsley and chives", "Salt & pepper"],
+    steps: [
+      "Brown the chicken in half the infused oil, then set aside.",
+      "Cook the carrot, zucchini and green pepper in the remaining oil for 4 minutes; stir in rice and turmeric.",
+      "Add stock and chicken, cover and simmer until the rice is tender and the chicken is cooked through.",
+      "Rest for 5 minutes, then fluff with parsley and chives."
+    ], safety: "Choose stock with no onion or garlic, use green rather than red bell pepper, and divide into four servings." },
+
+  { meal: "mains", icon: "🐟", name: "Miso Maple Salmon Rice Bowl", tagline: "Glossy baked salmon with crisp vegetables and rice.",
+    time: "30 min", serves: "Serves 4",
+    why: "Plain salmon and rice are naturally low in FODMAPs; a small amount of miso adds savoury depth when it is spread across four bowls.",
+    ingredients: ["400 g salmon fillet, cut into 4 pieces", "2 cups cooked white rice", "1 tbsp white miso paste", "1 tbsp maple syrup", "1 tbsp tamari", "2 tsp rice wine vinegar", "2 cups bok choy, sliced", "1 cucumber, thinly sliced", "2 carrots, shredded", "1 tbsp sesame seeds"],
+    steps: [
+      "Heat the oven to 200C / 400F and line a tray.",
+      "Whisk the miso, maple, tamari and vinegar; brush over the salmon and bake 12-15 minutes, until it flakes easily.",
+      "Steam or pan-wilt the bok choy while the salmon cooks.",
+      "Build bowls with rice, bok choy, cucumber and carrot, then top with salmon and sesame."
+    ], safety: "Keep the miso to the stated amount and divide the dish into four servings." },
+
+  { meal: "mains", icon: "🥢", name: "Sesame Ginger Tofu Soba Bowl", tagline: "Cool, crisp noodles with golden tofu and a bright dressing.",
+    time: "30 min", serves: "Serves 2",
+    why: "Firm tofu, ginger, cucumber and carrot make a satisfying plant-based bowl; measured 100% buckwheat soba keeps the portion low-FODMAP.",
+    ingredients: ["100 g 100% buckwheat soba noodles", "250 g firm tofu, pressed and cubed", "1 tbsp garlic-infused olive oil", "2 carrots, shredded", "1/2 cucumber, ribboned", "1/2 cup shelled edamame", "2 tbsp tamari", "1 tbsp rice wine vinegar", "2 tsp maple syrup", "1 tsp fresh ginger, grated", "2 tsp sesame seeds"],
+    steps: [
+      "Cook the soba according to the packet, rinse under cold water and drain well.",
+      "Pan-fry the tofu in the infused oil until crisp on several sides.",
+      "Whisk tamari, vinegar, maple and ginger, then toss with the noodles, carrot, cucumber and edamame.",
+      "Divide into two bowls, add the tofu and scatter with sesame."
+    ], safety: "Use firm tofu and 100% buckwheat soba, then keep the recipe divided into two portions." },
+
+  { meal: "soups", icon: "🍲", name: "Chicken, Quinoa & Spinach Soup", tagline: "A nourishing bowl for an easy, no-fuss dinner.",
+    time: "40 min", serves: "Serves 4",
+    why: "Chicken, quinoa, carrot and spinach make a hearty soup without relying on onion or garlic for flavour.",
+    ingredients: ["300 g plain chicken breast, diced", "1/2 cup quinoa, rinsed", "1 tbsp garlic-infused olive oil", "2 carrots, diced", "1 small zucchini, diced", "5 cups onion- and garlic-free chicken stock", "2 cups baby spinach", "Chives, lemon juice, salt & pepper"],
+    steps: [
+      "Soften the carrot and zucchini in the infused oil for 4 minutes.",
+      "Add stock, quinoa and chicken; simmer until the quinoa is tender and the chicken is cooked through.",
+      "Stir in spinach until just wilted, then season with chives, lemon, salt and pepper."
+    ], safety: "Use a stock without onion or garlic, and keep zucchini to a modest portion by serving four." },
+
+  { meal: "salads", icon: "🥔", name: "Warm Potato, Green Bean & Egg Salad", tagline: "A substantial salad with soft potato and a sharp lemon dressing.",
+    time: "30 min", serves: "Serves 4",
+    why: "Potatoes and eggs make this a satisfying meal rather than a side salad, with green beans kept to a comfortable serving.",
+    ingredients: ["700 g baby potatoes, halved", "300 g green beans, trimmed", "4 eggs", "2 cups lettuce", "20 cherry tomatoes, halved", "2 tbsp olive oil", "1 tbsp lemon juice", "1 tsp Dijon mustard", "Chives, salt & pepper"],
+    steps: [
+      "Boil the potatoes until tender; add the green beans for the final 3 minutes, then drain.",
+      "Soft- or hard-boil the eggs to your liking and halve them.",
+      "Whisk oil, lemon, mustard, chives, salt and pepper.",
+      "Toss the warm potatoes and beans with the dressing, then arrange over lettuce with tomatoes and egg."
+    ], safety: "Divide into four servings so each bowl has about 75 g green beans and five cherry tomatoes." },
+
+  { meal: "salads", icon: "🍓", name: "Strawberry, Spinach & Feta Quinoa Salad", tagline: "Sweet berries, salty feta and enough quinoa to make it a meal.",
+    time: "20 min", serves: "Serves 4",
+    why: "Quinoa, strawberries, spinach, feta and walnuts are a colourful way to build a fibre- and protein-containing salad from low-FODMAP ingredients.",
+    ingredients: ["2 cups cooked quinoa, cooled", "2 cups strawberries, sliced", "4 cups baby spinach", "80 g feta, crumbled", "1/2 cup walnuts, roughly chopped", "2 tbsp olive oil", "1 tbsp lemon juice", "1 tsp maple syrup", "Salt & pepper"],
+    steps: [
+      "Whisk the oil, lemon, maple, salt and pepper into a dressing.",
+      "Toss quinoa and spinach with most of the dressing.",
+      "Fold through strawberries, feta and walnuts, then drizzle over the remaining dressing."
+    ], safety: "Keep to one quarter of the salad per serving so the fruit and walnuts stay moderate." },
+
+  { meal: "snacks", icon: "🧀", name: "Crispy Parmesan Polenta Bites", tagline: "Golden-edged little squares made for dipping or snacking.",
+    time: "35 min + cooling", serves: "Makes 16 bites",
+    why: "Polenta, aged parmesan and chives create a savoury snack with big flavour and no onion or garlic powder.",
+    ingredients: ["1 cup quick-cook polenta", "3 cups onion- and garlic-free stock or water", "1 tbsp garlic-infused olive oil", "1/3 cup grated parmesan", "1 tbsp chopped chives", "Salt & pepper"],
+    steps: [
+      "Cook the polenta in stock or water until very thick; stir in parmesan, chives, salt and pepper.",
+      "Press into a lined small tray and cool until firm enough to cut.",
+      "Cut into 16 squares, brush with infused oil and bake at 220C / 425F for 18-20 minutes, turning once."
+    ], safety: "Use garlic-infused oil for flavour, never garlic powder or a stock cube with onion." },
+
+  { meal: "snacks", icon: "🥒", name: "Cucumber, Feta & Walnut Rice Cake Bites", tagline: "A crunchy snack plate that is ready in minutes.",
+    time: "10 min", serves: "Serves 4",
+    why: "Rice cakes keep the base simple while cucumber, feta and walnuts add crunch, protein and satisfying fat.",
+    ingredients: ["8 plain rice cakes", "1/2 cup lactose-free yogurt", "80 g feta, crumbled", "1/2 cucumber, finely diced", "1/4 cup walnuts, chopped", "1 tsp lemon juice", "Chives, salt & pepper"],
+    steps: [
+      "Mix the yogurt, feta, cucumber, lemon, chives, salt and pepper.",
+      "Spread the mixture over the rice cakes.",
+      "Finish with walnuts and serve straight away so the rice cakes stay crisp."
+    ], safety: "Choose plain rice cakes and lactose-free yogurt; two topped cakes make one snack serving." },
+
+  { meal: "sweets", icon: "🥜", name: "Maple Walnut Oat Clusters", tagline: "Small baked clusters with a proper oat-and-nut crunch.",
+    time: "30 min", serves: "Serves 4",
+    why: "A measured portion of oats, walnuts, pumpkin seeds and maple turns into a simple dessert or afternoon treat without dried fruit.",
+    ingredients: ["1 cup rolled oats", "1/2 cup walnuts, chopped", "1/4 cup pumpkin seeds", "2 tbsp maple syrup", "1 egg white", "1 tsp cinnamon", "Pinch of salt"],
+    steps: [
+      "Heat the oven to 170C / 340F and line a tray.",
+      "Mix oats, walnuts, pumpkin seeds, cinnamon and salt; stir in maple and egg white until clumpy.",
+      "Spoon into 12 small clusters and bake 15-18 minutes until crisp at the edges.",
+      "Cool completely before lifting from the tray."
+    ], safety: "Enjoy one quarter of the batch at a time so the oat and walnut portions stay modest." },
+
+  { meal: "sweets", icon: "🍋", name: "Lemon Blueberry Yogurt Pots", tagline: "Cold, creamy little pots with berry freshness.",
+    time: "10 min + chilling", serves: "Serves 4",
+    why: "Lactose-free yogurt gives these pots their creaminess, with a measured blueberry topping for a light make-ahead dessert.",
+    ingredients: ["2 cups lactose-free yogurt", "1 cup blueberries", "2 tsp maple syrup", "1 tsp finely grated lemon zest", "2 tbsp pumpkin seeds", "1 tsp lemon juice"],
+    steps: [
+      "Stir the yogurt with maple, lemon zest and lemon juice.",
+      "Divide between four small glasses and spoon blueberries on top.",
+      "Chill for at least 20 minutes, then finish with pumpkin seeds before serving."
+    ], safety: "Keep the recipe split across four small pots so each portion has about 1/4 cup blueberries." }
 ];
 
 /* Image filename per recipe - SAME ORDER as RECIPES above (see tools/image_manifest.json).
@@ -1345,7 +1471,8 @@ const RECIPE_SLUGS = [
   "pb-banana-rice-cakes", "popcorn", "energy-balls", "cheese-cracker-plate", "blueberry-yogurt-bark", "cheddar-oat-crackers", "roasted-nuts", "zucchini-fritters",
   "peanut-butter-cookies", "strawberry-chia-jam", "chocolate-strawberry-bark", "lemon-polenta-cake", "orange-almond-polenta-muffins", "pavlova", "flourless-brownies",
   "berry-smoothie", "green-smoothie", "pineapple-mint-cooler", "turmeric-latte", "ginger-lemon-tea",
-  "herb-yogurt-sauce", "tofu-scramble", "baked-eggs-tomato", "zucchini-risotto", "lemongrass-pork-noodles", "potato-leek-soup", "rocket-orange-salad", "kale-chips", "panna-cotta", "matcha-latte"
+  "herb-yogurt-sauce", "tofu-scramble", "baked-eggs-tomato", "zucchini-risotto", "lemongrass-pork-noodles", "potato-leek-soup", "rocket-orange-salad", "kale-chips", "panna-cotta", "matcha-latte",
+  "blueberry-quinoa-pudding", "spinach-tomato-feta-polenta", "chicken-herb-rice-pilaf", "miso-maple-salmon-bowl", "sesame-ginger-tofu-soba", "chicken-quinoa-spinach-soup", "potato-green-bean-egg-salad", "strawberry-spinach-feta-quinoa-salad", "parmesan-polenta-bites", "cucumber-feta-walnut-rice-cakes", "maple-walnut-oat-clusters", "lemon-blueberry-yogurt-pots"
 ];
 
 /* ----------------------------------------------------------------------- */

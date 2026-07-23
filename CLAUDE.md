@@ -53,7 +53,7 @@ Every page loads three scripts, in this order: **`js/data.js` → `js/layout.js`
   present.
 
 Each page's HTML = `<head>` (page-specific `<title>`/`<meta description>`, favicon
-`assets/img/logo.webp`, font preload, `css/styles.css`) + `<body data-page="KEY">`
+`assets/img/logo-v2.webp` (with `logo.webp` retained for rollback), font preload, `css/styles.css`) + `<body data-page="KEY">`
 containing that page's `<section>`(s) with **empty container divs** that `app.js` fills,
 then the three `<script>` tags.
 
@@ -103,7 +103,7 @@ TIPS, SOURCES   = ...                                        // Journey page
 - All images are **pre-generated locally with GPT Image 2** (OpenAI's model, accessed via
   the **Leonardo API**) and committed as WebP under `assets/img/`:
   `recipes/<RECIPE_SLUGS slug>.webp`, `categories/<FOOD_CATEGORIES id>.webp`,
-  `recipe-cats/<RECIPE_CATS id>.webp`, `cuisines/<CUISINE_SLUGS slug>.webp`, and `logo.webp`.
+  `recipe-cats/<RECIPE_CATS id>.webp`, `cuisines/<CUISINE_SLUGS slug>.webp`, and the current `logo-v2.webp` (`logo.webp` is retained for rollback).
 - The site references the **files** and **falls back to the item's emoji** if a file is
   missing (`onerror` → a `.noimg` class). So images are optional and the site never breaks.
 - Generator: `tools/generate_images.py` (Python stdlib + optional Pillow), driven by

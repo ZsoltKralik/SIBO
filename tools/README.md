@@ -15,7 +15,7 @@ assets/img/recipes/*.webp                  ← committed output (referenced by t
 assets/img/categories/*.webp               ← food-category icons
 assets/img/recipe-cats/*.webp              ← recipe-category icons
 assets/img/cuisines/*.webp                 ← cuisine icons
-assets/img/logo.webp                       ← brand logo / favicon
+assets/img/logo-v2.webp                    ← current brand logo / favicon (`logo.webp` retained for rollback)
 ```
 
 1. Put your key in `../.env` (copy from `../.env.example`):

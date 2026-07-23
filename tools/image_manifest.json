@@ -78,7 +78,19 @@
     { "slug": "rocket-orange-salad", "title": "A rocket salad with fresh orange segments, walnuts and shaved parmesan on a plate" },
     { "slug": "kale-chips", "title": "A bowl of crispy baked kale chips dusted with parmesan and paprika" },
     { "slug": "panna-cotta", "title": "A glass of set vanilla panna cotta topped with fresh strawberries and blueberries" },
-    { "slug": "matcha-latte", "title": "An iced matcha latte in a tall glass with layers of green matcha and milk over ice" }
+    { "slug": "matcha-latte", "title": "An iced matcha latte in a tall glass with layers of green matcha and milk over ice" },
+    { "slug": "blueberry-quinoa-pudding", "title": "Creamy blueberry quinoa breakfast pudding in a ceramic bowl with pumpkin seeds" },
+    { "slug": "spinach-tomato-feta-polenta", "title": "Creamy polenta breakfast bowl with a poached egg, baby spinach, cherry tomatoes, feta and chives" },
+    { "slug": "chicken-herb-rice-pilaf", "title": "Golden garlic-infused chicken and herb rice pilaf with carrot, zucchini and green bell pepper in a shallow bowl" },
+    { "slug": "miso-maple-salmon-bowl", "title": "Baked miso maple salmon rice bowl with bok choy, cucumber, carrot and sesame seeds" },
+    { "slug": "sesame-ginger-tofu-soba", "title": "Sesame ginger tofu soba noodle bowl with carrot ribbons, cucumber and edamame" },
+    { "slug": "chicken-quinoa-spinach-soup", "title": "Comforting chicken quinoa and spinach soup with carrot and chives in a bowl" },
+    { "slug": "potato-green-bean-egg-salad", "title": "Warm potato green bean and egg salad with lettuce, cherry tomatoes and lemon dressing" },
+    { "slug": "strawberry-spinach-feta-quinoa-salad", "title": "Strawberry spinach feta and walnut quinoa salad in a wide ceramic bowl" },
+    { "slug": "parmesan-polenta-bites", "title": "Golden crispy parmesan polenta bites with chives on a baking tray" },
+    { "slug": "cucumber-feta-walnut-rice-cakes", "title": "Cucumber feta and walnut rice cake bites arranged on a light plate" },
+    { "slug": "maple-walnut-oat-clusters", "title": "Maple walnut oat clusters with pumpkin seeds on a parchment-lined tray" },
+    { "slug": "lemon-blueberry-yogurt-pots", "title": "Lemon blueberry lactose-free yogurt pots in small glass cups with pumpkin seeds" }
   ],
   "categories": [
     { "slug": "popular", "label": "Popular & Fast Food", "subject": "a cardboard carton of golden french fries beside a cheeseburger" },

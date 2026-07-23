@@ -29,7 +29,7 @@
     <header class="site-header" id="top">
       <div class="header-inner">
         <a class="brand" href="index.html" aria-label="SIBO Plate home">
-          <span class="brand-mark" aria-hidden="true"><img src="assets/img/logo.webp" alt="" class="brand-logo" onerror="this.closest('.brand-mark').classList.add('noimg')"><span class="brand-emoji">🍃</span></span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/img/logo-v2.webp" alt="" class="brand-logo" onerror="this.closest('.brand-mark').classList.add('noimg')"><span class="brand-emoji">🍃</span></span>
           <span class="brand-text">SIBO&nbsp;Plate</span>
         </a>
         <nav class="main-nav" aria-label="Primary">${navLinks}</nav>
@@ -45,13 +45,13 @@
   const footerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="footer-brand"><span class="brand-mark footer-mark" aria-hidden="true"><img src="assets/img/logo.webp" alt="" class="brand-logo" onerror="this.closest('.brand-mark').classList.add('noimg')"><span class="brand-emoji">🍃</span></span> SIBO&nbsp;Plate</div>
+        <div class="footer-brand"><span class="brand-mark footer-mark" aria-hidden="true"><img src="assets/img/logo-v2.webp" alt="" class="brand-logo" onerror="this.closest('.brand-mark').classList.add('noimg')"><span class="brand-emoji">🍃</span></span><span class="brand-text">SIBO&nbsp;Plate</span></div>
         <p class="footer-note">
           Built as a free, educational reference following the Low-FODMAP framework. Not a substitute for
           personalised medical or dietetic advice. Always confirm your own tolerances with a professional.
         </p>
         <p class="footer-meta"><a href="index.html">Home</a> · <a href="#top" class="to-top">Back to top ↑</a></p>
-        <p class="footer-credit">Produced by SPECTRA STUDIO.</p>
+        <p class="footer-credit">Produced by SPECTRA STUDIO</p>
       </div>
     </footer>`;
 
