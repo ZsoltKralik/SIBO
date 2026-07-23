@@ -41,7 +41,12 @@ Every page loads three scripts, in this order: **`js/data.js` → `js/layout.js`
   `insertAdjacentHTML` (no fetch → works offline). The `NAV` array is the **single
   source of truth** for the tab bar. Marks the active tab from `document.body.dataset.page`.
   Also owns: theme toggle (persisted in `localStorage` key `sibo-theme`), mobile nav,
-  back-to-top, and reveal-on-scroll (IntersectionObserver).
+  back-to-top, and reveal-on-scroll. The reveal is a progressive enhancement that must
+  **never** gate content: sections already in view are shown synchronously (so a tall
+  above-the-fold section like the food list paints on load), and only below-the-fold
+  ones are animated in via an `IntersectionObserver` at `threshold:0`. Do not go back
+  to a positive visibility ratio - it is unreachable for elements taller than the
+  viewport and leaves that content stuck at `opacity:0` until scrolled.
 - **`js/app.js`** - renders page content. It is **page-aware**: each block runs only if
   its target container exists, via a `fill(id, html)` helper (`if (!el) return`) and
   IIFE early-returns. The **same** `app.js` drives every page and renders only what's

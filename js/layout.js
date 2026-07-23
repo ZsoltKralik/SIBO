@@ -99,14 +99,29 @@
   });
 
   /* --------------------------- REVEAL ON SCROLL --------------------------- */
+  /* The fade-up is a progressive enhancement and must never gate content:
+     anything already in view is revealed synchronously (so the food list - one
+     ~12,500px section - shows on first paint without waiting on the observer),
+     and only below-the-fold sections are animated in as they scroll into view.
+     An earlier version observed every section with a 0.06 visibility ratio,
+     which is unreachable for any element taller than viewport / 0.06 - so the
+     food list stayed at opacity:0 until a scroll happened to nudge it. */
   const revealTargets = Array.from(document.querySelectorAll(".section, .disclaimer"));
   revealTargets.forEach(el => el.classList.add("reveal"));
+
+  const revealNow = (el) => el.classList.add("in");
+  const inViewport = (el) => {
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    return r.top < vh && r.bottom > 0;
+  };
+
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { threshold: 0.06 });
-    revealTargets.forEach(el => io.observe(el));
+      entries.forEach(en => { if (en.isIntersecting) { revealNow(en.target); io.unobserve(en.target); } });
+    }, { threshold: 0 });
+    revealTargets.forEach(el => inViewport(el) ? revealNow(el) : io.observe(el));
   } else {
-    revealTargets.forEach(el => el.classList.add("in"));
+    revealTargets.forEach(revealNow);
   }
 })();
