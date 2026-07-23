@@ -243,34 +243,16 @@ em { font-style: italic; }
 .cuisine-ico.noimg img { display: none; }
 .cuisine-ico.noimg .cuisine-emoji { display: inline; font-size: 1.95rem; }
 
-/* ----------------------------- A Week's Food (horizontal scroller) ----------------------------- */
-.week-scroller { position: relative; }
-.week-scroller::before, .week-scroller::after { content: ""; position: absolute; top: 0; bottom: 16px; width: 34px; pointer-events: none; z-index: 2; transition: opacity .25s var(--ease); }
-.week-scroller::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
-.week-scroller::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
-.week-scroller.at-start::before { opacity: 0; }
-.week-scroller.at-end::after   { opacity: 0; }
+/* ----------------------------- A Week's Food (horizontal scroll strip) ----------------------------- */
 .week-track {
   display: flex; gap: 18px; overflow-x: auto; overflow-y: hidden;
-  scroll-snap-type: x proximity; scroll-behavior: smooth; scroll-padding-left: 0;
-  padding: 6px 0 16px; scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent;
+  scroll-snap-type: x proximity; padding: 6px 0 16px;
+  scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent;
 }
 .week-track::-webkit-scrollbar { height: 8px; }
 .week-track::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
 .week-track::-webkit-scrollbar-thumb:hover { background: var(--ink-faint); }
 .week-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
-.week-nav {
-  position: absolute; top: 50%; transform: translateY(calc(-50% - 6px)); z-index: 3;
-  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-strong);
-  background: var(--surface); color: var(--ink); font-size: 1.4rem; line-height: 1;
-  display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-md);
-  transition: background .2s, border-color .2s, opacity .2s, transform .15s;
-}
-.week-nav.prev { left: -8px; }
-.week-nav.next { right: -8px; }
-.week-nav:hover { background: var(--surface-2); border-color: var(--accent); }
-.week-nav:active { transform: translateY(calc(-50% - 6px)) scale(.92); }
-.week-nav:disabled { opacity: 0; pointer-events: none; }
 .day-card { flex: 0 0 clamp(258px, 80vw, 296px); scroll-snap-align: start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow-sm); }
 .day-name { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft); color: var(--accent-deep); }
 .day-meals { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
@@ -471,7 +453,6 @@ em { font-style: italic; }
 @media (max-width: 680px) {
   .glance-grid { grid-template-columns: 1fr; }
   .quicklinks-grid { grid-template-columns: 1fr; }
-  .week-nav { display: none; }
 }
 @media (max-width: 560px) {
   .principles-grid { grid-template-columns: 1fr; }

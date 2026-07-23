@@ -54,7 +54,7 @@ Each tab is its own page.
 | **Home** (`index.html`) | The whole diet at a glance - eat/avoid cheat sheet, four golden rules, quick links |
 | **Food List** (`foods.html`) | Searchable, filterable database of 300+ foods (incl. a **Snacks** category) with 🟢 enjoy / 🟡 moderate / 🔴 avoid ratings, portion notes, and "try instead" hints |
 | **Swaps** (`swaps.html`) | "Eat this, not that" cards - Big Mac, pizza, cola, KFC, apple pie, ramen and more |
-| **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day) shown as a **horizontal scroll strip** - swipe or scroll left-to-right through the week (arrow buttons on desktop), mostly drawn from the recipes |
+| **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day) shown as a **horizontal scroll strip** you swipe or scroll left-to-right through the week (always starting on Monday), mostly drawn from the recipes |
 | **Recipes** (`recipes.html`) | 68 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
 | **Eating Out** (`eating-out.html`) | What to order / skip across 21 cuisines (Japanese, Vietnamese, café, seafood, Brazilian, French, Korean, pub, bakery and more) |
 | **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |

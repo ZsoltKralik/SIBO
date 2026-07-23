@@ -140,35 +140,6 @@
       </ul>
     </article>`).join(""));
 
-  /* Week plan: horizontal scroll controls (progressive enhancement - the strip
-     still scrolls by drag/trackpad/scrollbar if this never runs). */
-  (function () {
-    const track = byId("weekPlan");
-    const scroller = track && track.closest(".week-scroller");
-    if (!scroller) return;
-    const prev = scroller.querySelector(".week-nav.prev");
-    const next = scroller.querySelector(".week-nav.next");
-    const stepBy = () => {
-      const card = track.querySelector(".day-card");
-      const gap = parseFloat(getComputedStyle(track).columnGap) || 18;
-      return card ? card.getBoundingClientRect().width + gap : Math.round(track.clientWidth * 0.85);
-    };
-    const update = () => {
-      const max = track.scrollWidth - track.clientWidth - 1;
-      const atStart = track.scrollLeft <= 0;
-      const atEnd = track.scrollLeft >= max;
-      scroller.classList.toggle("at-start", atStart);
-      scroller.classList.toggle("at-end", atEnd || max <= 0);
-      if (prev) prev.disabled = atStart;
-      if (next) next.disabled = atEnd || max <= 0;
-    };
-    if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -stepBy(), behavior: "smooth" }));
-    if (next) next.addEventListener("click", () => track.scrollBy({ left: stepBy(), behavior: "smooth" }));
-    track.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    update();
-  })();
-
   /* --------------------------- RECIPES + FILTER + MODAL --------------------------- */
   (function () {
     const recipeGrid = byId("recipeGrid");

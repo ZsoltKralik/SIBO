@@ -70,13 +70,11 @@ then the three `<script>` tags.
 
 (There is no Snacks page - snacks were merged into the Food List as a category.)
 
-The **Week's Food** plan is a **horizontal scroller** (Mon -> Sun, left to right).
-`meals.html` wraps `#weekPlan` in `.week-scroller` with two `.week-nav` prev/next buttons;
-`app.js` renders the day cards into `#weekPlan.week-track` (a `scroll-snap` flex row of
-fixed-width `.day-card`s) and wires the buttons, their end-state disabling, and the
-`.at-start`/`.at-end` edge fades. It is a progressive enhancement: the strip still scrolls
-by swipe / trackpad / scrollbar with no JS, and the `.week-nav` buttons are hidden on
-small screens (where swiping is natural).
+The **Week's Food** plan is a simple **horizontal scroll strip** (Mon -> Sun, left to
+right, always starting at Monday). `app.js` renders the day cards straight into
+`#weekPlan.week-track` - a `scroll-snap` flex row of fixed-width `.day-card`s that the
+user scrolls by swipe / trackpad / scrollbar. No JS or buttons drive it, so every load
+starts at the left (Monday).
 
 ## Content model (all globals live in `js/data.js`)
 ```
