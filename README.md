@@ -17,6 +17,7 @@ and an "order-this-not-that" guide for eating out. Trigger foods show a quick
 ## Contents
 - [How to open it](#️-how-to-open-it)
 - [What's inside](#-whats-inside)
+- [Recent changes](#recent-changes)
 - [Project structure](#-project-structure)
 - [How it works (architecture)](#️-how-it-works-architecture)
 - [Editing the content](#️-editing-the-content)
@@ -51,19 +52,27 @@ Each tab is its own page.
 
 | Tab / page | What it gives you |
 |---|---|
-| **Home** (`index.html`) | The whole diet at a glance - eat/avoid cheat sheet, four golden rules, quick links |
+| **Home** (`index.html`) | The whole diet at a glance - a concise What is SIBO? explainer and illustration, eat/avoid cheat sheet, four golden rules, quick links |
 | **Food List** (`foods.html`) | Searchable, filterable database of 300+ foods (incl. a **Snacks** category) with 🟢 enjoy / 🟡 moderate / 🔴 avoid ratings, portion notes, and "try instead" hints |
 | **Swaps** (`swaps.html`) | "Eat this, not that" cards - Big Mac, pizza, cola, KFC, apple pie, ramen and more |
 | **A Week's Food** (`meals.html`) | A full 7-day Low-FODMAP meal plan (breakfast / lunch / dinner / snack each day) shown as a **horizontal scroll strip** you swipe or scroll left-to-right through the week (always starting on Monday), mostly drawn from the recipes |
 | **Recipes** (`recipes.html`) | 78 gut-friendly recipes across 8 categories (basics, breakfast, mains, soups, salads, snacks, sweets, drinks), filterable by type |
 | **Eating Out** (`eating-out.html`) | What to order / skip across 21 cuisines (Japanese, Vietnamese, café, seafood, Brazilian, French, Korean, pub, bakery and more) |
-| **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination → reintroduction → personalisation), FAQ, tips, sources |
+| **The Journey** (`journey.html`) | The three Low-FODMAP phases (elimination, reintroduction, personalisation), always-visible FAQ cards, tips, sources |
 
 Features: a fresh-green, modern-wellbeing design with a self-hosted font, light/dark
-mode, live search & filtering, a recipe modal, responsive layout, printable, and
+mode, live search & filtering, a recipe modal, responsive layout, printable, a concise glossary for common FODMAP terms on applicable content pages, and
 **fully offline** (no CDNs, no trackers).
 
 ---
+
+## Recent changes
+
+- Home includes a short, educational "What is SIBO?" introduction with the selected local illustration at `assets/img/illustrations/sibo-overgrowth.webp`.
+- Food, swap, meal-plan and recipe quantities use metric measurements (grams or millilitres) and Celsius temperatures where a quantity or temperature is stated.
+- Common terms such as FODMAP, GOS, HFCS, polyols, sorbitol, fructans and mannitol offer concise hover and keyboard-focus explanations on applicable content pages.
+- Glossary popups are intentionally disabled on Home and inside The Journey FAQ and sources sections, where they interrupt reading.
+- The Journey FAQ is presented as four always-visible answer cards rather than expandable disclosures.
 
 ## 📁 Project structure
 
@@ -109,9 +118,10 @@ in order: `data.js` → `layout.js` → `app.js`.
 - **`app.js`** renders the page content. It is **page-aware**: each block runs only if
   its target element exists on the current page (via a small `fill(id, html)` guard and
   `if (!el) return` checks). The *same* `app.js` therefore drives all 7 pages and only
-  renders what's present - no per-page scripts.
-- **Imagery** (recipe photos, food-category / recipe-category / cuisine icons, and the logo)
-  is **pre-generated locally** with **GPT Image 2** (via the Leonardo API - see `tools/`) and
+  renders what's present - no per-page scripts. It also enhances common abbreviations with
+  hover/focus explanations, except on Home and in the Journey FAQ and sources sections.
+- **Imagery** (recipe photos, food-category / recipe-category / cuisine icons, the logo, and
+  the Home SIBO illustration) is **pre-generated locally** with **GPT Image 2** (via the Leonardo API - see `tools/`) and
   committed as plain WebP files under `assets/img/`. The site just references them and **falls
   back to an emoji** if an image is missing - so it stays fully offline and the published site
   never calls an API or holds a key.
@@ -164,6 +174,11 @@ SOURCES     = [ { name, url } ];                                             // 
 
 To **add a food**: append an object to `FOODS` with a `cat` that matches a category `id`.
 The hero "300+" stat, the result counts, and all filters update automatically.
+
+### Measurement and glossary conventions
+
+- Use metric quantities in user-facing content: grams (`g`) or millilitres (`ml`) for portions and Celsius (`C`) for temperatures. Do not add cup, tablespoon, teaspoon, or Fahrenheit measurements.
+- Glossary definitions are maintained in `ABBREVIATIONS` in [`js/app.js`](js/app.js). The shared annotation pass is deliberately disabled on the Home page and skips `.faq-extra` and `#sources` on The Journey page. Keep those exclusions when editing the glossary so readable FAQ and citation layouts remain undisturbed.
 
 ---
 

@@ -10,6 +10,7 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const byId = (id) => document.getElementById(id);
   const STATUS_LABEL = { green: "Enjoy", yellow: "Moderate", red: "Avoid" };
+  const SHOW_ABBREVIATION_TOOLTIPS = document.body.dataset.page !== "home";
   const ABBREVIATIONS = {
     FODMAP: "Fermentable carbohydrates that can draw water into the gut and ferment, often causing gas, bloating or pain in sensitive people.",
     GOS: "Galacto-oligosaccharides - a FODMAP group found in beans, lentils, soybeans and some nuts.",
@@ -28,7 +29,7 @@
     const el = byId(id);
     if (!el) return;
     el.innerHTML = html;
-    annotateAbbreviations(el);
+    if (SHOW_ABBREVIATION_TOOLTIPS) annotateAbbreviations(el);
   }
 
   function annotateAbbreviations(root) {
@@ -37,7 +38,7 @@
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const parent = node.parentElement;
-        if (!parent || skipTags.has(parent.tagName) || parent.closest(".abbr-term")) return NodeFilter.FILTER_REJECT;
+        if (!parent || skipTags.has(parent.tagName) || parent.closest(".abbr-term, .faq-extra, #sources")) return NodeFilter.FILTER_REJECT;
         ABBR_PATTERN.lastIndex = 0;
         return ABBR_PATTERN.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
@@ -401,8 +402,10 @@
   fill("sourceList", SOURCES.map(s =>
     `<li><a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name}</a></li>`).join(""));
 
-  annotateAbbreviations($(".hero"));
-  annotateAbbreviations($(".disclaimer"));
-  annotateAbbreviations($("main"));
-  initAbbreviationTooltips();
+  if (SHOW_ABBREVIATION_TOOLTIPS) {
+    annotateAbbreviations($(".hero"));
+    annotateAbbreviations($(".disclaimer"));
+    annotateAbbreviations($("main"));
+    initAbbreviationTooltips();
+  }
 })();
