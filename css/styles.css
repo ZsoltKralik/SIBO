@@ -101,6 +101,41 @@ a { color: var(--primary-deep); text-decoration: none; }
 a:hover { text-decoration: underline; }
 em { font-style: italic; }
 ::selection { background: var(--accent-soft); color: var(--accent-deep); }
+/* ----------------------------- Abbreviation tips ----------------------------- */
+.abbr-term {
+  border-bottom: 1px dotted color-mix(in srgb, var(--accent) 76%, transparent);
+  cursor: help;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.abbr-term:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.abbr-tooltip {
+  position: fixed;
+  z-index: 220;
+  max-width: min(280px, calc(100vw - 24px));
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--border-strong) 64%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--ink) 96%, transparent);
+  color: var(--bg);
+  box-shadow: var(--shadow-lg);
+  font-size: .84rem;
+  font-weight: 600;
+  line-height: 1.42;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .14s var(--ease), transform .14s var(--ease);
+}
+.abbr-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.abbr-tooltip[hidden] { display: none; }
 
 /* ----------------------------- Header ----------------------------- */
 .site-header {

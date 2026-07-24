@@ -10,11 +10,123 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const byId = (id) => document.getElementById(id);
   const STATUS_LABEL = { green: "Enjoy", yellow: "Moderate", red: "Avoid" };
+  const ABBREVIATIONS = {
+    FODMAP: "Fermentable carbohydrates that can draw water into the gut and ferment, often causing gas, bloating or pain in sensitive people.",
+    GOS: "Galacto-oligosaccharides - a FODMAP group found in beans, lentils, soybeans and some nuts.",
+    HFCS: "High-fructose corn syrup - a sweetener used in some processed foods and drinks. It can be high in excess fructose, a FODMAP for some people.",
+    POLYOLS: "Sugar alcohols that can be poorly absorbed and ferment in the gut. Sorbitol and mannitol are common examples.",
+    SORBITOL: "A polyol found naturally in some fruit and used as a sweetener. When poorly absorbed, it can draw water into the bowel and cause digestive symptoms.",
+    FRUCTANS: "Fermentable chains of fructose found in foods such as wheat, onion and garlic. They are a FODMAP group.",
+    MANNITOL: "A polyol found in foods such as mushrooms and cauliflower, and in some sweeteners. It can be poorly absorbed and trigger digestive symptoms in sensitive people.",
+    SIBO: "Small Intestinal Bacterial Overgrowth - too many bacteria in the small intestine, often linked with bloating and changed bowel habits.",
+    IBS: "Irritable Bowel Syndrome - a gut-brain condition that can overlap with SIBO symptoms."
+  };
+  const ABBR_PATTERN = /\b(FODMAPs?|GOS|HFCS|Polyols?|Sorbitol|Fructans?|Mannitol|SIBO|IBS)\b/gi;
 
   /* Render `html` into #id only if that element exists on this page. */
   function fill(id, html) {
     const el = byId(id);
-    if (el) el.innerHTML = html;
+    if (!el) return;
+    el.innerHTML = html;
+    annotateAbbreviations(el);
+  }
+
+  function annotateAbbreviations(root) {
+    if (!root) return;
+    const skipTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"]);
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || skipTags.has(parent.tagName) || parent.closest(".abbr-term")) return NodeFilter.FILTER_REJECT;
+        ABBR_PATTERN.lastIndex = 0;
+        return ABBR_PATTERN.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach(node => {
+      const frag = document.createDocumentFragment();
+      const text = node.nodeValue;
+      let lastIndex = 0;
+      ABBR_PATTERN.lastIndex = 0;
+      text.replace(ABBR_PATTERN, (match, _term, index) => {
+        if (index > lastIndex) frag.append(document.createTextNode(text.slice(lastIndex, index)));
+        const normalizedTerm = match.toUpperCase();
+        const key = normalizedTerm.startsWith("FODMAP") ? "FODMAP"
+          : normalizedTerm === "POLYOL" ? "POLYOLS"
+          : normalizedTerm === "FRUCTAN" ? "FRUCTANS"
+          : normalizedTerm;
+        const span = document.createElement("span");
+        span.className = "abbr-term";
+        span.textContent = match;
+        span.dataset.tooltip = ABBREVIATIONS[key];
+        if (!node.parentElement.closest("a, button, summary")) span.tabIndex = 0;
+        frag.append(span);
+        lastIndex = index + match.length;
+        return match;
+      });
+      if (lastIndex < text.length) frag.append(document.createTextNode(text.slice(lastIndex)));
+      node.replaceWith(frag);
+    });
+  }
+
+  function initAbbreviationTooltips() {
+    const tooltip = document.createElement("div");
+    tooltip.id = "abbrTooltip";
+    tooltip.className = "abbr-tooltip";
+    tooltip.setAttribute("role", "tooltip");
+    tooltip.hidden = true;
+    document.body.append(tooltip);
+
+    let activeTerm = null;
+
+    function placeTooltip(term) {
+      const rect = term.getBoundingClientRect();
+      const pad = 12;
+      tooltip.hidden = false;
+      const tipRect = tooltip.getBoundingClientRect();
+      const centered = rect.left + (rect.width / 2) - (tipRect.width / 2);
+      const left = Math.min(window.innerWidth - tipRect.width - pad, Math.max(pad, centered));
+      const top = rect.top > tipRect.height + 18
+        ? rect.top - tipRect.height - 10
+        : rect.bottom + 10;
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${Math.max(pad, top)}px`;
+    }
+
+    function show(term) {
+      activeTerm = term;
+      tooltip.textContent = term.dataset.tooltip || "";
+      term.setAttribute("aria-describedby", tooltip.id);
+      placeTooltip(term);
+      tooltip.classList.add("is-visible");
+    }
+
+    function hide(term) {
+      const current = term || activeTerm;
+      if (current) current.removeAttribute("aria-describedby");
+      activeTerm = null;
+      tooltip.classList.remove("is-visible");
+      tooltip.hidden = true;
+    }
+
+    document.addEventListener("mouseover", (e) => {
+      const term = e.target.closest(".abbr-term");
+      if (term) show(term);
+    });
+    document.addEventListener("mouseout", (e) => {
+      const term = e.target.closest(".abbr-term");
+      if (term && !term.contains(e.relatedTarget)) hide(term);
+    });
+    document.addEventListener("focusin", (e) => {
+      if (e.target.classList && e.target.classList.contains("abbr-term")) show(e.target);
+    });
+    document.addEventListener("focusout", (e) => {
+      if (e.target.classList && e.target.classList.contains("abbr-term")) hide(e.target);
+    });
+    window.addEventListener("scroll", () => { if (activeTerm) placeTooltip(activeTerm); }, { passive: true });
+    window.addEventListener("resize", () => { if (activeTerm) placeTooltip(activeTerm); });
   }
 
   /* --------------------------- HERO STAT --------------------------- */
@@ -75,6 +187,7 @@
         return true;
       });
       foodGrid.innerHTML = list.map(foodCard).join("");
+      annotateAbbreviations(foodGrid);
       noResults.hidden = list.length !== 0;
       const g = list.filter(f => f.status === "green").length;
       const y = list.filter(f => f.status === "yellow").length;
@@ -178,6 +291,7 @@
         .map((r, i) => ({ r, i }))
         .filter(o => activeCat === "all" || o.r.meal === activeCat);
       recipeGrid.innerHTML = items.map(o => recipeCard(o.r, o.i)).join("");
+      annotateAbbreviations(recipeGrid);
       if (countEl) {
         if (activeCat === "all") {
           countEl.textContent = `${RECIPES.length} recipes`;
@@ -227,6 +341,7 @@
         <p class="modal-section-title">Method</p>
         <ol class="modal-steps">${r.steps.map(x => `<li>${x}</li>`).join("")}</ol>
         ${r.safety ? `<div class="modal-safety">⚠️ ${r.safety}</div>` : ""}`;
+      annotateAbbreviations(modalBody);
       lastFocused = document.activeElement;
       modal.hidden = false;
       document.body.style.overflow = "hidden";
@@ -286,4 +401,8 @@
   fill("sourceList", SOURCES.map(s =>
     `<li><a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name}</a></li>`).join(""));
 
+  annotateAbbreviations($(".hero"));
+  annotateAbbreviations($(".disclaimer"));
+  annotateAbbreviations($("main"));
+  initAbbreviationTooltips();
 })();
